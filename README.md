@@ -39,10 +39,10 @@ Inside the new folder create a `info.json` file and add the following data:
 }
 ```
 During the build process if a folder is missing the `info.json` file that language will be skipped.
-Your result should look like this: `src/locales/<code>/info.json` (where '<code>' is your language code identifier)
+Your result should look like this: `src/locales/<code>/info.json` (where <code> is your language code identifier)
 
 ## How to translate a Changelog
-You can translate a changelog by creating a file named `<code>.json` (where '<code>' is your language code) in the changelog folder of that specific component/route/view 
+You can translate a changelog by creating a file named `<code>.json` (where <code> is your language code) in the changelog folder of that specific component/route/view 
 
 # Todo
     - Split HeroDatabase.json and Camping Data into 2 different files

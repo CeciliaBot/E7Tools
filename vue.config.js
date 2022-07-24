@@ -26,10 +26,9 @@ module.exports = {
       filename: 'e7tools/index.html',
       title: 'CeciliaBot Tools',
       description: 'Tierlist Maker | Timeline | Powder Shop history | Gear Score.',
-      chunks: ['chunk-vendors', 'chunk-common', 'index'],
       baseURL: '../'
     },
-    Timeline: {
+    TimelineStandalone: {
       entry: 'src/views/timeline/standalone/',
       template: 'public/index.html',
       filename: 'timeline/index.html',
