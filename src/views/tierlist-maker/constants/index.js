@@ -1,0 +1,1 @@
+export const labelColors = ['#ff5f5f','#fa6e6e','#fa9560','#fac552','#f4fa43','#b0fa35','#62fb26','#18fb26','#09fb6b','#03f3b7','#0383f3','#095ab0','#503ece','#5b31f0','#7640b7','#c44bc8','#ec7597','#f9b4c8','#fdedf2','#c4babd','#686566']

@@ -1,0 +1,40 @@
+[
+    [
+        1.5, "17/07/2022",
+        [
+            ["new", "Now you can see this changelog!"],
+            ["new", "Everything has been recoded from scratch with Vue 3 (from Vue 2 to Vue 3)"],
+            ["new", "Now you can use some emotes like :booba: and :speedset: for Tier List Name, Tier Name, and character comments!"],
+            ["fix", "Improvments to ther 'Apply filter to ranked elements': Now the items that don't match will not disappear but decrease opacity so you can move items around each tier without disabling the filter"],
+            ["new", "Add support for full size hero images (_su.png). Patched html2canvas.js to correctly export this type of icons."],
+            ["fix", "Fixed artifact icons not dispaying Role and Rarity icons."]
+        ]
+    ],
+    [
+        1.4, "13/05/2022",
+        [
+            ["new", "Alignment tier list now available."],
+            ["new", "Character skins now are available. You can select a skin by pressing right click on a character with ingame skins."],
+            ["new", "Added a shortcut to the E7Vault model viewer"]
+        ]
+    ],
+    [
+        1.2, "15/04/2022",
+        [
+            ["new", "Comments for tier elements are now available on mobile. Tap a character to view and edit comments."]
+        ]
+    ],
+    [
+        1.11, "27/03/2022",
+        [
+            ["new", "Added <code>CTRL+F</code> shortcut for PC users. It will focus and select all of the text inside the search bar."]
+        ]
+    ],
+    [
+        1.1, "18/03/2022",
+        [
+            ["new", "Added Search bar"],
+            ["new", "Added new filter: Gender."]
+        ]
+    ]
+]

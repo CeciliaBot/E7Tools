@@ -1,0 +1,18 @@
+.holding-drag * {
+    cursor: grabbing !important;
+}
+.holding-drag .tooltip {
+    display: none !important;
+}
+.dragPlaceholder {
+    opacity: 0.5;
+    background-color: #ffffff29;
+    border-radius: 5px;
+}
+.is-dragging {
+    position: fixed !important;
+    /*opacity: 0.85;*/
+    transform-origin: 0 0; /* Center if element has scale */
+    z-index: 100;
+    pointer-events: none !important;
+}

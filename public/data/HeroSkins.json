@@ -1,0 +1,259 @@
+{
+    "cecilia": [
+        {
+            "id": "c1002_s01",
+            "_id": "cecilia-blackwinged-succubus",
+            "name": "Black-Winged Succubus"
+        }
+    ],
+    "cidd": [
+        {
+            "id": "c1014_s01",
+            "_id": "cidd-masked-gentleman",
+            "name": "Masked Gentleman"
+        }
+    ],
+    "lidica": [
+        {
+            "id": "c1046_s01",
+            "_id": "lidica-bride-of-roses",
+            "name": "Bride of Roses"
+        }
+    ],
+    "specter-tenebria": [
+        {
+            "id": "c2050_s01",
+            "_id": "specter-tenebria-dark-tyrant",
+            "name": "Dark Tyrant"
+        } 
+    ],
+    "tempest-surin": [
+        {
+            "id": "c2065_s01",
+            "_id": "tempest-surin-autumnal-beatuy",
+            "name": "Autumnal Beauty"
+        }
+    ],
+    "iseria": [
+        {
+            "id": "c1024_s01",
+            "_id": "iseria-night-of-white-flowers",
+            "name": "Night of White Flowers"
+        }
+    ],
+    "angelica": [
+        {
+            "id": "c1062_s01",
+            "_id": "angelica-mysterious-transfer-student",
+            "name": "Mysetious Transfer Student"
+        }
+    ],
+    "karin": [
+        {
+            "id": "c1011_s01",
+            "_id": "karin-shore-patrol",
+            "name": "Shore Patrol"
+        }
+    ],
+    "sez": [
+        {
+            "id": "c1038_s01",
+            "_id": "sez-aloof-lifeguard",
+            "name": "Aloof Lifeguard"
+        }
+    ],
+    "aither": [
+        {
+            "id": "c1018_s01",
+            "_id": "aither-star-of-ezera",
+            "name": "Star of Ezera"
+        }
+    ],
+    "basar": [
+        {
+            "id": "c1053_s01",
+            "_id": "basar-sophisticated-magnate",
+            "name": "Sophisticated Magnate"
+        }
+    ],
+    "tenebria": [
+        {
+            "id": "c1050_s01",
+            "_id": "tenebria-phantom-schoolgirl",
+            "name": "Phantom Schoolgirl"
+        }
+    ],
+    "destina": [
+        {
+            "id": "c2022_s01",
+            "_id": "destina-spring-breeze",
+            "name": "Spring Breeze"
+        }
+    ],
+    "tamarinne": [
+        {
+            "id": "c1067_s01",
+            "_id": "tamarinne-starlight-concert",
+            "name": "Starlight Concert"
+        }
+    ],
+    "achates": [
+        {
+            "id": "c1017_s01",
+            "_id": "achates-azure-sea",
+            "name": "Azure Sea"
+        }
+    ],
+    "yuna": [
+        {
+            "id": "c1030_s01",
+            "_id": "yuna-afterschool-party",
+            "name": "Afterschool Party"
+        }
+    ],
+    "charles": [
+        {
+            "id": "c1027_s01",
+            "_id": "charles-demon-hunter",
+            "name": "Demon Hunter"
+        }
+    ],
+    "elena": [
+        {
+            "id": "c1091_s01",
+            "_id": "elena-starlit-melody",
+            "name": "Starlit Melody"
+        }
+    ],
+    "luluca": [
+        {
+            "id": "c1082_s01",
+            "_id": "luluca-lovely-patissiere",
+            "name": "Lovely Patissiere"
+        }
+    ],
+    "violet": [
+        {
+            "id": "c1074_s01",
+            "_id": "violet-ardent-gentleman",
+            "name": "Ardent Gentleman"
+        }
+    ],
+    "rose": [
+        {
+            "id": "c1003_s01",
+            "_id": "rose-dark-angel",
+            "name": "Dark Angel"
+        }
+    ],
+    "kayron": [
+        {
+            "id": "c1023_s01",
+            "_id": "kayron-time-rabbit",
+            "name": "Time Rabbit"
+        }
+    ],
+    "faithless-lidica": [
+        {
+            "id": "c2046_s01",
+            "_id": "faithless-lidica-victorious-knight",
+            "name": "Victorious Knight"
+        }
+    ],
+    "angelic-montmorancy": [
+        {
+            "id": "c4042_s01",
+            "_id": "angelic-montmorancy-serene-sea",
+            "name": "Serene Sea"
+        }
+    ],
+    "fallen-cecilia": [
+        {
+            "id": "c2002_s01",
+            "_id": "fallen-cecilia-snow-white-warmth",
+            "name": "Snow White Warmth"
+        }
+    ],
+    "vildred": [
+        {
+            "id": "c1007_s01",
+            "_id": "vildred-distinguished-gentleman",
+            "name": "Distinguished Gentleman"
+        }
+    ],
+    "bomb-model-kanna": [
+        {
+            "id": "c1097_s01",
+            "_id": "bomb-model-kanna-special-gift",
+            "name": "Special Gift"
+        }
+    ],
+    "ruele-of-light": [
+        {
+            "id": "c1022_s01",
+            "_id": "ruele-of-light-heir-of-radiance",
+            "name": "Heir of Radiance"
+        }
+    ],
+    "vivian": [
+        {
+            "id": "c1088_s01",
+            "_id": "vivian-villainess",
+            "name": "Villainess"
+        }
+    ],
+    "arbiter-vildred": [
+        {
+            "id": "c2007_s01",
+            "_id": "arbiter-vildred-dark-monarch",
+            "name": "Dark Monarch"
+        }
+    ],
+    "mercedes": [
+        {
+            "id": "c0002",
+            "_id": "mercedes-powered-up",
+            "name": "Powered up Mercedes"
+        },
+        {
+            "id": "c1005_s01",
+            "_id": "mercedes-fluffy-lady",
+            "name": "Fluffy Lady"
+        }
+    ],
+    "judge-kise": [
+        {
+            "id": "c2006_s01",
+            "_id": "judge-kise-heir-of-holy-light",
+            "name": "Heir of Holy Light"
+        }
+    ],
+    "yufine": [
+        {
+            "id": "c1016_s01",
+            "_id": "yufine-adorable-flower-bud",
+            "name": "Adorable Flower Bud"
+        }
+    ],
+    "diene": [
+        {
+            "id": "npc1216",
+            "_id": "diene-magical-girl-d",
+            "name": "Magical Girl D"
+        }
+    ],
+    "maid-chloe": [
+        {
+            "id": "c2049_s01",
+            "_id": "maid-chloe-energetic",
+            "name": "Energetic"
+        }
+    ],
+    "cermia": [
+        {
+            "id": "c1079_s01",
+            "_id": "beachside-merrymaker-cermia",
+            "name": "Beachside Merrymaker Cermia"
+        }
+    ]
+}

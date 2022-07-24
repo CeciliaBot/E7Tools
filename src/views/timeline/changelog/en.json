@@ -1,0 +1,48 @@
+[
+    [
+        1.16, "28/04/2022",
+        [
+            ["new", "Change Shop Timeline from Hover to open to Click to open. This should feel less intrusive while navigating the main timeline."],
+            ["new", "Search function improvments: <br>You can search multiple elements by separating each element with a \"|\" character: Example: (rimuru|cermia) -> You can also use other RegEx characters like $ etc<br>When you click a search result the \"Shop rotation timeline\" will automatically open and close."]
+        ]
+    ],
+    [
+        1.15, "15/04/2022",
+        [
+            ["new", "You can now select the rendering direction. By default the timeline will now render from left to right."],
+            ["added", "New right click menu. You can change render direction and other small stuff."],
+            ["new", "Search function will now display Powder/Covenant/Galaxy Shop rotations."],
+            ["new", "Images are now lazy loaded, images will be loaded once they enter the users screen."]
+        ]
+    ],
+    [
+        1.12, "28/03/2022",
+        [
+            ["new", "Added a tooltip to show information about start/end time of a banner.<br>On mobile tap and hold to view the tooptip."]
+        ]
+    ],
+    [
+        1.11, "27/03/2022",
+        [
+            ["fix", "Vertical Timeline: Fix mystic banners on mobile getting thin and impossible to recognize."],
+            ["fix", "Vertical Timeline: Mystic will now align to the right like they used to do in the old timeline."]
+        ]
+    ],
+    [
+        1.10, "26/03/2022",
+        [
+            ["added", "Added Comment section for each banner (Powered by DISQUS)."],
+            ["added", "Added Powder Shop and Galaxy/Covenant Coin Shop roatiations in the timeline.<br>Hover the bottom (or right if in vertical mode) of the timeline to open the secondary timeline."],
+            ["added", "Added a search function for Rate ups and mystic banners. The shortcut <code>CTRL + F</code> is available for PC users.<br>Currently Events and Shop rotations are ignored by the search function.<br>Powder shop search function is available in the <a href=\"e7tools/#/powder-shop\">Powder shop</a> section of this website."],
+            ["new", "The timeline is available as standalone <a href=\"/timeline/\">here</a> or as part of CeciliaBot Tools <a href=\"/e7tools/#/timeline\">here</a>.<br>Whene not in standalone mode you can use the shortcut <code>ESC</code> or <code>M</code> to open the main menu of CeciliaBot Tools.<br>The old timeline is available <a href=\"/old/timeline/\">here</a>."],
+            ["removed", "Characters stats section has been removed, it will probably come back later."],
+            ["improved", "Everything has been recoded from scratch while keeping the same layout."]
+        ]
+    ],
+    [
+        1.00, "13/07/2021",
+        [
+            ["new", "Initial timeline release"]
+        ]
+    ]
+]

@@ -1,0 +1,420 @@
+.timeline .date {
+    position: absolute;
+    top: calc(40% - 50px);
+    color: white;
+    transform: rotate(-45deg);
+    width: max-content;
+}
+.timeline span.tevent {
+    font-size: 45px;
+    line-height: 1em;
+    margin-left: -0.2em;
+    position: absolute;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+    top: 100%;
+    transform: translateY(-100%);
+    color: var(--icon-bar-active);
+    height: max-content;
+    opacity: 0.5;
+    max-height: 100%;
+    text-align: end;
+    text-decoration: none;
+    z-index: 1;
+}
+span.tevent a {
+  text-decoration: none;
+  color: inherit;
+}
+#timeline { /* Used for vtimeline centering */
+  text-align: center;
+}
+.timeline li.today {
+    border-left: solid red;
+}
+.vtimeline li.today {
+    border-top: solid red;
+}
+.timeline {
+    position: relative;
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding-left: 100px;
+    height: 100%;
+    text-align: start;
+    vertical-align: top; /* fix overflow y*/
+}  /* set here the height of the timeline */
+.timeline .dummy {
+    visibility: hidden;
+    opacity: 0;
+    width: 0 !important;
+    pointer-events: none;
+}
+/* middle line */
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    top: calc(40% - 1px);
+    width: 100%;
+    height: 2px;
+    background: var(--decoration-color-primary);
+}
+.timeline > li > span {
+}
+.timeline > li {
+    display: flex;
+    padding: 0 5px;
+    width: 350px; /* 70px * 7 days */
+    border-left: thin dashed #ffffff4f;
+    /*transition: width ease .4s;*/
+}
+.timeline .banner{
+    overflow: hidden;
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+    border: 1px var(--decoration-color-primary) solid;
+    background-color: red;
+    border-radius: 30px;
+    margin: 5px 0; /* this value (margin-left) has to be repeted (doubled) app.bannerLength*/
+    cursor: pointer;
+    position: relative;
+}
+/* .banner:not(:focus):hover {
+    transition: transform ease .4s;
+    z-index: 1;
+    transform: scale(1.03);
+    box-shadow: 0 0 10px 10px;
+} */
+.timeline .banner.mystic {
+    background: #6b266b;
+    background-image: url(https://p4.wallpaperbetter.com/wallpaper/237/281/286/space-universe-nebula-star-wallpaper-preview.jpg);
+    background-size: cover;
+    color: white;
+}
+.timeline .banner.covenant {
+    background-color: white;
+}
+.timeline .banner.limited {
+    background-color: #544CAF;
+}
+.timeline .banner.fire {
+    background-color: #AF4C4C;
+}
+.timeline .banner.ice {
+    background-color: #4C8AAF;
+}
+.timeline .banner.wind {
+    background-color: #4CAF50;
+}
+.timeline .wrapper-n {
+    position: absolute;
+    top: calc(40% + 10px);
+    width: 0;
+}
+.timeline .wrapper-m {
+    position: absolute;
+    top: 40px;
+    width: 0;
+}
+span.banner-description {
+    display: inline-block;
+    position: sticky;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #000000aa;
+    padding: 10px 0;
+}
+.timeline span.banner-description {
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* style for the dot over the timeline */
+.timeline > li:before {
+    content: attr(data-date);
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%) translateX(-16px) rotate(-45deg);
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+    border: solid thick #fff;
+    background: #4CAF50;
+    color: white;
+    text-indent: 20px;
+    line-height: 10px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+
+/* style for the event arrow */
+/*
+.timeline .banner:before {
+    display: none;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -1px) rotateZ(45deg);
+    background: #fff;
+}*/
+.timeline div .icon_container {
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    position: sticky;
+    right: 0;
+    left: 0;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    float: right;
+}
+.timeline div .icon_container > div{
+    height: inherit;
+    position: relative;
+    display: inline-block;
+}
+.timeline div .icon_container img{
+    height: inherit;
+    width: inherit;
+    overflow: clip;
+}
+div.isnew > img {
+  background-color: orange;
+  border-radius: 100px;
+  border-radius: 100%;
+  border: solid orangered;
+}
+div.isnew:after {
+	content: 'N';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: max-content;
+	/* height: 20%; */
+	background-color: orangered;
+	border-radius: 100%;
+	box-shadow: 0 0 8px 5px orangered;
+	color: white;
+	/* font-size: 12px; */
+	font-size: 75%;
+	text-align: center;
+	padding: 2px 6px;
+}
+
+.timeline > section.event-overlay {
+    z-index: 1;
+    position: absolute;
+    display: inline-flex;
+    height: 40% !important;
+    top: -35%;
+    transition: top .4s ease;
+
+}
+.timeline > section.event-overlay:hover {
+    z-index: 2;
+    top: 0;
+}
+.timeline .event-line {
+    position: relative;
+    overflow: hidden;
+    padding: 0 10px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px var(--decoration-color-primary) solid;
+    background-color: white;
+    color: black;
+    border-radius: 7px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.timeline .event-line.dummy {
+    opacity: 0;
+    visibility: 0;
+}
+
+@media screen and (max-height: 600px) {
+    .timeline .banner {
+          height: 70px !important;
+    }
+    .timeline .wrapper-n {
+        top: calc(10% + 10px);
+    }
+    .timeline .wrapper-m {
+        top: calc(100% - 200px);
+        display: flex;
+        height: 160px;
+        flex-direction: column-reverse;
+    }
+    .timeline .date {
+        top: calc(10% - 20px);
+        transform: rotate(0deg);
+    }
+    .timeline:before {
+        top: 10%;
+        top: calc(10% - 1px);
+    }
+    .timeline > li:before {
+        top: 10%;
+    }
+}
+
+/* VERTICAL TIMELINE TEST*/
+.vtimeline {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin: auto;
+    padding: 100px 0;
+    width: 100%;
+    max-width: 900px;
+}  /* set here the height of the timeline */
+.vtimeline .dummy {
+    visibility: none;
+    opacity: 0;
+    pointer-events: none;
+}
+/* middle line */
+.vtimeline:before {
+    content: "";
+    position: absolute;
+    left: 40%;
+    left: calc(40% - 1px);
+    height: 100%;
+    width: 2px;
+    background: var(--decoration-color-primary);
+}
+.vtimeline > li > span {
+}
+.vtimeline > li {
+    display: flex;
+    padding: 5px 0;
+    width: 100% !important;
+    /*rder-top: thin dashed white;*/
+    height: 200px;
+    /*transition: height ease .4s;*/
+}
+.vtimeline .banner{
+    overflow: hidden;
+    padding: 10px;
+    max-width: 100px;
+    width: 30%;
+    margin-top: 5px;
+    border: 1px var(--decoration-color-primary) solid;
+    background-color: red;
+    border-radius: 30px;
+    margin: 0 5px;
+    cursor: pointer;
+    display: inline-block;
+    /*transition: height ease .4s;*/
+}
+.vtimeline .banner.mystic {
+    width: 100px;
+    background: #6b266b;
+    background-image: url(https://p4.wallpaperbetter.com/wallpaper/237/281/286/space-universe-nebula-star-wallpaper-preview.jpg);
+    background-size: cover;
+    color: white;
+}
+.vtimeline .banner.covenant {
+    background-color: white;
+}
+.vtimeline .banner.limited {
+    background-color: #544CAF;
+}
+.vtimeline .banner.fire {
+    background-color: #AF4C4C;
+}
+.vtimeline .banner.ice {
+    background-color: #4C8AAF;
+}
+.vtimeline .banner.wind {
+    background-color: #4CAF50;
+}
+.vtimeline .wrapper-n {
+    position: absolute;
+    left: calc(40% + 10px);
+    width: calc(60% - 10px);
+    height: 0;
+    display: inline-flex;
+}
+/*.vtimeline .wrapper-n > div.banner {
+    width: 20%;
+}*/
+.vtimeline .wrapper-m {
+    position: absolute;
+    left: 10px;
+    width: calc(40% - 20px);
+    height: 0;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+.vtimeline .wrapper-n > div, .vtimeline .wrapper-n > div {
+    display: inline-block;
+}
+/* style for the dot over the timeline */
+.vtimeline > li:before {
+    content: attr(data-date);
+    position: absolute;
+    left: 40%;
+    transform: translateY(-80%) translateX(-50%);
+    height: 20px;
+    z-index: 2;
+    border: thick solid #fff;
+    line-height: 10px;
+    white-space: nowrap;
+    border-radius: 10px;
+    color: #000;
+    background-color: #fff;
+    pointer-events: none;
+}
+
+/* style for the event arrow */
+/*
+.vtimeline .banner:before {
+    display: none;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -1px) rotateZ(45deg);
+    background: #fff;
+}*/
+.vtimeline div .icon_container {
+    display: inline-block;
+    width: 100%;
+}
+.vtimeline div .icon_container > div{
+    width: inherit;
+    position: relative;
+}
+.vtimeline div .icon_container img{
+    width: inherit;
+    height: inherit;
+    overflow: clip;
+}
+.vtimeline span.tevent {
+    font-size: 45px;
+    position: absolute;
+    text-orientation: mixed;
+    transform: translateY(-100%);
+    color: var(--icon-bar-active);
+    width: max-content;
+    opacity: 0.5;
+    max-height: 100%;
+    text-align: end;
+    text-decoration: none;
+    z-index: 1;
+    margin-top: 30px;
+}
