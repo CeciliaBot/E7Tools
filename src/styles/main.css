@@ -137,6 +137,7 @@ input[type=number] {
 }
 #app > .container {
     height: inherit;
+    overflow: auto;
 }
 /*
 #app > .container section {
@@ -951,12 +952,12 @@ table td.r, table th.r {
 .nav-camping-base {
   display: flex;
   height: 60px;
-  width: calc(100% + 20px);
+  width: 100%;
   background-color: var(--icon-bar);
   font-size: 20px; /* 18px */
-  margin: -10px -10px 0 -10px;
+  margin: 0;
   position: sticky;
-  top: -10px;
+  top: 0px;
   z-index: 10;
 }
 .nMobile-nav {

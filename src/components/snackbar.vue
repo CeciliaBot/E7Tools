@@ -5,10 +5,10 @@ export default {
     props: {
     },
     data: function () {
-    return {
+      return {
         ev: {},
         id: 0
-    }
+      }
     },
     computed: {
     },
@@ -22,10 +22,6 @@ export default {
         this.ev[id] = event;
         if (event.manual) { /* manually remove notification on click */
             return
-        }
-        if (this.mobile) { /* only one notification on mobile and has to be manually dismissed*/
-        //this.$delete(this.ev, 'N'+(this.id-1))
-        //return;
         }
         setTimeout(() => {
             delete this.ev[id];

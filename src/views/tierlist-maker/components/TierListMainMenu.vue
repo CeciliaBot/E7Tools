@@ -20,7 +20,7 @@
             </div>
             <button @click="$emit('settings')" class="material-button stroked raised" v-ripple-effect>{{ $t('strings.settings') }}</button>
         </div>
-        <div class="tier-load-box">
+        <div class="tier-load-box glass-container-2">
             <h1>
                 <span style="font-weight: 600;">Your Tier Lists</span>
                 <button class="material-button stroked primary button-large" @click="viewChangelog=!viewChangelog" v-ripple-effect>
@@ -29,14 +29,14 @@
             </h1>
             <div v-show="!viewChangelog" class="hide-scrollbar load-body">
                 <template v-if="numberOfTierLists && tierListsLoaded">
-                    <span v-for="tierList in tierListHistory" :key="tierList.id" > <!-- @click="loadTierList(tierList)" @delete="deletePrompt($event, tierList)" -->
+                    <span v-for="tierList in sortedHistory" :key="tierList.id" > <!-- @click="loadTierList(tierList)" @delete="deletePrompt($event, tierList)" -->
                         <TierListCard :tierlist="tierList" @load="loadTierList" @delete="deletePrompt"/>
                     </span>
                 </template>
-                <div v-else-if="tierListsLoaded" style="text-align: center;background-color: var(--background-modifier-darken-alpha);padding: 10px;border-radius: 8px;font-size: 20px;">
+                <div v-else-if="tierListsLoaded" style="text-align: center;background-color: var(--background-modifier-darken-alpha);padding: 10px;border-radius: 8px;font-size: 20px; height: min-content;">
                     <span>{{ $t('strings.no_tierlists') }}</span>
                 </div>
-                <div v-else>
+                <div v-else style="width: 100%; height: 100%;">
                     <div class="infinite-loading-wrapper">
                         <div class="infinite-loading"></div>
                     </div>
@@ -55,6 +55,7 @@ import { stringToHtmlEmotes } from '@/utils/text-to-emoji.js'
 import { newTierRows } from '../utils/newTierRow.js'
 import changelogComponent from '@/components/changelog.vue'
 import JSONTierListLoader from '../utils/load-json-file.js'
+import { getRandomElement } from '@/utils/array.js'
 
 export default {
     name: 'tier-list-main-menu',
@@ -79,6 +80,9 @@ export default {
         tierListHistory() {
             return this.$store.getters.getTierListDB();
         },
+        sortedHistory() {
+            return Object.values(this.tierListHistory || {}).sort( (a,b) => a.updated_at > b.updated_at ? -1 : 0 )
+        },
         numberOfTierLists() {
             return Object.values(this.tierListHistory).length
         }
@@ -86,6 +90,9 @@ export default {
     renderTriggered (e) {console.log('MainMenu', e)},
     created: function () {
         this.$store.dispatch('LOAD_TIER_LIST_DB')
+            .catch( () => { /* Can't open indexed db -> Probably firefox incognito mode, let the user know they wont be able to save progress only export */
+                this.$snackbar.warn({title: 'Can\'t open local database', description: 'Saving and Loading disabled'})
+            })
             .finally( () => {
                 this.tierListsLoaded = true;
             })
@@ -101,7 +108,7 @@ export default {
         newTierList(type) {
             let tiers = [];
             newTierRows(5, tiers);
-            this.$emit('workTierList', {type: type, name: ':booba: ' + this.$t('strings.untitled_tier_list'), tiers: tiers, xy: {names: [], list: []}})
+            this.$emit('workTierList', {type: type, name: ':' + getRandomElement(['Aware', 'Clueless', 'BOOBA', 'Copium', 'Bedge', 'Pepega', 'PepegaCredit', 'PepeLaugh', 'CharlotteNoted', 'skystone', 'molagora', 'molagoraseed']) + ': '+ this.$t('strings.untitled_tier_list'), tiers: tiers, xy: {names: [], list: []}})
         },
         loadTierList(data) {
             this.$emit('workTierList', data)
@@ -160,9 +167,7 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: #00000077;
+    box-shadow: none;
 }
 .tier-load-box > h1 {
     width: 100%;

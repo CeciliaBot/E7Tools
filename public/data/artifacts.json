@@ -1383,6 +1383,15 @@
         "role": "",
         "gacha": false
     },
+    "vii-the-chariot": {
+        "_id": "vii-the-chariot",
+        "id": "art0163",
+        "identifier": "",
+        "name": "VII. The Chariot",
+        "rarity": 4,
+        "role": "",
+        "gacha": false
+    },
     "xiii-death": {
         "_id": "xiii-death",
         "id": "art0113",
@@ -1415,6 +1424,15 @@
         "id": "art0115",
         "identifier": "",
         "name": "XVIII. The Moon",
+        "rarity": 4,
+        "role": "",
+        "gacha": false
+    },
+    "xix-the-sun": {
+        "_id": "xix-the-sun",
+        "id": "art0162",
+        "identifier": "",
+        "name": "XIX. The Sun",
         "rarity": 4,
         "role": "",
         "gacha": false

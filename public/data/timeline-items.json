@@ -5871,5 +5871,88 @@
       }
     ],
     "a": []
+  },
+  {
+    "type": "covenant",
+    "dt": [
+      "2022-08-04",
+      "2022-08-11"
+    ],
+    "c": [
+      {
+        "id": "flan",
+        "new": false
+      }
+    ],
+    "a": [
+      {
+        "id": "unseen-observer",
+        "new": false
+      }
+    ]
+  },
+  {
+    "type": "covenant",
+    "dt": [
+      "2022-08-11",
+      "2022-08-18"
+    ],
+    "c": [
+      {
+        "id": "bellona",
+        "new": false
+      }
+    ],
+    "a": [
+      {
+        "id": "iron-fan",
+        "new": false
+      }
+    ]
+  },
+  {
+    "type": "covenant",
+    "dt": [
+      "2022-08-11",
+      "2022-08-18"
+    ],
+    "c": [
+      {
+        "id": "roana",
+        "new": false
+      }
+    ],
+    "a": [
+      {
+        "id": "touch-of-rekos",
+        "new": false
+      }
+    ]
+  },
+  {
+    "type": "mystic",
+    "dt": [
+      "2022-08-11",
+      "2022-09-01"
+    ],
+    "c": [
+      {
+        "id": "fallen-cecilia",
+        "new": false
+      },
+      {
+        "id": "silver-blade-aramintha",
+        "new": false
+      },
+      {
+        "id": "desert-jewel-basar",
+        "new": false
+      },
+      {
+        "id": "moon-bunny-dominiel",
+        "new": true
+      }
+    ],
+    "a": []
   }
 ]

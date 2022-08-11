@@ -1,13 +1,17 @@
 [
     [
-        1.5, "17/07/2022",
+        1.5, "11/08/2022",
         [
             ["new", "Now you can see this changelog!"],
-            ["new", "Everything has been recoded from scratch with Vue 3 (from Vue 2 to Vue 3)"],
-            ["new", "Now you can use some emotes like :booba: and :speedset: for Tier List Name, Tier Name, and character comments!"],
-            ["fix", "Improvments to ther 'Apply filter to ranked elements': Now the items that don't match will not disappear but decrease opacity so you can move items around each tier without disabling the filter"],
+            ["new", "Everything has been written from scratch with Vue 3 (from Vue 2 to Vue 3)"],
+            ["new", "Now you can use some emotes like :speedset: (or some emotes like :BOOBA:). Emotes can be used for: Tier List Name, Tier Row Name, Character comments and XY Graph axes!. A suggestion box will appear after you type \":\" showing some of the matching emotes, press enter to input that emote."],
+            ["fix", "Improvments to ther 'Apply filter to ranked elements': Now the items that don't match the filter or search query will not disappear but decrease their opacity so you can move items around without disabling the filter"],
             ["new", "Add support for full size hero images (_su.png). Patched html2canvas.js to correctly export this type of icons."],
-            ["fix", "Fixed artifact icons not dispaying Role and Rarity icons."]
+            ["fix", "Fixed artifact icons not dispaying Role and Rarity icons."],
+            ["fix", "Fix ugly flicker on Firefox."],
+            ["new", "Added \"Add above\" and \"Add below\" otions for quicker tier row creation in the \"Tier Row Settings\" modal."],
+            ["new", "You can now Save as PNG without including the title in the image. (You can enable this option in the settings menu) "],
+            ["new", "When exporting as PNG you can now view a preview of the image (Zoom and move around). You can right click or click the download icon to the save the image!"]
         ]
     ],
     [

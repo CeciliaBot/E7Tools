@@ -1,5 +1,5 @@
 <template>
-    <div class="tier-card"  @click.prevent="this.$emit('load', tierlist)">
+    <div class="tier-card"  @click.prevent="this.$emit('load', this.tierlist)">
         <EmotableBox class="title" tagName="h2" :editable="false" :value="tierlist.name" />
         <div class="body">
             <div class="description">
@@ -22,6 +22,7 @@
 import emoteEditableBoxComponent from '@/components/EmoteableDiv.vue'
 export default {
     name: 'TierListCard',
+    emits: ['load', 'delete'],
     components: {
         EmotableBox: emoteEditableBoxComponent
     },
@@ -37,7 +38,7 @@ export default {
     },
     computed: {
         name: function () {
-            return this.tierlist.name//stringToHtmlEmotes(this.tierlist.name)
+            return this.tierlist.name
         }
     }
 }

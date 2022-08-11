@@ -12,9 +12,11 @@ import localePlugin from './plugins/language'
 import contextmenu from './plugins/contextmenu/contextmenu.js'
 import snackbar from './plugins/snackbar.js'
 import callbackAlert from './plugins/callback-modal.js'
+import photogalleryPlugin from './plugins/photogallery'
 
 import heroIcon from './components/hero-icon.vue'
 import MobileFloatingMenu from './components/mobile-floating-menu.vue'
+
 
 window.i18n = i18n
 let app = createApp(App)
@@ -26,6 +28,7 @@ app.use(router)
     .use(snackbar)
     .use(callbackAlert)
     .use(localePlugin)
+    .use(photogalleryPlugin)
     .directive('tooltip', tooltip)
     .directive('lazyloader', lazyloader)
     .directive('ripple-effect', rippleEffect)

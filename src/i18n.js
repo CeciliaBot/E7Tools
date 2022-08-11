@@ -20,20 +20,18 @@ const i18n = createI18n({
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
   datetimeFormats,
   messages: {},
-  silentTranslationWarn: true // turn this off to see warning in the console when a string is missing translation
+  missingWarn: false, fallbackWarn: false // turn this on to see warnings in the console when a string is missing translation
 })
-i18n._availableLocales = requireAll(require.context('./locales', true, /info\.json$/))
+//i18n._availableLocales = requireAll(require.context('./locales', true, /info\.json$/)).map(x=> {console.log(x); return x})
 i18n.global._availableLocales = requireAll(require.context('./locales', true, /info\.json$/))
 
-
 const loadedLanguages = [];
-export function loadLocaleMessagesAsync(locale) {
+function getLanguagePack(locale) {
   if (loadedLanguages.length > 0 && i18n.global.locale === locale) {
     return Promise.resolve(locale)
   }
   // If the language was already loaded
   if (loadedLanguages.includes(locale)) {
-    i18n.global.locale = locale
     return Promise.resolve(locale)
   }
   // If the language hasn't been loaded yet
@@ -46,41 +44,42 @@ export function loadLocaleMessagesAsync(locale) {
     //Object.assign(strings.default, camping.default, heroes.default, artifacts.default)  // Merge!
     i18n.global.setLocaleMessage(locale, {strings:strings.default, heroes: heroes.default, artifacts: artifacts.default, camping: camping.default})
     loadedLanguages.push(locale)
-    i18n.global.locale = locale
+    document.querySelector('html').setAttribute('lang', locale)
     return Promise.resolve(locale)
   }).catch(() => {
     return Promise.resolve(false)
   })
 }
+export function loadLocaleMessagesAsync(locale) { // Load and set as active
+  return getLanguagePack(locale).then( (gotLocale) => {
+    i18n.global.locale = gotLocale
+    return Promise.resolve(gotLocale)
+  }).catch( () => {
+    return Promise.reject(locale)
+  })
+}
 
 export default i18n;
 
-/********************* Load Fallback and Current/Local Language @ start up *********************/
+/********************* Load Fallback and Current/Local Language at start up *********************/
 var init = [
-  i18n.global.fallbackLocale,
-  [ loadLocaleMessagesAsync(i18n.global.fallbackLocale) ]
+  getLanguagePack(i18n.global.fallbackLocale)
 ];
-var userLang = localStorage.getItem('USER_PREFERED_LOCALE');
-if (!userLang) { // TRY TO DETECT AND APPLAY THE CORRECT LOCALE
-    const tLang = navigator.language || navigator.userLanguage;
-    i18n._availableLocales.forEach(locale => {
-        locale.langCodes.forEach(code => {
-            const langCode = code.split('-')[0];
-            const zoneCode = code.split('-').slice(1).join('');
-            const tZoneCode = tLang.split('-').slice(1).join('');
-            if (langCode === tLang.split('-')[0] && (zoneCode=== '*' || !tZoneCode || zoneCode===tZoneCode))
-              if (locale.code !== i18n.global.fallbackLocale)
-                init[0] = locale.code,
-                init[1].push(loadLocaleMessagesAsync(locale.code))
-        })
-    })
-} else if (userLang !== i18n.global.fallbackLocale) {
-  init[0] = userLang,
-  init[1].push(loadLocaleMessagesAsync(userLang))
-}
+// var userLang = localStorage.getItem('USER_PREFERED_LOCALE');
+// if (!userLang) { // TRY TO DETECT AND APPLAY THE CORRECT LOCALE
+//     const tLang = navigator.language || navigator.userLanguage;
+//     i18n.global._availableLocales.forEach(locale => {
+//         locale.langCodes.forEach(code => {
+//             const langCode = code.split('-')[0];
+//             const zoneCode = code.split('-').slice(1).join('');
+//             const tZoneCode = tLang.split('-').slice(1).join('');
+//             if (langCode === tLang.split('-')[0] && (zoneCode=== '*' || !tZoneCode || zoneCode===tZoneCode))
+//               if (locale.code !== i18n.global.fallbackLocale)
+//                 init.push(loadLocaleMessagesAsync(locale.code))
+//         })
+//     })
+// } else if (userLang !== i18n.global.fallbackLocale) {
+//   init.push(loadLocaleMessagesAsync(userLang))
+// }
 
-Promise.all(
-  init[1]
-).then( () => {
-  i18n.global.locale = init[0];
-})
+Promise.all(init).catch(err => console.error(err))

@@ -34,9 +34,9 @@
                 <button @click="$emit('settings')" style="float: right;" v-tooltip="() => $t('strings.settings')">
                     <i class="icon fas fa-cog"></i>
                 </button>
-                <button @click="$localePicker" style="float: right;" v-tooltip="() => $t('strings.language')">
+                <!-- <button @click="$localePicker" style="float: right;" v-tooltip="() => $t('strings.language')">
                     <i class="icon fas fa-globe"></i>
-                </button>
+                </button> -->
             </div>
             <template v-else>
                 <MobileFloatingMenu
@@ -64,26 +64,29 @@
                     @move-tier-row="moveTierRow"
                     @clear-tier-row="clearTierRow"
                     @delete-tier-row="deleteTierRow"
+                    @new-tier="addNewTierRow"
                 />
                 <div class="new-tier-box noselect" style="height: 100px;" @click="addNewTierRow" data-html2canvas-ignore>
                     <i class="fa fa-plus"></i>
                     <span>{{ $t('strings.add_new_tier') }}</span>
                 </div>
             </div>
-            <ScalableDIV
-                v-if="tierType===1"
-                id="AlignChart"
-                :height="2500"
-                :width="2500"
-                :maxzoom="5"
-                :minzoom="0.03"
-            ><!-- ScalableDIV's ID is used during export as png -->
-                <TierListXY 
-                    key="XYGraph"
-                    :list="xy.list"
-                    :axes="xy.names"
-                />
-            </ScalableDIV>
+            <div v-if="tierType===1" class="xy-graph-container">
+                <ScalableDIV
+                    id="AlignChart"
+                    :height="2500"
+                    :width="2500"
+                    :maxzoom="5"
+                    :minzoom="0.03"
+                    padding="70 70 70 70"
+                ><!-- ScalableDIV's ID is used during export as png -->
+                    <TierListXY 
+                        key="XYGraph"
+                        :list="xy.list"
+                        :axes="xy.names"
+                    />
+                </ScalableDIV>
+            </div>
         </div><!-- Tier List area over -->
 
         <div key="hero-box" :class="{'mobile-list': mobile, 'desktop-list':  !mobile}" :style="{width: mobile ? '' : desktopHeroBoxWidth+1 + 'px'}">
@@ -140,6 +143,7 @@
 
 <script>
 import { computed } from 'vue'
+import { computePosition, offset, shift, flip } from '@floating-ui/dom'; // calculate filter modal position
 
 import tierListTable from './TierListTable.vue'
 import XYGraphComponent from './TierListXY.vue'
@@ -210,6 +214,7 @@ export default {
                     this.updateTierListTitle(n.name);
                     this.tierId = n.id;
                     this.elementType = n.type;
+                    this.tierType = n.tier_type || 0;
                     this.tierListName = n.name || '';
                     this.tiers = n.tiers || [];
                     this.xy = n.xy || {}; if (!this.xy.names) this.xy.names=[]; if (!this.xy.list) this.xy.list=[];
@@ -258,7 +263,7 @@ export default {
             filterPlacedElements: false,                                                                  // true if Elements in the tier list must be filtered
             tierItemsMask: {},                                                                            // set visisbility for the tier list items according to the current filter
 
-            tierType: 1,                                                                                  // tier layout; type 1 === xy
+            tierType: 0,                                                                                  // tier layout; type 1 === xy
             elementType: 'character',                                                                     // supported 'artifact' and 'character' to add more the mthod getDatabasePromise must be updated first
             tierId: null,
             tierListName: 'CeciliaBot Tier List Maker',
@@ -329,15 +334,21 @@ export default {
         },
         buildItemList() {
             this.charList = Object.keys(this.database)
+            var tene = this.charList.indexOf('dark-tyrant-tenebria') // can be remove after the camp simulator update
+            if (tene) this.charList.splice(tene, 1)
             if (!this.tierType) { // remove every ranked item
                 this.tiers.forEach(tier => {
                     tier.list.forEach(el => {
-                      this.charList.splice(this.charList.indexOf(el), 1)
+                      var i = this.charList.indexOf(el)
+                      if (i!==-1)
+                        this.charList.splice(i, 1)
                     })
                 })
             } else { // remove cartesian items
                 for (var i in this.xy.list) {
-                    this.charList.splice(this.charList.indexOf(this.xy.list[i].id), 1)
+                    var j = this.charList.indexOf(this.xy.list[i].id)
+                    if (j!==-1)
+                      this.charList.splice(j, 1)
                 }
             }
             this.applyFilter();
@@ -356,270 +367,6 @@ export default {
                         ]).then(async (data) => {
                             let db = data[0],
                                 skins = data[1];
-
-//                             let zodiac = {
-//     "achates": "twins",
-//     "adin": "lion",
-//     "adlay": "archer",
-//     "adventurer-ras": "scales",
-//     "ainos": "archer",
-//     "ains": "scales",
-//     "aither": "scales",
-//     "alencia": "crab",
-//     "alexa": "lion",
-//     "allrounder-wanda": "twins",
-//     "ambitious-tywin": "archer",
-//     "angel-of-light-angelica": "bull",
-//     "angelic-montmorancy": "fish",
-//     "angelica": "crab",
-//     "apocalypse-ravi": "crab",
-//     "aramintha": "twins",
-//     "arbiter-vildred": "lion",
-//     "archdemons-shadow": "waterbearer",
-//     "aria": "bull",
-//     "armin": "goat",
-//     "arowell": "scales",
-//     "assassin-cartuja": "scorpion",
-//     "assassin-cidd": "waterbearer",
-//     "assassin-coli": "bull",
-//     "auxiliary-lots": "fish",
-//     "azalea": "scorpion",
-//     "baal-sezan": "twins",
-//     "bad-cat-armin": "maiden",
-//     "baiken": "scorpion",
-//     "basar": "waterbearer",
-//     "bask": "scorpion",
-//     "batisse": "bull",
-//     "belian": "ram",
-//     "bellona": "goat",
-//     "benevolent-romann": "bull",
-//     "blaze-dingo": "archer",
-//     "blood-blade-karin": "scorpion",
-//     "blood-moon-haste": "fish",
-//     "bomb-model-kanna": "twins",
-//     "briar-witch-iseria": "twins",
-//     "butcher-corps-inquisitor": "lion",
-//     "camilla": "maiden",
-//     "captain-rikoris": "scales",
-//     "carmainerose": "waterbearer",
-//     "carrot": "archer",
-//     "cartuja": "crab",
-//     "cecilia": "ram",
-//     "celeste": "archer",
-//     "celestial-mercedes": "scorpion",
-//     "celine": "scorpion",
-//     "cerise": "waterbearer",
-//     "cermia": "lion",
-//     "challenger-dominiel": "scorpion",
-//     "champion-zerato": "ram",
-//     "chaos-inquisitor": "lion",
-//     "chaos-sect-axe": "lion",
-//     "charles": "twins",
-//     "charlotte": "lion",
-//     "chloe": "archer",
-//     "choux": "goat",
-//     "christy": "goat",
-//     "church-of-ilryos-axe": "lion",
-//     "cidd": "ram",
-//     "clarissa": "lion",
-//     "closer-charles": "scorpion",
-//     "coli": "scorpion",
-//     "commander-lorina": "lion",
-//     "conqueror-lilias": "waterbearer",
-//     "corvus": "crab",
-//     "crescent-moon-rin": "bull",
-//     "crimson-armin": "scales",
-//     "crozet": "crab",
-//     "dark-corvus": "goat",
-//     "desert-jewel-basar": "archer",
-//     "designer-lilibet": "crab",
-//     "destina": "crab",
-//     "diene": "twins",
-//     "dingo": "maiden",
-//     "dizzy": "bull",
-//     "doll-maker-pearlhorizon": "bull",
-//     "dominiel": "bull",
-//     "doris": "crab",
-//     "eaton": "crab",
-//     "eda": "ram",
-//     "elena": "twins",
-//     "elphelt": "goat",
-//     "elson": "fish",
-//     "emilia": "twins",
-//     "enott": "scorpion",
-//     "ervalen": "scorpion",
-//     "fairytale-tenebria": "bull",
-//     "faithless-lidica": "twins",
-//     "falconer-kluri": "ram",
-//     "fallen-cecilia": "archer",
-//     "fighter-maya": "scales",
-//     "flan": "goat",
-//     "free-spirit-tieria": "maiden",
-//     "furious": "lion",
-//     "general-purrgis": "crab",
-//     "glenn": "scales",
-//     "gloomyrain": "crab",
-//     "godmother": "twins",
-//     "great-chief-khawana": "crab",
-//     "guider-aither": "crab",
-//     "gunther": "scales",
-//     "hasol": "archer",
-//     "haste": "twins",
-//     "hataan": "lion",
-//     "hazel": "waterbearer",
-//     "helen": "crab",
-//     "helga": "archer",
-//     "holiday-yufine": "scales",
-//     "holy-flame-adin": "lion",
-//     "hurado": "fish",
-//     "hwayoung": "scales",
-//     "ian": "maiden",
-//     "ilynav": "twins",
-//     "inferno-khawazu": "scorpion",
-//     "iseria": "lion",
-//     "jack-o": "bull",
-//     "januta": "lion",
-//     "jecht": "archer",
-//     "jena": "ram",
-//     "judge-kise": "maiden",
-//     "judith": "fish",
-//     "karin": "lion",
-//     "kawerik": "maiden",
-//     "kayron": "ram",
-//     "ken": "goat",
-//     "khawana": "fish",
-//     "khawazu": "scorpion",
-//     "kikirat-v2": "goat",
-//     "kiris": "goat",
-//     "kise": "lion",
-//     "kitty-clarissa": "maiden",
-//     "kizuna-ai": "crab",
-//     "kluri": "ram",
-//     "krau": "fish",
-//     "command-model-laika": "twins",
-//     "landy": "lion",
-//     "last-rider-krau": "fish",
-//     "lena": "scales",
-//     "leo": "goat",
-//     "lidica": "maiden",
-//     "lilias": "ram",
-//     "lilibet": "scales",
-//     "lionheart-cermia": "fish",
-//     "little-queen-charlotte": "scales",
-//     "lorina": "lion",
-//     "lots": "twins",
-//     "lucy": "maiden",
-//     "ludwig": "lion",
-//     "luluca": "waterbearer",
-//     "luna": "scales",
-//     "magic-scholar-doris": "crab",
-//     "maid-chloe": "maiden",
-//     "martial-artist-ken": "lion",
-//     "mascot-hazel": "waterbearer",
-//     "maya": "ram",
-//     "mediator-kawerik": "goat",
-//     "melany": "scales",
-//     "melissa": "lion",
-//     "mercedes": "scorpion",
-//     "mercenary-helga": "archer",
-//     "mighty-scout": "goat",
-//     "milim": "crab",
-//     "mirsa": "fish",
-//     "mistychain": "lion",
-//     "montmorancy": "fish",
-//     "mort": "twins",
-//     "mucacha": "archer",
-//     "mui": "maiden",
-//     "muse-rima": "waterbearer",
-//     "muwi": "scorpion",
-//     "nemunas": "scales",
-//     "operator-sigret": "scales",
-//     "orte": "waterbearer",
-//     "otillie": "bull",
-//     "pavel": "maiden",
-//     "pearlhorizon": "bull",
-//     "peira": "maiden",
-//     "penelope": "scorpion",
-//     "pirate-captain-flan": "twins",
-//     "politis": "twins",
-//     "purrgis": "scorpion",
-//     "pyllis": "crab",
-//     "ram": "twins",
-//     "ran": "ram",
-//     "ras": "scales",
-//     "ravi": "goat",
-//     "ray": "bull",
-//     "rem": "scorpion",
-//     "remnant-violet": "lion",
-//     "requiemroar": "archer",
-//     "researcher-carrot": "archer",
-//     "righteous-thief-roozid": "twins",
-//     "rikoris": "scales",
-//     "rima": "waterbearer",
-//     "rimuru": "scales",
-//     "rin": "maiden",
-//     "roaming-warrior-leo": "twins",
-//     "roana": "fish",
-//     "romann": "twins",
-//     "roozid": "twins",
-//     "rose": "scales",
-//     "ruele-of-light": "fish",
-//     "sage-baal-sezan": "bull",
-//     "schuri": "lion",
-//     "seaside-bellona": "twins",
-//     "senya": "bull",
-//     "serila": "waterbearer",
-//     "sez": "scorpion",
-//     "shadow-knight-pyllis": "crab",
-//     "shadow-rose": "twins",
-//     "shooting-star-achates": "crab",
-//     "shuna": "twins",
-//     "sigret": "bull",
-//     "silk": "maiden",
-//     "silver-blade-aramintha": "twins",
-//     "sinful-angelica": "bull",
-//     "sol": "archer",
-//     "solitaria-of-the-snow": "bull",
-//     "sonia": "fish",
-//     "specimen-sez": "scorpion",
-//     "specter-tenebria": "twins",
-//     "dark-tyrant-tenebria": "twins",
-//     "spirit-eye-celine": "archer",
-//     "straze": "bull",
-//     "summers-disciple-alexa": "lion",
-//     "summertime-iseria": "goat",
-//     "surin": "twins",
-//     "sven": "scorpion",
-//     "sylvan-sage-vivian": "crab",
-//     "taeyou": "maiden",
-//     "tamarinne": "archer",
-//     "taranor-guard": "scales",
-//     "taranor-royal-guard": "scorpion",
-//     "tempest-surin": "twins",
-//     "tenebria": "crab",
-//     "tieria": "ram",
-//     "top-model-luluca": "archer",
-//     "troublemaker-crozet": "fish",
-//     "tywin": "ram",
-//     "verdant-adin": "lion",
-//     "vigilante-leader-glenn": "scales",
-//     "vildred": "lion",
-//     "violet": "scorpion",
-//     "vivian": "archer",
-//     "wanda": "twins",
-//     "wanderer-silk": "goat",
-//     "watcher-schuri": "scorpion",
-//     "wild-angara": "bull",
-//     "yoonryoung": "ram",
-//     "yufine": "bull",
-//     "yulha": "archer",
-//     "yuna": "lion",
-//     "zahhak": "archer",
-//     "zealot-carmainerose": "waterbearer",
-//     "zeno": "bull",
-//     "zerato": "ram",
-//     "jacko": "bull"
-// }
                             for (var key in skins) {
                                 if (db[key] && !db[key].skin)
                                     db[key].skin = skins[key];
@@ -647,14 +394,15 @@ export default {
         getItemComment: function (id) {
             return this.comments[id];
         },
-        addNewTierRow() {
-            newTierRow(this.tiers)
+        addNewTierRow(index) {
+            newTierRow(this.tiers, index)
         },
 
         /******************************************** Save and export methods  ********************************************/
         tierListToObject() {
           return {
             id: 0,
+            tier_type: this.tierType,
             type: this.elementType,
             name: this.tierListName,
             tiers: this.tiers,
@@ -682,12 +430,25 @@ export default {
 
         /******************************************** Filter and Search methods  ********************************************/
         openFilterModal: function(e) {
-            var position; /* set the position of the dialog box */
-            if (!this.mobile && e) {
-                position = {top: 50+'px', right: 10+'px'}
-            }
-            this.$refs['filter-modal'].$.props.xy = position;
             this.showFilterModal=true;
+            if (this.mobile) return;
+            this.$nextTick( () => {
+                computePosition(e.currentTarget, this.$refs['filter-modal'].$el.firstChild, {
+                    strategy: 'fixed',
+                    placement: 'bottom-end',
+                    middleware: [
+                        offset(5),
+                        shift(),
+                        flip()
+                    ]
+                }).then( ({x, y}) => {
+                  console.log(x,y)
+                    this.$refs['filter-modal'].$.props.xy = {
+                        top: y+'px',
+                        left: x+'px'
+                    }
+                })
+            })
         },
         closeFilterModal: function() {
             this.showFilterModal=false;
@@ -749,7 +510,14 @@ export default {
                     class: 'fas fa-link',
                     handler: () => window.open('https://www.e7vau.lt/portrait-viewer.html?id='+(this.skin[item] || data.id), '_blank').focus()
                 })
-
+            else {
+                const name = this.getItemName(item)
+                options.push({
+                    name: 'View artwork',
+                    class: 'fas fa-image',
+                    handler: () => this.$gallery([{description: name, src: this.$store.getters.getArtifactImage(item)}, {description: 'Icon: ' + name, src: this.$store.getters.getArtifactIcon(item)}])
+                })
+            }
             if (data.skin) {
                 const link = (id) => {return cdn+'face/' + id + '_s.png'};
                 options.push(
@@ -796,42 +564,42 @@ export default {
         },
 
         /******************************************** Drag and Drop handlers  ********************************************/
-        handleDropEvent(item, to, from, newIndex, detail) {
-            if (this.tierType === 0)
-                if (from === to) {
-                    arrayMove(from, from.indexOf(item), newIndex);
-                } else {
-                    /* make sure there are no duplicates */
-                    while ( from.includes(item) ) from.splice(from.indexOf(item), 1);
-                    to.splice(newIndex, 0, item);
-                }
-            else {
-                var cX = detail.clientX, cY = detail.clientY;
-                let canvas = document.getElementById('XYCanvas').getBoundingClientRect();
-                cX = Math.min(100, Math.max(0, (-canvas.left+cX)/canvas.width*100) ), cY = Math.min(100, Math.max( 0, (-canvas.top+cY)/canvas.height*100) );
-                var index = -1;
-                this.xy.list.some((hero,i) => {if (hero.id === item) index = i;})
-                if (to === this.charList) {
-                    if (from === to)
-                      arrayMove(from, from.indexOf(item), newIndex);
-                    else {
-                        to.splice(newIndex, 0, item);
-                        from.splice(index, 1);
-                    }
-                } else {
-                    if (from === to) {
-                        this.xy.list[index].x = cX;
-                        this.xy.list[index].y = cY;
-                        arrayMove(this.xy.list, index, this.xy.list.length);
-                        detail.node.style.top = cY+'%';
-                        detail.node.style.left = cX+'%';
-                    } else {
-                        from.splice(from.indexOf(item), 1);
-                        this.xy.list.push({id: item, x: cX, y: cY})
-                    }
-                }
-            }
-        }
+        // handleDropEvent(item, to, from, newIndex, detail) {
+        //     if (this.tierType === 0)
+        //         if (from === to) {
+        //             arrayMove(from, from.indexOf(item), newIndex);
+        //         } else {
+        //             /* make sure there are no duplicates */
+        //             while ( from.includes(item) ) from.splice(from.indexOf(item), 1);
+        //             to.splice(newIndex, 0, item);
+        //         }
+        //     else {
+        //         var cX = detail.clientX, cY = detail.clientY;
+        //         let canvas = document.getElementById('XYCanvas').getBoundingClientRect();
+        //         cX = Math.min(100, Math.max(0, (-canvas.left+cX)/canvas.width*100) ), cY = Math.min(100, Math.max( 0, (-canvas.top+cY)/canvas.height*100) );
+        //         var index = -1;
+        //         this.xy.list.some((hero,i) => {if (hero.id === item) index = i;})
+        //         if (to === this.charList) {
+        //             if (from === to)
+        //               arrayMove(from, from.indexOf(item), newIndex);
+        //             else {
+        //                 to.splice(newIndex, 0, item);
+        //                 from.splice(index, 1);
+        //             }
+        //         } else {
+        //             if (from === to) {
+        //                 this.xy.list[index].x = cX;
+        //                 this.xy.list[index].y = cY;
+        //                 arrayMove(this.xy.list, index, this.xy.list.length);
+        //                 detail.node.style.top = cY+'%';
+        //                 detail.node.style.left = cX+'%';
+        //             } else {
+        //                 from.splice(from.indexOf(item), 1);
+        //                 this.xy.list.push({id: item, x: cX, y: cY})
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
 </script>
@@ -1136,9 +904,25 @@ export default {
       flex: 1;
       overflow: scroll;
       padding: 10px;
+      position: relative;
     }
-    
-    
+    .xy-graph-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      padding-top: 50px;
+    }
+    .mobileView .xy-graph-container {
+      padding-top: 0
+    }
+    .force-stack-view:not(.mobile-list) .xy-graph-container {
+      position: relative;
+      padding-top:0;
+    }
+
     .box-manage {
       margin: 0.2em 0;
       font-size: 20px;

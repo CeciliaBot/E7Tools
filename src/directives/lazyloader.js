@@ -7,19 +7,21 @@
 */
 var ImgMap = []; // Array of imgs already loaded at least once
 
+export function lazyOnload(e) {
+  e.target.style.opacity = '';
+  const prev = e.target.previousSibling;
+  if (prev && prev.tagName === 'IMG' && prev.getAttribute('data-lazy-fader')) prev.style.opacity = 0;
+  e.target.onload = null; // delete self
+  ImgMap.push(e.target.src);
+}
+
 const lazyImage = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         var target = entry.target;
         const src = target.getAttribute('data-src');
         if (src) {
-            target.onload = function (e) {
-                e.target.style.opacity = '';
-                const prev = e.target.previousSibling;
-                if (prev && prev.tagName === 'IMG' && prev.getAttribute('data-lazy-fader')) prev.style.opacity = 0;
-                e.target.onload = null; // delete self
-                ImgMap.push(src);
-            }
+            target.onload = lazyOnload;
             target.setAttribute('src', src);
             target.removeAttribute('data-src');
         }

@@ -20,10 +20,11 @@ import './drag-drop.css'
 
 */
 
+// Maybe transform this into a simple component with slot
 
 
 
-var state;
+export var state; // can be imported to know if it's dragging and other stuff
 var originalParent;
 var nextSibling;
 var placeholder;

@@ -5,6 +5,7 @@ import lazyloader from '@/directives/lazyloader.js'
 
 export default {
   name: 'artifact-icon',
+  emits: ['click', 'context'],
   props: {
     inview: {
       type: Boolean,
@@ -60,7 +61,7 @@ export default {
   },
   render: function () {
     if (!this.artifact) return;
-    return h('div', {class: 'hero-icon-comp noselect', style: {'font-size': this.size + 'px'}, onClick: event => event.target.className.indexOf('remove') !=-1 ? this.$emit('remove', this.artifact) : this.$emit('click', this.artifact), onContextmenu: event => {event.preventDefault(); this.$emit('contextmenu',this.artifact) } }, [
+    return h('div', {class: 'hero-icon-comp noselect', style: {'font-size': this.size + 'px'}, onClick: event => event.target.className.indexOf('remove') !=-1 ? this.$emit('remove', this.artifact, event) : this.$emit('click', this.artifact, event), onContextmenu: event => {event.preventDefault(); this.$emit('context',this.artifact, event) } }, [
       h('div', {style: {position: 'relative', width: '1em', height: this.type===0?'1em':'auto', 'text-align': 'start', 'pointer-events': 'none'}}, [
         this.lazyload ? h('img', {style: 'height: 1em; vertical-align: top; position: absolute; transition: opacity .4s ease;', src: this.placeholder, 'data-lazy-fader': true, crossorigin: 'anonymous', SameSite: 'Lax'}) : null,
         withDirectives(

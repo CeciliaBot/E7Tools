@@ -2,8 +2,13 @@
     <div v-if="open" style="position: fixed; left: 0; top: 0; height: 100%; width: 100%; background-color: #00000033" @click="hide"></div>
     <div :class="['lang-picker glass-container-2', {show: open}]">
         <div v-for="locales in availableLangs" v-show="locale!==locales.code" :key="locales.code" class="locale mat-hover" @click="setLocale(locales)">
-            <div :class="'flag-box flag-'+locales.code"></div>
-            <div>{{ locales.name }}</div>
+            <div :class="'flag-box'">
+                <img :data-src="locales.flag" style="width: 100%;" v-lazyloader/>
+            </div>
+            <div>
+                <p>{{ locales.name }}</p>
+                <p style="font-size: 0.5em;">{{ locales.authors.join(', ') }}</p>    
+            </div>
         </div>
     </div>
 </template>
@@ -11,9 +16,13 @@
 <script>
 import '@/styles/lang-picker.css'
 import { loadLocaleMessagesAsync } from "@/i18n"
+import lazyloader from '@/directives/lazyloader.js'
 
 export default {
     name: 'LocalePicker',
+    directives: {
+        lazyloader
+    },
     data() {
         return {
             open: false

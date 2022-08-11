@@ -107,13 +107,13 @@ export default createStore({
     }
   },
   mutations: {
-    loading: function (state, payload=[false, i18n.global.t('strings.connecting___')]) {
+    loading: function (state, payload=[false, 'CONNECTING...']) {
       if (!Array.isArray(payload))
         state.loading[0] = payload,
-        state.loading[1] = i18n.global.t('strings.connecting___')
+        state.loading[1] = 'CONNECTING...'
       else {
         state.loading[0] = payload[0],
-        state.loading[1] = payload[1] || i18n.global.t('strings.connecting___')
+        state.loading[1] = payload[1] || 'CONNECTING...'
       }
     },
     installPWAButton: function (state, e) {
@@ -216,7 +216,7 @@ export default createStore({
         });
       });
     },
-    getPowderShop: function (context) {
+    GET_POWDER_SHOP: function (context) {
       return new Promise((resolve, reject) => {
         if (context.state.powderShop) return resolve(context.state.powderShop);
         httpGetAsync('./data/powder-shop.json').then( (res) => {

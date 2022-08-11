@@ -10,7 +10,7 @@
     >
         <template v-if="isMounted">
             <Teleport :to="$el.parentNode.parentNode">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; z-index: 1; text-align: center;" data-html2canvas-ignore>
+                <div style="position: absolute; top: 10px; left: 0; width: 100%; z-index: 1; text-align: center;" data-html2canvas-ignore>
                     <button class="material-button flat primary" @click="toggleRenameAxesModal" v-ripple-effect>
                         <span>{{ $t('strings.rename_canvas_axes') }}</span>
                     </button>
@@ -28,6 +28,7 @@
             v-drag="{drops: ['tierlist-element'], index: i, item: c.id, list: list}"
             @dragstart="(e) => dragOverResize(e.detail.node, true, true)"
             @dragfail="restoreElement"
+            @dragclick="itemContextMenu(c.id, $event)"
             v-tooltip="() => getItemTooltip(c.id)"
         >
             <component
@@ -41,7 +42,7 @@
                 :showrole="settings.showRole"
                 :showrarity="settings.showRarity"
                 :size="settings.iconSize"
-                :lazyload="false"
+                :lazyload="true"
                 :class="{'no-padding': !iconPadding}"
                 @context="itemContextMenu"
             ></component>

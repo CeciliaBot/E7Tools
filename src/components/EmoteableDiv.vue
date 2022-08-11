@@ -4,22 +4,29 @@
             <button class="material-button flat basic" style="font-size: 20px; line-height: 2em; pointer-events: none;">
                 <i class="fas fa-smile"></i>
             </button>
-        </div> -->
-        <div v-if="showEmoteSelector" class="emote-selector" :style="selectorStyling">
+        </div> v-if="showEmoteSelector"-->
+        <div ref="emote-selector" v-if="showEmoteSelector" class="emote-selector" :style="selectorStyling">
             <span v-for="emote in emotes" :key="emote.code" class="emote-wrapper" @mousedown.prevent @click="clickToInserEmote(emote.code)" style="min-width: 40px; min-height: 40px;">
-                <img :src="emote.src" :title="':'+ emote.code +':'" height="40" />
+                <img :src="emote.src" :title="':'+ emote.code +':'" height="40" SameSite="Lax" />
             </span>
+        </div>
+        <div v-if="autocomplete.length">
+            <div v-for="emote in autocomplete" :key="emote.code">
+                <img :src="emote.src" style="height: 1.5em" />
+            </div>
         </div>
     </div>
 
     <component :is="tagName" key="text-content" ref="text-box" v-bind="$attrs" class="input-box" :contenteditable="editable" spellcheck="false" @blur="onBlur" @click="onClick" v-emote v-html="text" />
 </template>
 <script>
+import { computePosition, autoPlacement } from '@floating-ui/dom';
 import { stringToHtmlEmotes, clickToInsertEmote, emotes } from '@/utils/text-to-emoji.js'
 import emoteDirective from '@/directives/emote-editable-box.js'
 
 export default {
     name: 'EmotableBox',
+    emits: ['update'],
     directives: {
         emote: emoteDirective
     },
@@ -48,11 +55,9 @@ export default {
         return {
             showEmoteSelector: false,
             emotes: emotes,
+            autocomplete: [],
+            autocompleteIndex: 0,
             selectorStyling: {
-                position: 'fixed',
-                zIndex: 50,
-                width: '300px',
-                minHeight: '100px',
                 left: 0,
                 right: 0
             }
@@ -72,20 +77,26 @@ export default {
         },
         setSelectorStyling() {
             if (this.icon) {
-                var t = this.$refs['text-box']
+                var t = this.$refs['text-box'],
+                    target = this.$refs['emote-selector'];
                 if (!t) return;
-                t=t.getBoundingClientRect();
-                this.selectorStyling.left=t.right+'px';
-                this.selectorStyling.top=t.top+'px';
-                this.selectorStyling.minHeight=t.height+'px';
+                computePosition(t, target, {
+                    strategy: 'fixed',
+                    middleware: [autoPlacement({
+                        allowedPlacements: ['top-end', 'bottom-end', 'left-start', 'right-start'],
+                    })]
+                }).then( ({x,y}) => {
+                    this.selectorStyling.top = y+'px';
+                    this.selectorStyling.left = x+'px';
+                })
             }
         },
         onClick() {
-            this.showEmoteSelector = true;
-            this.setSelectorStyling();
+            // this.showEmoteSelector = true;
+            // this.$nextTick( () => this.setSelectorStyling() )
         },
         onBlur(e) {
-            this.showEmoteSelector = false;
+            //this.showEmoteSelector = false;
             this.$emit('update', this.$refs['text-box'].getCleanInnerHTML(), e)
         }
     }
@@ -106,9 +117,14 @@ export default {
 }
 .emote-selector {
     z-index: 10;
-    position: absolute;
-    width: 300px;
-    background-color: var(--background-modifier-darken-alpha);
+    position: fixed;
+    z-index: 50;
+    width: 320px;
+    height: 300px;
+    overflow: auto;
+    padding: 10px;
+    background-color: var(--background-color-secondary);
+    border-bottom: solid 20px var(--background-color-tertiary);
     border-radius: 8px;
 }
 .emote-wrapper {

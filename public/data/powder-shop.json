@@ -1,5 +1,19 @@
 [
   {
+    "nid": 8748316,
+    "dt": ["2022-08-11","2022-09-18"],
+    "a": [
+      { "id": "secret-art-storm-sword" },
+      { "id": "rod-of-amaryllis" },
+      { "id": "knowledge-seed" },
+      { "id": "song-of-stars" },
+      { "id": "elyhas-knife" },
+      { "id": "eternus" },
+      { "id": "strak-gauntlet" },
+      { "id": "steadfast-gatekeeper" }
+    ]
+  },
+  {
     "nid": 855172,
     "dt": ["2022-06-30","2022-08-11"],
     "a": [

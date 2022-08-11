@@ -1,7 +1,6 @@
 /* From https://github.com/pearofducks/mount-vue-component */
 
 import { createVNode, render } from 'vue'
-
 export default function mount(component, { props, children, element, app } = {}) {
   let el = element
 

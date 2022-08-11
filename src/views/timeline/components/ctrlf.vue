@@ -1,7 +1,7 @@
 <script>
 import { h } from 'vue'
 import {debounce} from '@/utils/helpers.js'
-// memory leak https://github.com/vuejs/vue/pull/10085
+
 export default {
   name: 'ctrlf-component',
   props: {

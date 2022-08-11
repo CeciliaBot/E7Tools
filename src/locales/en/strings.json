@@ -1,6 +1,6 @@
 {
-    "connecting___": "CONNECTING...",
-    "loading___": "LOADING...",
+    "connecting_ld": "CONNECTING...",
+    "loading_ld": "LOADING...",
     "app_cecilia_tools": "CeciliaBot Tools",
     "app_main_menu": "Main menu",
     "app_timeline": "Timeline",
@@ -207,6 +207,8 @@
     "clear_tier": "Remove Elements",
     "move_up": "Move up",
     "move_down": "Move down",
+    "new_tier_above": "New tier above",
+    "new_tier_below": "New tier below",
     "apply_filter_to_ranked": "Apply filter to ranked elements",
     "has_skin": "Has skins (Right click to equip)",
     "show_name": "Show name",
@@ -216,6 +218,7 @@
     "compact_tier_name": "Compact tier name",
     "simplified_tier_ctrl": "Simplified tier controls",
     "tier_list_vertical_layout": "Vertical tier list maker layout",
+    "export_png_without_title": "Export to PNG without including the title",
     "l_while_tier_list_open": "You currently have a tier list open, any unsaved changes will be lost!<br>Press \"{0}\" to go back to your current tier list.",
 
     "gear_select_substat": "Please select a substat",
@@ -260,6 +263,7 @@
     "ok": "Ok",
     "save": "Save",
     "save_as_new": "Save as new",
+    "download": "Download",
     "load": "Load",
     "delete": "Delete",
     "confirm": "Confirm",

@@ -1,14 +1,14 @@
-<script>
-import photogallery from '@/components/photogallery.vue'
-
-/*
-    Map size is optional but prevents layout shifts with lazy loading
-*/
-var maps = [
+export default [
     {
         name: 'azmakalis',
         'background': 'rgba(255, 0, 0, 0.133)',
         en: [
+            {
+                src: 'paolo.png',
+                description: 'does not exist',
+                author: '',
+                size: [1398, 1080]
+            },
             {
                 src: 'https://ceciliabot.github.io/img/Raid-Normal_en.png',
                 description: 'Normal Raid Map',
@@ -99,103 +99,3 @@ var maps = [
         ]
     }
 ]
-
-
-export default {
-    name: 'maps-component',
-    props: ['visible', 'mobile'],
-    data: function () {
-        return {
-            currMap: undefined,
-            mapIndex: 0
-        }
-    },
-    computed: {
-        lang: function () {
-            return this.$i18n.locale || 'en';
-        }
-    },
-    created: function () {
-    },
-    methods: {
-        openMap: function (index, mapIndex) {
-            this.currMap = maps[index][this.lang] || maps[index]['en'] || []
-            this.mapIndex = mapIndex;
-        },
-        closePhotoGallery: function () {
-            this.currMap = undefined;
-            this.mapIndex = 0;
-        }
-    },
-    render: function (h) {
-        return h('div', {style: {}}, [
-            maps.map( (map, index) => {
-                return h('div', {staticClass: 'map-container', ref: 'map-block-'+index, style: {'background-color': map.background}}, [
-                    h('div', {staticClass: 'dungeon-title'}, this.$t('strings.'+map.name)),
-                    h('div', {domProps: {innerHTML: (map['description_'+this.lang]||map['description_en'])}, style: {'text-align': 'center'}}),
-                    (map[this.lang] || map['en'] || []).map( (img, i) => {
-                        return h('div', {staticClass: 'image-container noselect', style: {'min-width': img.size ? (200/img.size[1]*img.size[0] ) + 'px' : '200px', 'min-height': '200px'}}, [
-                            h('img', {style: 'opacity: 0', attrs: {'data-src': img.src, SameSite: 'Lax'}, on: {click: () => this.openMap(index, i)}, directives: [{name: 'lazyloader'}] }),
-                            h('span', {staticClass: 'map-name'}, img.description)
-                        ])
-                    })
-                ])
-            }),
-            this.currMap != undefined ?
-                h(photogallery, {props: {current: this.mapIndex, album: this.currMap }, on: {close: this.closePhotoGallery}})
-            : null
-        ])
-    }
-}
-</script>
-<style scoped>
-    .map-container {
-        position: relative;
-        margin: 0;
-        width: 100%;
-        padding: 20px 0 20px 100px;
-        background-color: rgb(0, 0, 0);
-        color: white;
-    }
-    .dungeon-title {
-        position: absolute;
-        height: calc(100% - 40px);
-        left: 10px;
-        text-align: center;
-        text-orientation: mixed;
-        text-transform: uppercase;
-        max-width: 50px;
-        writing-mode: vertical-rl;
-        font-size: 30px;
-    }
-    .image-container {
-        position: relative;
-        height: 200px;
-        margin: 20px 15px;
-        display: inline-block;
-    }
-    .image-container img {
-        height: 200px;
-        filter: brightness(50%);
-        border: 2px;
-        border-color: black;
-        transition: all .3s ease;
-    }
-    .image-container img:hover {
-        cursor: pointer;
-        filter: brightness(.2);
-    }
-    .map-name {
-        pointer-events: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-top: 100px;
-        margin-left: 50%;
-        transform: translate(-50%,-50%);
-        text-align: center;
-        font-size: 25px;
-        color: white;
-        text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black;
-    }
-</style>

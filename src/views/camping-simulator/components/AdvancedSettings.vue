@@ -1,5 +1,7 @@
 <script>
-import characterSelection from '../../../components/character-select.vue';
+import { h, withDirectives } from 'vue'
+import Ripple from '@/directives/material-ripple.js'
+
 var buffList = {
   "stic_debuf_impossible": {"name": "Immunity", "id": 12},
   "stic_att_up": {"name": "Attack up", "id": 1},
@@ -39,10 +41,7 @@ var debuffList = {
 };
 
 export default {
-  name: 'camping-manage',
-  components: {
-    'character-selection': characterSelection
-  },
+  name: 'AdvancedSettings',
   props: {
     mobile: {
       type: Boolean,
@@ -70,7 +69,7 @@ export default {
     return {
       myHeroes: [],
       lockedHeroes: [],
-      advancedSettings: this.advanced,
+      advancedSettings: this.advanced || {},
 
       characterSelect: undefined // or slot number
     }
@@ -83,8 +82,13 @@ export default {
     mobile: function () {
       //mmm
     },
-    locked: function() {this.lockedHeroes = this.locked},
-    roster: function() {this.myHeroes = this.roster},
+    locked: function() {this.lockedHeroes = this.locked || []},
+    roster: function() {this.myHeroes = this.roster || []},
+    advanced(n, o) {
+      if (n !== o) {
+        this.advancedSettings = n;
+      }
+    }
     // advanced: {
     //   immediate: true,
     //   deep: true,
@@ -108,7 +112,7 @@ export default {
     },
     setCheckbox: function (key,checked) {
       if (checked)
-        this.$set(this.advancedSettings, key, checked);
+        this.advancedSettings[key] = checked;
       else
         delete this.advancedSettings[key];
     },
@@ -122,27 +126,27 @@ export default {
     setReqestedNumber: function (obj, key, val=1) { // val = +1 || -1, obj = role/attribute etc, key = fire/ice etc
       var t = this.advancedSettings[obj];
       if (!t)
-        this.$set(this.advancedSettings,obj,{}),
+        this.advancedSettings[obj] = {},
         t=this.advancedSettings[obj];
       if (!t[key]) 
-        if (val > 0) this.$set(t,key,0);
+        if (val > 0) t[key] = 0;
         else return;
       if (val > 0 && this.countActive(obj)>3-this.lockedHeroes.length) {
-        this.$snackbar.show({type: 'info', title: 'Can\'t select more '+obj, description: 'Can\'t lock more than 4 elements for eache category.'});
+        this.$snackbar.log({type: 'info', title: 'Can\'t select more '+obj, description: 'Can\'t lock more than 4 elements for eache category.'});
         return;
       }
-      this.$set(t,key,t[key]+val);
+      t[key] = t[key]+val;
       if (t[key]<1) delete t[key];
     },
     addToArray: function (cat,elem) {
       var t=this.advancedSettings;
-      if (!t[cat]) this.$set(t,cat,[]);
-      t = t [cat];
+      if (!t[cat]) t[cat] = [];
+      t = t[cat];
       if (!t.includes(elem))
         t.push(elem);
       else {
         t.splice(t.indexOf(elem),1);
-        if (!t[cat].length) delete t[cat]; // don't keep empty arrays -> they might slow down the worker
+        if (!t.length) delete t[cat]; // don't keep empty arrays -> they might slow down the worker
       }
     },
     lockATopic: function (e) {
@@ -154,7 +158,7 @@ export default {
       if (!topics.length) return;
       if (this.advancedSettings.lockedTopics && this.advancedSettings.lockedTopics.length===4 ) return;
 
-      this.$contextmenu.show( customEventObject , topics.map(topic => {
+      this.$contextmenu( customEventObject , topics.map(topic => {
         return {
           class: '',
           name: this.$t('strings.'+topic),
@@ -168,25 +172,28 @@ export default {
       return true;
     },
     getCartesianSlot: function (n) {
-      if (!this.advancedSettings.cartesianLock) this.$set(this.advancedSettings, 'cartesianLock', [[],[],[],[]]);
+      if (!this.advancedSettings.cartesianLock) this.advancedSettings.cartesianLock = [[],[],[],[]];
       return this.advancedSettings.cartesianLock[n];
     },
     openCartesianSelector: function (e,i) {
       e.preventDefault();
       e.stopPropagation();
-      this.$set(this, 'characterSelect', i);
+      this.characterSelect = i;
     },
     closeCartesianSelector: function () {
       this.characterSelect = undefined;
     }
   },
-  render: function (h) {
-    return h('div', {style: {display: this.visible?'block':'none'}}, [
+  render: function () {
+    return h('div', {class: 'advanced'}, [
       h('h1', [
         this.$t('strings.advanced_settings'),
-        h('button', {staticClass: 'material-button stroked warn', style: 'float: right;', on: {click: () => this.advancedSettings = {}}, directives: [{name: 'ripple-effect'}]}, [
-          h('span', this.$t('strings.reset_advanced'))
-        ])
+        withDirectives(
+          h('button', {class: 'material-button stroked warn', style: 'float: right;', onClick: () => this.advancedSettings = {}}, [
+            h('span', this.$t('strings.reset_advanced'))
+          ]),
+          [[Ripple]]
+        )
       ]),
       h('div', {style: {padding: '15px', 'background-color': 'black', 'border-radius': '10px', border: 'solid #776048', 'font-size': '18px', color: '#A1AEBD'}}, [
         [
@@ -200,30 +207,36 @@ export default {
           ['includeCleanser','must_include_cleanse']
         ].map(opt => {
           return h('div', [
-            h('label', {staticClass: 'custom-check', style: {margin: 0} }, [
-              h('input', {attrs: {type: 'checkbox', checked: this.advancedSettings[opt[0]]===true }, on: {change: (e) => this.setCheckbox(opt[0], e.target.checked) }}),
-              h('span', {staticClass: 'checkmark'}),
+            h('label', {class: 'custom-check', style: {margin: 0} }, [
+              h('input', {type: 'checkbox', checked: this.advancedSettings[opt[0]]===true, onChange: (e) => this.setCheckbox(opt[0], e.target.checked) }),
+              h('span', {class: 'checkmark'}),
               h('span', this.$t(`strings.${opt[1]}`) )
             ])
           ])
         })
       ]),
-      h('div', {staticClass: 'advanced-settings-box'}, [
+      h('div', {class: 'advanced-settings-box'}, [
         h('h2', `Topics:`),
         h('i', 'Teams must include the following topics:'),
         h('div', [
           (this.advancedSettings.lockedTopics || []).map( topic => {
-            return h('button', {key: 'locked-'+topic, staticClass: 'material-button stroked', on: {click: () => this.addToArray('lockedTopics', topic)}, directives: [{name: 'ripple-effect'}]}, [
-              h('span', this.$t('strings.'+topic)+' '),
-              h('i', {staticClass: 'fas fa-times'})
-            ])
+            return withDirectives(
+              h('button', {key: 'locked-'+topic, class: 'material-button stroked', onClick: () => this.addToArray('lockedTopics', topic)}, [
+                h('span', this.$t('strings.'+topic)+' '),
+                h('i', {class: 'fas fa-times'})
+              ]),
+              [[Ripple]]
+            )
           }),
-          h('button', {key: 'add-new-topic-lock', staticClass: 'material-button stroked primary', style: {display: (this.advancedSettings.lockedTopics || []).length<4 ? '':'none'}, on: {click: this.lockATopic}, directives: [{name: 'ripple-effect'}]}, [
-            h('span', 'Lock a new topic')
-          ])
+          withDirectives(
+            h('button', {key: 'add-new-topic-lock', class: 'material-button stroked primary', style: {display: (this.advancedSettings.lockedTopics || []).length<4 ? '':'none'}, onClick: this.lockATopic}, [
+              h('span', 'Lock a new topic')
+            ]),
+            [[Ripple]]
+          )
         ])
       ]),
-      h('div', {staticClass: 'advanced-settings-box'}, [
+      h('div', {class: 'advanced-settings-box'}, [
         h('h2', `${this.$tc(`strings.role`)}:`),
         [
           ['knight','knight'],
@@ -234,24 +247,24 @@ export default {
           ['manauser','manauser']
         ].map(role => {
           var q = (this.advancedSettings['role'] || {})[role[0]];
-          return h('div', {staticClass: 'quantityBox noselect'}, [
-            h('img', {attrs: {src: this.roleIcon(role[0])}, directives: [{name: 'lazyloader'}]}),
+          return h('div', {class: 'quantityBox noselect'}, [
+            h('img', { src: this.roleIcon(role[0]) }),
             h('div', [
-              h('span', {style:{color:'red'}, on: {click: () => this.setReqestedNumber('role',role[0],-1) }},'-'),
+              h('span', {style:{color:'red'}, onClick: () => this.setReqestedNumber('role',role[0],-1) },'-'),
               h('span', {style: {color: q ? '':'transparent'}},  q || '0'),
-              h('span', {style:{color:'green'}, on: {click: () => this.setReqestedNumber('role',role[0],1) }},'+')
+              h('span', {style:{color:'green'}, onClick: () => this.setReqestedNumber('role',role[0],1) },'+')
             ])
           ]);
         }),
         h('div', [
-          h('label', {staticClass: 'custom-check', style: {margin: 0}, on: {change: (e) => this.setCheckbox('fixedNumberOfRoles', e.target.checked) } }, [
-            h('input', {attrs: {type: 'checkbox', checked: this.advancedSettings['fixedNumberOfRoles'] }}),
-            h('span', {staticClass: 'checkmark'}),
+          h('label', {class: 'custom-check', style: {margin: 0}, onChange: (e) => this.setCheckbox('fixedNumberOfRoles', e.target.checked) }, [
+            h('input', {type: 'checkbox', checked: this.advancedSettings['fixedNumberOfRoles'] }),
+            h('span', {class: 'checkmark'}),
             h('span', this.$t(`strings.must_be_exact_number_of`, {item: this.$tc(`strings.role`,2)}))
           ])
         ])
       ]),
-      h('div', {staticClass: 'advanced-settings-box'}, [
+      h('div', {class: 'advanced-settings-box'}, [
         h('h2', `${this.$tc(`strings.attribute`)}:`),
         [
           ['fire','Fire'],
@@ -261,64 +274,66 @@ export default {
           ['light','Light']
         ].map(role => {
           var q = (this.advancedSettings['attribute'] || {})[role[0]];
-          return h('div', {staticClass: 'quantityBox noselect'}, [
-            h('img', {attrs: {src: this.attributeIcon(role[0])}, directives: [{name: 'lazyloader'}] }),
+          return h('div', {class: 'quantityBox noselect'}, [
+            h('img', {src: this.attributeIcon(role[0])}),
             h('div', [
-              h('span', {style:{color:'red'}, on: {click: () => this.setReqestedNumber('attribute',role[0],-1) }},'-'),
-              h('span', {style: {color: q ? '':'transparent'}, domProps: {innerHTML: q || '0'}}),
-              h('span', {style:{color:'green'}, on: {click: () => this.setReqestedNumber('attribute',role[0],1) }},'+')
+              h('span', {style:{color:'red'}, onClick: () => this.setReqestedNumber('attribute',role[0],-1) },'-'),
+              h('span', {style: {color: q ? '':'transparent'}, innerHTML: q || '0'}),
+              h('span', {style:{color:'green'}, onClick: () => this.setReqestedNumber('attribute',role[0],1) },'+')
             ])
           ]);
         }),
         h('div', [
-          h('label', {staticClass: 'custom-check', style: {margin: 0}, on: {change: (e) => this.setCheckbox('fixedNumberOfAttributes', e.target.checked) } }, [
-            h('input', {attrs: {type: 'checkbox', checked: this.advancedSettings['fixedNumberOfAttributes'] }}),
-            h('span', {staticClass: 'checkmark'}),
+          h('label', {class: 'custom-check', style: {margin: 0}, onChange: (e) => this.setCheckbox('fixedNumberOfAttributes', e.target.checked) }, [
+            h('input', {type: 'checkbox', checked: this.advancedSettings['fixedNumberOfAttributes'] }),
+            h('span', {class: 'checkmark'}),
             h('span', this.$t(`strings.must_be_exact_number_of`, {item: this.$tc(`strings.attribute`,2)}))
           ])
         ])
       ]),
-      h('div', {staticClass: 'advanced-settings-box'}, [
+      h('div', {class: 'advanced-settings-box'}, [
         h('h2', `${this.$tc(`strings.buff`, 2)}:`),
         Object.keys(buffList).map( buff => {
-          return h('div', {staticClass: 'buff-debuff-check noselect', class: {enabled: this.doesArrayInclude('buffs', buffList[buff].id)}, on: {click: () => this.addToArray('buffs', buffList[buff].id) } }, [
+          return h('div', {class: ['buff-debuff-check noselect', {enabled: this.doesArrayInclude('buffs', buffList[buff].id)}], onClick: () => this.addToArray('buffs', buffList[buff].id) }, [
             //this.doesArrayInclude('buffs', buffList[buff].id) ? h('div', {staticClass: 'activeBuff animate'},'✓') : null,
-            h('img', {attrs: {src: 'https://assets.epicsevendb.com/buff/' + buff + '.png'}, directives: [{name: 'lazyloader'}]}),
+            h('img', {src: 'https://assets.epicsevendb.com/buff/' + buff + '.png'}),
             h('p', this.$t(`strings.${buff}`))
           ])
         })
       ]),
-      h('div', {staticClass: 'advanced-settings-box'}, [
+      h('div', {class: 'advanced-settings-box'}, [
         h('h2', `${this.$tc(`strings.debuff`, 2)}:`),
         Object.keys(debuffList).map( debuff => {
-          return h('div', {staticClass: 'buff-debuff-check noselect', class: {enabled: this.doesArrayInclude('debuffs', debuffList[debuff].id)}, on: {click: () => this.addToArray('debuffs', debuffList[debuff].id) } }, [
-            h('img', {attrs: {src: 'https://assets.epicsevendb.com/buff/' + debuff + '.png'}, directives: [{name: 'lazyloader'}]}),
+          return h('div', {class: ['buff-debuff-check noselect', {enabled: this.doesArrayInclude('debuffs', debuffList[debuff].id)}], onClick: () => this.addToArray('debuffs', debuffList[debuff].id) }, [
+            h('img', {src: 'https://assets.epicsevendb.com/buff/' + debuff + '.png'}),
             h('p', this.$t(`strings.${debuff}`))
           ])
         })
       ]),
-      h('div', {staticClass: 'advanced-settings-box'}, [
+      h('div', {class: 'advanced-settings-box'}, [
         h('h2', `${this.$t(`strings.camp_multilock`)}:`),
         [0,1,2,3].map( i => {
-          return h('div', {staticClass: 'multilock-slot', on: {click: (e) => this.openCartesianSelector(e,i)}}, [
-            h('h3', {attrs: {title: 'Add to this slot'}}, [
+          return h('div', {class: 'multilock-slot', onClick: (e) => this.openCartesianSelector(e,i)}, [
+            h('h3', {title: 'Add to this slot'}, [
               this.$t('strings.camp_multi_slot', {n: i+1}),
-              h('i', {staticClass: 'fa fa-pencil-alt', style: {float: 'right', 'line-height': '28px', 'padding-right': '5px'}})
+              h('i', {class: 'fa fa-pencil-alt', style: {float: 'right', 'line-height': '28px', 'padding-right': '5px'}})
             ]),
             h('div', [
               this.getCartesianSlot(i).map( hero => {
-                return h('div', {staticClass: 'cartesian-element'}, this.getHeroName(hero))
+                return h('div', {class: 'cartesian-element'}, this.getHeroName(hero))
               })
             ])
           ])
         })
-      ]),
-      this.characterSelect===undefined ? null : h('character-selection', {on: {close: () => this.closeCartesianSelector()}, props: {title: this.$t('strings.camp_multi_slot', {n: this.characterSelect+1}), description: this.$t('strings.camp_multi_slot_desc'), list: this.myHeroes, selected: this.getCartesianSlot(this.characterSelect), mobile: this.mobile }})
+      ])
     ])
   }
 };
 </script>
 <style scoped>
+  .advanced {
+    padding: 10px;
+  }
   .advanced-settings-box {
     text-align: center;
     background-color: var(--background-color-tertiary);

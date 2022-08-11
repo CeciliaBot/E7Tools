@@ -13,9 +13,11 @@
                 <EmoteableDiv :value="localTier.name" :icon="true" @update="localTier.name=$event" style="display: inline-block; border: solid 1px; width: 100%; max-width: 470px; height: 70px; font-size: 16px;" />
             </div>
             <div style="margin-top: 20px;">
-                <button class="flat-button material-button basic basic" v-ripple-effect @click="$emit('delete', localTier)"><span>{{ $t('strings.delete_tier') }}</span></button>
-                <button class="flat-button material-button basic basic" v-ripple-effect @click="$emit('move', localTier, -1)"><span>{{ $t('strings.move_up') }}</span></button>
+                <button class="flat-button material-button basic basic" v-ripple-effect @click="$emit('newAbove', localTier)"><span>{{ $t('strings.new_tier_above') }}</span></button>
+                <button class="flat-button material-button basic basic" v-ripple-effect @click="$emit('newBelow', localTier)"><span>{{ $t('strings.new_tier_below') }}</span></button>
                 <button class="flat-button material-button basic basic" v-ripple-effect @click="$emit('clear', localTier)"><span>{{ $t('strings.clear_tier') }}</span></button>
+                <button class="flat-button material-button basic basic" v-ripple-effect @click="$emit('move', localTier, -1)"><span>{{ $t('strings.move_up') }}</span></button>
+                <button class="flat-button material-button basic warn" v-ripple-effect @click="$emit('delete', localTier)"><span>{{ $t('strings.delete_tier') }}</span></button>
                 <button class="flat-button material-button basic basic" v-ripple-effect @click="$emit('move', localTier, +2)"><span>{{ $t('strings.move_down') }}</span></button>
             </div>
         </Modal>
@@ -27,6 +29,7 @@ import emoteableComponent from '@/components/EmoteableDiv.vue'
 import { labelColors } from '../constants/'
 export default {
     name: 'TierRowSettings',
+    emits: ['move', 'delete', 'clear', 'newAbove', 'newBelow', 'close'],
     components: {
         Modal: modalComponent,
         EmoteableDiv: emoteableComponent

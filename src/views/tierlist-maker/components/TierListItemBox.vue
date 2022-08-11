@@ -1,6 +1,6 @@
 <template>
     <div class="tier-database noselect" v-drop="'tierlist-element'" @drop="e=> handleDropEvent(e.detail.item, list, e.detail.list, e.detail.index, e.detail)">
-        <span v-for="(c,i) in list" :key="'item-'+c" v-show="tierItemsMask[c]" class="tier-item" v-drag="{drops: ['tierlist-element'], index: i, item: c, list: list}" v-tooltip="()=>getItemTooltip(c)">
+        <span v-for="(c,i) in list" :key="'item-'+c" v-show="tierItemsMask[c]" class="tier-item" v-drag="{drops: ['tierlist-element'], index: i, item: c, list: list}" @dragclick="itemContextMenu(c, $event)" v-tooltip="()=>getItemTooltip(c)">
             <component
                 :is="isComponentType"
                 :hero="c"

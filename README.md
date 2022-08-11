@@ -11,6 +11,7 @@ Vue Router
 Vuex
 Vue  i18n 9+
 Vue Multiselect (currently only used by the gear score calculator)
+Floating UI Dom
 ```
 Using Vue-cli
 

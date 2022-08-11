@@ -1,23 +1,25 @@
 import { cdn } from '@/utils/constant.js'
-var emj = {
+
+export var emj = {
     /* Sets */
-    hitset: cdn+'item/icon_set_acc.png',
-    atkset: cdn+'item/icon_set_att.png',
-    unityset: cdn+'item/icon_set_coop.png',
-    counterset: cdn+'item/icon_set_counter.png',
-    critset: cdn+'item/icon_set_cri.png',
-    defset: cdn+'item/icon_set_def.png',
-    healset: cdn+'item/icon_set_heal_inc.png',
-    immunityset: cdn+'item/icon_set_immune.png',
-    healthset: cdn+'item/icon_set_max_hp.png',
-    penetrationset: cdn+'item/icon_set_penetrate.png',
-    rageset: cdn+'item/icon_set_rage.png',
-    randomset: cdn+'item/icon_set_random.png',
-    resistset: cdn+'item/icon_set_res.png',
-    revengeset: cdn+'item/icon_set_revenge.png',
-    injuryset: cdn+'item/icon_set_scar.png',
-    speedset: cdn+'item/icon_set_speed.png',
-    lifestealset: cdn+'item/icon_set_vampire.png',
+    HitSet: cdn+'item/icon_set_acc.png',
+    AttackSet: cdn+'item/icon_set_att.png',
+    UnitySet: cdn+'item/icon_set_coop.png',
+    CounterSet: cdn+'item/icon_set_counter.png',
+    CritChanceSet: cdn+'item/icon_set_cri.png',
+    CritDamageSet: cdn+'item/icon_set_cri_dmg.png',
+    DefenseSet: cdn+'item/icon_set_def.png',
+    HealSet: cdn+'item/icon_set_heal_inc.png',
+    ImmunitySet: cdn+'item/icon_set_immune.png',
+    HealthSet: cdn+'item/icon_set_max_hp.png',
+    PenetrationSet: cdn+'item/icon_set_penetrate.png',
+    RageSet: cdn+'item/icon_set_rage.png',
+    UnknownSet: cdn+'item/icon_set_random.png',
+    ResistSet: cdn+'item/icon_set_res.png',
+    RevengeSet: cdn+'item/icon_set_revenge.png',
+    InjurySet: cdn+'item/icon_set_scar.png',
+    SpeedSet: cdn+'item/icon_set_speed.png',
+    LifestealSet: cdn+'item/icon_set_vampire.png',
 
     /* Stats */
     attack: cdn+'img/icon_menu_att.png',
@@ -63,13 +65,14 @@ var emj = {
     aquarius: cdn+'img/cm_icon_zodiac_waterbearer.png',
     pisces: cdn+'img/cm_icon_zodiac_fish.png',
 
+    CermiaWeird: cdn + 'ui/emote/CermiaWeird.png',
     /* E7 Emotes */
-    noted: cdn+'ui/emote/c5009_hard_001.webp',
-    provoke: cdn+'ui/emote/c3121_provoke_001.webp',
-    tired: cdn+'ui/emote/c3123_tired_001.webp',
+    CharlotteNoted: cdn+'ui/emote/c5009_hard_001.webp',
+    MelanyLaugh: cdn+'ui/emote/c3121_provoke_001.webp',
+    ChristieTired: cdn+'ui/emote/c3123_tired_001.webp',
 
     /* E7 Items */
-    skystones: cdn+'item/token_crystal.png',
+    skystone: cdn+'item/token_crystal.png',
     transmit: cdn+'item/token_hero1.png',
     transmit2: cdn+'item/token_hero2.png',
     powder: cdn+'item/token_powder.png',
@@ -81,31 +84,31 @@ var emj = {
 
     /* Other E7Stuff */
     banned: cdn+'img/_cm_banned_res.png',
-    d: cdn+'img/hero_dedi_a_d.png',
-    c: cdn+'img/hero_dedi_a_c.png',
-    b: cdn+'img/hero_dedi_a_b.png',
-    a: cdn+'img/hero_dedi_a_a.png',
-    s: cdn+'img/hero_dedi_a_s.png',
-    ss: cdn+'img/hero_dedi_a_ss.png',
-    sss: cdn+'img/hero_dedi_a_sss.png',
+    D: cdn+'img/hero_dedi_a_d.png',
+    C: cdn+'img/hero_dedi_a_c.png',
+    B: cdn+'img/hero_dedi_a_b.png',
+    A: cdn+'img/hero_dedi_a_a.png',
+    S: cdn+'img/hero_dedi_a_s.png',
+    SS: cdn+'img/hero_dedi_a_ss.png',
+    SSS: cdn+'img/hero_dedi_a_sss.png',
 
     /* Twitch emotes */
-    booba: cdn+'ui/emote/booba.webp',
-    based: 'https://www.nicepng.com/png/full/831-8318812_view-samegoogleiqdbsaucenao-based-pepe-in-a-tuxedo.png',
-    basedcigar: cdn+'ui/emote/basedCigar.webp',
-    modcheck: cdn+'ui/emote/modCheck.webp',
-    clueless: 'https://cdn.betterttv.net/emote/60419081306b602acc5972c9/3x',
-    aware: 'https://cdn.betterttv.net/emote/6151c623b63cc97ee6d39040/3x',
-    omegalul: 'https://cdn.betterttv.net/emote/583089f4737a8e61abb0186b/3x',
-    PepeLaugh: 'https://cdn.betterttv.net/emote/5c548025009a2e73916b3a37/3x',
-    NOPPERS: 'https://cdn.betterttv.net/emote/5ec39a9db289582eef76f733/3x',
-    EZ: 'https://cdn.betterttv.net/emote/5590b223b344e2c42a9e28e3/3x',
-    who: cdn+'ui/emote/WHO.webp',
+    BOOBA: cdn+'ui/emote/booba.webp',
+    BASED: cdn+'ui/emote/BASED.webp',
+    BASEDCIGAR: cdn+'ui/emote/BASEDCIGAR.webp',
+    modCheck: cdn+'ui/emote/modCheck.webp',
+    Clueless: cdn+'ui/emote/Clueless.webp',
+    Aware: cdn+'ui/emote/AWARE.gif',
+    OMEGALUL: cdn+'ui/emote/OMEGALUL.png',
+    NOPPERS: cdn+'ui/emote/NOPPERS.gif',
+    EZ: cdn+'ui/emote/EZ.png',
+    WHO: cdn+'ui/emote/WHO.webp',
     Pepega: cdn+'ui/emote/pepega.png',
-    pepegacredit: cdn+'ui/emote/PepegaCredit.webp',
-    copium: cdn+'ui/emote/copium.png',
-    gigachad: cdn+'ui/emote/GIGACHAD.webp',
-    sussy: cdn+'ui/emote/SUSSY.webp',
+    PepegaCredit: cdn+'ui/emote/PepegaCredit.webp',
+    PepeLaugh: cdn+'ui/emote/PepeLaugh.gif',
+    Copium: cdn+'ui/emote/copium.png',
+    GiGACHAD: cdn+'ui/emote/GIGACHAD.webp',
+    SUSSY: cdn+'ui/emote/SUSSY.webp',
     Bedge: cdn+'ui/emote/bedge.webp',
     Smadge: cdn+'ui/emote/Smadge.webp'
 }
@@ -117,7 +120,7 @@ export var emotes = Object.keys(emj).map(key => {
     }
 })
 
-function buildEmoteElement (emote) {
+export function buildEmoteElement (emote) {
     var img = document.createElement( 'img' );
     img.src=emj[emote];
     img.setAttribute('draggable', false);
@@ -131,11 +134,10 @@ function buildEmoteElement (emote) {
 
 export function stringToHtmlEmotes (text) {
     let str = (text || '').replace(/<(?!br\s*\/?)[^>]+>/, (match) => {
-        console.log(match);
         return match.replace('<', '&lt;').replace('>', '&gt;').replace('/', '&#47;')
     })
     //let str = (text || '').replace('<[^br]', '&lt;').replace('[^br]>', '&gt;').replace('/', '&#47;'); //replace <,>,/ to prevent pure html code in the string
-    let newString = str.replace(/:\w+:/g, function (match) {
+    let newString = str.replace(/:[a-zA-Z0-9_-]+:/g, function (match) {
         var emote = emj[match.replace(/:/g,'')];
         if (emote) {
             return '<img src="' + emote + '" title="' + match + '" draggable="false" style="height: 1.5em; vertical-align: middle; pointer-events: none;" SameSite="Lax" />'
@@ -144,7 +146,7 @@ export function stringToHtmlEmotes (text) {
     })
     return newString
 }
-function recursiveCleaner(node) { /* Loop through each node and get text + emotes */
+export function recursiveCleaner(node) { /* Loop through each node and get text + emotes */
     var str = '';
     if (!node.childNodes) return node.innerHTML;
     node.childNodes.forEach((child, index) => {
@@ -164,48 +166,7 @@ export function cleanInnerText (el) {
     return text
 }
 
-export function liveHtmlToEmote (e) {
-    if (e.key===':' || e.keyCode==229) { // = : ..... e.key doesn't work on mobile
-        window.requestAnimationFrame( () => {
-            var cart = getSelection();
-            var nodeTarget = cart.startContainer;
-            if (nodeTarget.nodeName === "#text") {
-                var string = nodeTarget.data.slice(0,cart.startOffset);
-                var match = string.match(/:\w+:$/);
-                if (match) {
-                    const emote = emj[match[0].replace(/:/g,'')];
-                    if (emote) {
-                        let l = match[0].length;
-
-                        insertAtIndex(
-                            nodeTarget,
-                            buildEmoteElement(match[0].replace(/:/g,'')),
-                            cart.startOffset-l,
-                            l
-                        );
-                    }
-                }
-            }
-        }) //animation frame
-    }// else { /* Autocomplete emote */
-    //     var cart = getSelection();
-    //     var nodeTarget = cart.startContainer;
-    //     if (nodeTarget.nodeName === "#text") {
-    //         var string = nodeTarget.data.slice(0,cart.startOffset);
-    //         var match = string.match(/:\w+$/);
-    //         if (match) {
-    //             let typed = match[0].slice(1)
-    //             for (var i=0;i<emotes.length;i++) {
-    //                 if (emotes[i].code.indexOf(typed) != -1) {
-    //                     console.log(emotes[i].code)
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-}
-
-function getSelection() {
+export function getSelection() {
     if (window.getSelection) {
         const sel = window.getSelection();
         if (sel.getRangeAt /*&& sel.rangeCount*/) {
@@ -234,7 +195,7 @@ function getSelection() {
 //     }
 // }
 
-function insertAtIndex (targetEl, newEl, index, length = 0) {
+export function insertAtIndex (targetEl, newEl, index, length = 0) {
     var sel, range;
     if (window.getSelection)
     {

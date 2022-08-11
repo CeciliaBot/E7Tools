@@ -1,25 +1,28 @@
 <template>
     <div key="tier-list-table" style="margin-top: 1px;" data-drop="tiers" @drop="handleDropEvent">
-        <TierRow 
-            v-for="(tier,ti) in tiers"
-            :key="tier._id"
-            :index="ti"
-            :tier="tier"
-            :color="tier.color || labelColors[ti % labelColors.length]"
-            :data-item-index="ti"
-            @move="moveTierListRow"
-            @rename="updateTierTitle"
-            @drop-item="tierRowDropItem"
-            @settings="openRowSettingsModal"
-        />
+        <TransitionGroup :name="animation" tag="div">
+            <TierRow 
+                v-for="(tier,ti) in tiers"
+                :key="tier._id"
+                :index="ti"
+                :tier="tier"
+                :color="tier.color || labelColors[ti % labelColors.length]"
+                :data-item-index="ti"
+                @move="moveTierListRow"
+                @rename="updateTierTitle"
+                @drop-item="tierRowDropItem"
+                @settings="openRowSettingsModal"
+            />
+        </TransitionGroup>
         <Teleport to="body">
             <RowSettings
                 v-if="showRowModal"
                 :tier="showRowModal"
-                :colors="labelColors"
                 @move="moveTierListRow"
                 @delete="deleteTier"
                 @clear="clearTier"
+                @new-above="addNewTierAbove"
+                @new-below="addNewTierBelow"
                 @close="showRowModal=false"
             />
         </Teleport>
@@ -29,11 +32,15 @@
 import tierRowComponent from './TierListTableRow.vue'
 import tierRowSettingsComponent from './TierListRowSettings.vue'
 import arrayMove from '../utils/array-move.js'
+import { labelColors } from '../constants/'
+
 export default {
+    emits: ['rename-tier-row', 'delete-tier-row', 'clear-tier-row', 'move-tier-row', 'newTier'],
     components: {
         TierRow: tierRowComponent,
         RowSettings: tierRowSettingsComponent
     },
+    inject: ['settings'],
     props: {
         tiers: {
             type: Object,
@@ -54,8 +61,13 @@ export default {
     },
     data() {
         return {
-            labelColors: ['#ff5f5f','#fa6e6e','#fa9560','#fac552','#f4fa43','#b0fa35','#62fb26','#18fb26','#09fb6b','#03f3b7','#0383f3','#095ab0','#503ece','#5b31f0','#7640b7','#c44bc8','#ec7597','#f9b4c8','#fdedf2','#c4babd','#686566'],
+            labelColors: labelColors, //['#ff5f5f','#fa6e6e','#fa9560','#fac552','#f4fa43','#b0fa35','#62fb26','#18fb26','#09fb6b','#03f3b7','#0383f3','#095ab0','#503ece','#5b31f0','#7640b7','#c44bc8','#ec7597','#f9b4c8','#fdedf2','#c4babd','#686566'],
             showRowModal: false
+        }
+    },
+    computed: {
+        animation() {
+            return this.settings.tierRowControlsType===1 ? 'list' : ''
         }
     },
     methods: {
@@ -74,6 +86,12 @@ export default {
         },
         clearTier(tier) {
             this.$emit('clear-tier-row', this.tiers.indexOf(tier) )
+        },
+        addNewTierAbove(tier) {
+            this.$emit('newTier', this.tiers.indexOf(tier))
+        },
+        addNewTierBelow(tier) {
+            this.$emit('newTier', this.tiers.indexOf(tier)+1)
         },
 
         /******************* Move Tiers *******************/
@@ -99,3 +117,22 @@ export default {
     }
 }
 </script>
+<style scoped>
+    .list-move, /* apply transition to moving elements */
+    .list-enter-active,
+    .list-leave-active {
+        transition: all 0.5s ease;
+    }
+
+    .list-enter-from,
+    .list-leave-to {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    /* ensure leaving items are taken out of layout flow so that moving
+    animations can be calculated correctly. */
+    .list-leave-active {
+        position: absolute;
+    }
+</style>

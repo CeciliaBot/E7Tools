@@ -21,16 +21,9 @@ export function throttle (callback, limit) {
         }
     }
 }
-
-export function debounceLeading(func, timeout = 300){ // Run the first wait later
-    let timer;
-    return (...args) => {
-        if (!timer) {
-            func.apply(this, args);
-        }
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-            timer = undefined;
-        }, timeout);
-    };
-}  
+export function cleanURL (router = false) {
+    let url = window.location.href.split('?')[0];
+    let segments = url.split('#'), maxSegments = router && router.href.charAt(0)==='#' ? 2 : 1;
+    while (segments.length > maxSegments) segments.pop();
+    return segments.join('#')
+}

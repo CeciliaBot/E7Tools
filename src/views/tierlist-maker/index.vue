@@ -52,6 +52,7 @@ export default {
     },
     data: function () {
         return {
+            VERSION: 1.5,
             current: {},                                                        // Current tier list open in workspace (Passed as prop to TierList component)
             showNewComponent: true,                                             // Show Tier list main menu
             hasSomethingInWorkspace: false,                                     // Show close button in TierListMainMenu
@@ -59,8 +60,9 @@ export default {
             showSettingsModal: false,                                           // Shwo or hide tier list settings menu
             settings: {                                                         // Inject to all child components, from child components changes can be applied with setSettings(key, value)
                 tierListMakerView: 0,                                           // 0 = side by side, 1 = vertical stack
-                rowLabelLayout: 0,                                                   // 0 = full box, 1 = small box
-                tierRowControlsType: 0,                                         // 0 grip to move, 1 = tiermaker.com style
+                rowLabelLayout: 0,                                              // 0 = full box, 1 = small box
+                tierRowControlsType: this.$store.state.isMobile ? 1 : 0,        // 0 grip to move, 1 = tiermaker.com style --> by default on mobile show buttons
+                exportTitlessImage: false,                                      // Export to PNG without the tier list title showing
                 iconSize: 75,
                 showName: false,
                 showRole: false,
@@ -114,17 +116,14 @@ export default {
         },
         saveTierList(data) {
             let time = new Date().getTime();
-            if (!this.current.id) // Use available id or generete a new one if the tier list is new
-                data.id = time;
-            else
-                data.id=this.current.id;
-            if (this.current.created_at)
-                data.created_at = time;
-            else
-                data.created_at = time;
-            data.updated_at = time;    
+            // Use available id or generete a new one if the tier list is new
+            data.id = this.current.id || time;
+            data.created_at = this.current.created_at || null;
+            data.updated_at = time;
+            data.version = this.VERSION;
             this.$store.dispatch('SAVE_TIER_LIST', JSON.parse(JSON.stringify(data))).then( () => {
                 this.canSaveAsNew = true;
+                this.$snackbar.log({title: 'Saved successfully!'})
             }).catch(err => {
                 this.$snackbar.error({title: 'Save failed', description: err})
             });
@@ -134,19 +133,19 @@ export default {
             data.id = id;
             data.created_at = id;
             data.updated_at = id;
-            this.$store.dispatch('SAVE_TIER_LIST', JSON.parse(JSON.stringify(data)))
+            data.version = this.VERSION;
+            this.$store.dispatch('SAVE_TIER_LIST', JSON.parse(JSON.stringify(data))).then( () => {
+                this.$snackbar.log({title: 'Saved successfully!'})
+            }).catch(err => {
+                this.$snackbar.error({title: 'Save failed', description: err})
+            });
         },
         exportAsJSON(data) {
             let time = new Date().getTime();
-            if (!this.current.id)
-                data.id = time;
-            else
-                data.id=this.current.id;
-            if (this.current.created_at)
-                data.created_at = time;
-            else
-                data.created_at = time;
+            data.id = this.current.id || time;
+            data.created_at = this.current.created_at || null;
             data.updated_at = time;
+            data.version = this.VERSION;
             exportAsJSON(data.name || 'TierList', data)
         }
     },

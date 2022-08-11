@@ -9,7 +9,7 @@
             @contextmenu.prevent="openRowSettings"
         ></EmotableBox>
         <div class="tier-list" :style="{'min-height': (iconFullSize + 30) + 'px'}" v-drop="'tierlist-element'" @drop="e=> handleDropEvent(e.detail.item, tier.list, e.detail.list, e.detail.index)">
-            <span v-for="(c,i) in tier.list" :key="c" :class="['tier-item', {'filter-out': !tierItemsMask[c]}]" v-drag="{drops: ['tierlist-element'], index: i, item: c, list: tier.list}" v-tooltip="() => getItemTooltip(c)">
+            <span v-for="(c,i) in tier.list" :key="c" :class="['tier-item', {'filter-out': !tierItemsMask[c]}]" v-drag="{drops: ['tierlist-element'], index: i, item: c, list: tier.list}" @dragclick="itemContextMenu(c, $event)" v-tooltip="() => getItemTooltip(c)">
                 <component
                     :is="isComponentType"
                     :hero="c"
@@ -21,7 +21,7 @@
                     :showrole="settings.showRole"
                     :showrarity="settings.showRarity"
                     :size="settings.iconSize"
-                    :lazyload="false"
+                    :lazyload="true"
                     :class="{'no-padding': !iconPadding}"
                     @context="itemContextMenu"
                 ></component>
@@ -45,6 +45,7 @@ import { drag, drop } from '@/directives/drag-drop.js'
 import compareBoxComponent from './TierListCompareBox.vue'
 export default {
     name: 'tier-row',
+    emits: ['settings', 'rename', 'drop-item', 'move'],
     inject: [
         /* From index.vue */
         'settings',

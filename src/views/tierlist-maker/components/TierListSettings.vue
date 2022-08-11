@@ -11,7 +11,7 @@
                             {{ $t('strings.'+setting[1]) }}
                         </label>
                     </div>
-                    {{ $t('strings.size') }}: <input type="range" min="40" max="120" step="5" :value="localSettings.iconSize" @change="setLocalSettings('iconSize', $event.target.value)">{{ localSettings['iconSize'] }}
+                    {{ $t('strings.size') }}: <input type="range" min="40" max="120" step="5" :value="localSettings.iconSize" @change="setLocalSettings('iconSize', Number($event.target.value) )">{{ localSettings['iconSize'] }}
                 </div>
                 <div style="display: inline-block; width: 160px; text-align: center; float: right;">
                     <HeroIcon hero="alencia" :type="localSettings.fullArtwork?1:0" :hover="false" :showname="localSettings.showName" :showrole="localSettings.showRole" :showrarity="localSettings.showRarity" :size="localSettings.iconSize" :lazyload="true" />
@@ -49,12 +49,21 @@
                     </label>
                 </div>
             </div>
-            <div style="margin: 10px 0; border-radius: 8px; border: solid grey; padding: 10px; display: flex; align-items: center; justify-content: space-between;">
-                <span>{{ $t('strings.tier_list_vertical_layout') }}</span>
-                <label class="switch">
-                    <input type="checkbox" :checked="localSettings.tierListMakerView===1" @change="setLocalSettings('tierListMakerView', localSettings.tierListMakerView?0:1)" />
-                    <i class="slider round" />
-                </label>
+            <div style="margin: 10px 0; border-radius: 8px; border: solid grey; padding: 10px; margin: 2px 0;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span>{{ $t('strings.tier_list_vertical_layout') }}</span>
+                    <label class="switch">
+                        <input type="checkbox" :checked="localSettings.tierListMakerView===1" @change="setLocalSettings('tierListMakerView', localSettings.tierListMakerView?0:1)" />
+                        <i class="slider round" />
+                    </label>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin: 2px 0;">
+                    <span>{{ $t('strings.export_png_without_title') }}</span>
+                    <label class="switch">
+                        <input type="checkbox" :checked="localSettings.exportTitlessImage" @change="setLocalSettings('exportTitlessImage', !localSettings.exportTitlessImage)" />
+                        <i class="slider round" />
+                    </label>
+                </div>
             </div>
         </div>
     </div>

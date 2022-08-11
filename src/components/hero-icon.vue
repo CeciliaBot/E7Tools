@@ -5,6 +5,7 @@ import lazyloader from '@/directives/lazyloader.js'
 
 export default {
   name: 'HeroIcon',
+  emits: ['click', 'context', 'remove'],
   props: {
     type: {
       type: Number,
@@ -55,7 +56,7 @@ export default {
     }
   },
   //renderTriggered (e) {console.log('HeroIcon', e)},
-  beforeUpdate() {console.log(this.name)},
+  //beforeUpdate() {console.log(this.name)},
   computed: {
     heroData: function () {return this.$store.getters.getHero(this.hero)},
     name: function () {return  this.$store.getters.getHeroName(this.hero) },//this.$store.getters.getHeroName(this.heroData._id)},
@@ -67,7 +68,7 @@ export default {
   render: function () {
     if (!this.hero) return;
     //console.log('Rerendering hero', this.name)
-    return h('div', {class: ['hero-icon-comp noselect', {hoverable: this.hover}], style: [this.style, {'font-size': this.size + 'px'}], onClick: event => event.target.className.indexOf('remove') !=-1 ? this.$emit('remove', this.hero) : this.$emit('click', this.hero), onContextmenu: event => {event.preventDefault(); event.stopPropagation(); this.$emit('context',this.hero, event) } }, [
+    return h('div', {class: ['hero-icon-comp noselect', {hoverable: this.hover}], style: [this.style, {'font-size': this.size + 'px'}], onClick: event => {event.target.className.indexOf('remove') !=-1 ? this.$emit('remove', this.hero, event) : this.$emit('click', this.hero, event)}, onContextmenu: event => {event.preventDefault(); this.$emit('context',this.hero, event) } }, [
       h('div', {style: {position: 'relative', height: '1em', 'min-width': (1+(this.removable ? 0.35 : 0))+'em', 'text-align': 'start', 'pointer-events': 'none'}}, [
         this.selected ? [
           h('div', {class: 'circle', style: {'animation-delay': '-3s'}}),

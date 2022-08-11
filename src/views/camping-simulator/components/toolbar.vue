@@ -24,7 +24,7 @@ const tabs = [ /* Last element will be removed if in standalone mode (no vue rou
 ];
 
 export default {
-    name: 'CampingToolbar',
+    name: 'ToolBar',
     props: {
         tab: {
             type: String,
@@ -33,9 +33,12 @@ export default {
         vertical: {
             type: Boolean,
             default: false
+        },
+        standalone: {
+            type: Boolean,
+            default: false
         }
     },
-    inject: ['standalone'],
     data() {
         return {
             tabs: tabs

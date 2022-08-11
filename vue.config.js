@@ -8,6 +8,14 @@ module.exports = {
     config.plugins.delete('prefetch-e7tools');
     //config.plugins.delete('prefetch-Timeline');
     //config.plugins.delete('prefetch-camp');
+    /* Prevent small images from being inlined to the code when using require() */
+    config.module
+      .rule('images')
+        .set('parser', {
+          dataUrlCondition: {
+            maxSize: -1
+          }
+        })
   },
 
   pages: {
@@ -28,7 +36,7 @@ module.exports = {
       description: 'Tierlist Maker | Timeline | Powder Shop history | Gear Score.',
       baseURL: '../'
     },
-    TimelineStandalone: {
+    timelineStandalone: {
       entry: 'src/views/timeline/standalone/',
       template: 'public/index.html',
       filename: 'timeline/index.html',

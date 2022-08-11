@@ -1,6 +1,7 @@
 <script>
-import { h } from 'vue'
+import { h, withDirectives } from 'vue'
 import { cdn, roles, attributes, rarity, zodiac, getZodiacIcon } from '@/utils/constant.js'
+import lazyloader from '@/directives/lazyloader.js'
 
 export default {
   name: 'filters-modal',
@@ -140,13 +141,16 @@ export default {
       h('div',{class: 'filter-modal', style: {'max-width': this.relative?'100%':'90%', position: this.xy ? 'fixed':'relative', top: this.xy ? this.xy.top : null, left: this.xy ? this.xy.left:null, right: this.xy ? this.xy.right:null, bottom: this.xy ? this.xy.bottom:null}, onClick: this.insideClick},[
         h('div', {class: 'filter-columns'}, [
           [{list: this.attribute, cat: 'attribute', icon: 'getAttributeIcon'}, {list: this.role, cat: 'role', icon: 'getRoleIcon'}, {list: this.rarity, cat: 'rarity', icon: 'getRarityIcon'}, {list: this.zodiac, cat: 'zodiac', icon: 'getZodiacIcon'}, {list: this.sex, cat: 'sex', icon: 'getGenderIcon'}].map( (filter) => {
-            return this.res[filter.cat] ? h('div', filter.list.map( (option,index) => {
+            return this.res[filter.cat] ? h('div', {style: {width: /* Temporary fix to firefox not calculating correctly */ Math.floor(filter.list.length/6)*5 +'em'}}, filter.list.map( (option,index) => {
                 return h('div', {class: ['elements', {active: this.isActive(filter.cat, option.id)}], onClick: () => this.updateFilter(filter.cat, option.id) }, [
                   h('label', {class: 'custom-check', style: {margin: 0, 'pointer-events': 'none'}}, [
                     h('input', {type: 'checkbox', checked: this.isActive(filter.cat, option.id) }),
                     h('span', {class: 'checkmark'}),
                     filter.cat==='rarity'&&index>0 ? h('span', option.id) : null,
-                    h('img', {class: {'all-filter-label': index===0}, src: this[filter.icon](option.id), SameSite: 'Lax'})
+                    withDirectives(
+                      h('img', {class: {'all-filter-label': index===0}, 'data-src': this[filter.icon](option.id), SameSite: 'Lax'}),
+                      [ [lazyloader] ]
+                    )
                   ])
                 ])
               })) : null ;

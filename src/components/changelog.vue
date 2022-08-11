@@ -1,7 +1,7 @@
 <script>
 import { h } from 'vue'
 export default {
-    name: 'changelog-component',
+    name: 'ChangelogComponent',
     props: ['path'],
     data: function () {
         return {
