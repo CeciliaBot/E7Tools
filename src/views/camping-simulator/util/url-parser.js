@@ -45,14 +45,6 @@ export default function (heroList, context) { /* context === this from main camp
         ).then(async ([answer]) => {
             if (answer === 0) {
                 context.roster = urlRoster
-                // Set the add hero list tab
-                var all = heroList;
-                context.roster.forEach(hero => {
-                    var index = all.indexOf(hero);
-                    if (index!==-1)
-                        all.splice(index, 1)
-                })
-                context.displayableHeroes = all;
                 window.history.pushState("", "", cleanUrl(context.$router)); // remove ?camproster= from the URL to avoid accidental refreshes replacing your current team
             }
         })

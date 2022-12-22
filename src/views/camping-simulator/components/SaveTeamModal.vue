@@ -164,7 +164,7 @@ export default {
             this.campData.topics = this.campData.topics || []
             this.campData.enemy = this.campData.enemy || []
             this.campData.gameMode = this.campData.gameMode || []
-            this.campData.uploaded = true                                       // we change this if upload to statistics api fails
+            this.campData.uploaded = this.campData.uploaded != undefined ? this.campData.uploaded : true   // we change this if upload to statistics api fails
         },
 
         addEnemy(enemy) {

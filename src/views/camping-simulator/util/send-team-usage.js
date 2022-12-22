@@ -2,7 +2,7 @@ import ajax from '@/utils/ajax.js'
 
 export default function (camp, isAdding) {
     return new Promise( (resolve, reject) => {
-        if (camp._type==='friendship') // don't upload usage stats if it's a friendship comp
+        if (!camp.uploaded || camp.converted || camp._type==='friendship') // don't upload usage stats if it's a friendship comp
             return reject();
 
         // convert to the old format (this will be deleted onece I update the api)

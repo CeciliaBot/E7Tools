@@ -174,7 +174,17 @@ export default {
         },
         roster: {
             deep: true,
-            handler() {
+            handler(a,b) {
+                if (a!==b) { // array has changed maybe url roster or boot operation
+                    // Set the add hero list tab (remove what's in the roster)
+                    var all = this.heroList.slice();
+                    this.roster.forEach(hero => {
+                        var index = all.indexOf(hero);
+                        if (index!==-1)
+                            all.splice(index, 1)
+                    })
+                    this.displayableHeroes = all;
+                }
                 if (!this.booting) this.writeStorageRoster()
             }
         }
@@ -225,15 +235,6 @@ export default {
                 this.HeroDB = data[0]
                 this.readStorageTeams()
                 this.readStorageRoster()
-
-                // Set the add hero list tab
-                var all = this.heroList.slice();
-                this.roster.forEach(hero => {
-                    var index = all.indexOf(hero);
-                    if (index!==-1)
-                        all.splice(index, 1)
-                })
-                this.displayableHeroes = all;
 
                 parseUrlRoster(this.heroList.slice(), this);
             }).catch(err => {
@@ -321,7 +322,7 @@ export default {
                             topics: [old.opzioneMigliore1, old.opzioneMigliore2],
                             gameMode: gameMode,
                             enemy: ['queen', 'vera', 'arakahan', 'juleeve', 'karkanis'].filter(enemy => old[enemy]),
-                            uplodaed: false,
+                            uploaded: false,
                             converted: true,
                             version: this.VERSION
                         })
@@ -382,8 +383,9 @@ export default {
                 else this.$snackbar.log({title: 'Cant lock more than 4 heroes'})
         },
         saveCamp(camp) {
-            this.teams.push(camp)
             camp.version = this.VERSION
+            this.teams.push(camp)
+            camp = this.teams[this.teams.length-1];
             SendTeamDataUsage(camp, true).then( () => {
                 //
             }).catch( () => {
