@@ -8,7 +8,7 @@
                     {{ !this.tierType? this.$t('strings.alignment_chart') : this.$t('strings.row_tier_chart') }}
                 </button>
                 <button @click="$emit('newTierList')" v-tooltip="() => $t('strings.new_tier_list')">
-                    <i class="icon fas fa-pencil-alt"></i>
+                    <i class="icon fas fa-folder-open"></i> {{ $t('strings.menu') }}
                 </button>
                 <button v-show="!tierType && !compare" @click="showCompareModal=true" v-tooltip="() => $t('strings.compare')">
                     <i class="icon fas fa-exchange-alt" />
@@ -55,7 +55,7 @@
             </template>
 
             <!-- Normal Tier list-->
-            <div v-show="!tierType" id="tiers" class="tier-drop-area">
+            <div v-show="!tierType" id="tiers" class="tier-drop-area" :style="{'--label-width': labelWidth + 'px'}">
                 <EmotableBox key="tier-list-title-main" class="tier-list-title" :value="tierListName" :icon="true" @update="updateTierListTitle" />
                 <TierListTable
                     :tiers="tiers"
@@ -154,6 +154,7 @@ import emoteEditableBoxComponent from '@/components/EmoteableDiv.vue'
 import scalableComponent from '@/layout/interactive.vue'
 import commentEditorComponent from './TierListItemComment.vue'
 
+import ajax from '@/utils/ajax.js'
 import { newTierRow } from '../utils/newTierRow.js'
 import arrayMove from '../utils/array-move.js'
 import sort from '@/utils/sort-heroes.js'
@@ -179,6 +180,7 @@ export default {
         return {
             tierItemsMask: computed( () => this.tierItemsMask),
             elementType: computed( () => this.elementType),
+            getItemId: this.getItemId,
             getItemName: this.getItemName,
             getItemComment: this.getItemComment,
             getItemTooltip: this.getItemTooltip,
@@ -189,9 +191,9 @@ export default {
             compareTiers: computed( () => this.compare),
         }
     },
-    inject: ['settings'],
+    inject: ['settings', 'setSettings'],
     props: {
-        'tierlist': {
+        tierlist: {
             type: Object,
             default: function () {
                 return {}
@@ -209,7 +211,7 @@ export default {
                 this.$store.commit('loading', true);
                 this.getDatabasePromise(n.type).then(response => {
                     this.database = response;
-                    this.autosaveTimer = setInterval( this.autosave, 120000 ); // autosave every 2 minutes
+                    //this.autosaveTimer = setInterval( this.autosave, 120000 ); // autosave every 2 minutes
                     
                     this.updateTierListTitle(n.name);
                     this.tierId = n.id;
@@ -220,6 +222,9 @@ export default {
                     this.xy = n.xy || {}; if (!this.xy.names) this.xy.names=[]; if (!this.xy.list) this.xy.list=[];
                     this.skin = n.skin || {};
                     this.comments = n.comments || {};
+                    this.clones = n.clones || {}
+
+                    this.setSettings('labelWidth', n.labelWidth)
 
                     // Applay filter and sort
                     this.buildItemList();
@@ -271,16 +276,26 @@ export default {
             tiers: [],
             xy: {names: [], list: []},
             comments: {},                                                                                 // charcter comments
-            skin: {}                                                                                      // alternative icons to use
+            skin: {},                                                                                     // alternative icons to use
+            clones: {}                                                                                    // pair of clones and original element example: 'clone804303040': 'alencia'
         }
     },
+    mounted() {
+        window.addEventListener('keydown', this.focusSearchBar)
+    },
     beforeUnmount() {
-        console.log('Unmouting')
-        this.autosaveTimer = null;
+        window.removeEventListener('keydown', this.focusSearchBar)
+        if (this.autosaveTimer) {
+            this.autosaveTimer.clearInterval()
+            this.autosaveTimer = null
+        }
     },
     computed: {
         mobile() {
-            return this.$store.getters.getIsMobile;
+            return this.$store.getters.getIsMobile();
+        },
+        labelWidth() {
+            return this.settings.labelWidth || 100
         },
         iconSize() {
             return this.settings.iconSize;
@@ -327,13 +342,13 @@ export default {
     methods: {
         updateTierListTitle(title) {
             this.tierListName = title;
-            document.title = title;
+            document.title = title + ' | ' + this.$t('strings.app_tier_list_maker');
         },
         toggleTierListType() {
             this.tierType = this.tierType===0?1:0;
         },
         buildItemList() {
-            this.charList = Object.keys(this.database)
+            this.charList = [...Object.keys(this.database), ...Object.keys(this.clones)]
             var tene = this.charList.indexOf('dark-tyrant-tenebria') // can be remove after the camp simulator update
             if (tene) this.charList.splice(tene, 1)
             if (!this.tierType) { // remove every ranked item
@@ -351,6 +366,7 @@ export default {
                       this.charList.splice(j, 1)
                 }
             }
+            this.charList.forEach(el => this.tierItemsMask[el] = true)
             this.applyFilter();
             this.sortList(this.charList, this.sort[0], false);
         },
@@ -363,8 +379,8 @@ export default {
                     return new Promise((resolve, reject) => {
                         Promise.all([
                             this.$store.dispatch('GET_HERO_DB'),
-                            fetch('./data/HeroSkins.json').then( data => {return data.json()}).catch( () => {return {}}),
-                        ]).then(async (data) => {
+                            ajax('./data/HeroSkins.json').then( data => {return JSON.parse(data)}).catch( () => {return {}}),
+                        ]).then( (data) => {
                             let db = data[0],
                                 skins = data[1];
                             for (var key in skins) {
@@ -379,9 +395,15 @@ export default {
             }
         },
         getItem: function (h) {
-            return this.database[h] || {id: h, _id: h};
+            var id = this.clones[h] || h;
+            return this.database[id] || {id: id, _id: id};
         },
-        getItemName: function (id) {
+        getItemId: function (id) {
+            // Get the database reference item id -> for normal items is the id for clones is the original item
+            return this.clones[id] || id
+        },
+        getItemName: function (h) {
+            var id = this.clones[h] || h;
             switch (this.elementType) {
                 case 'character':
                     return this.$store.getters.getHeroName(id);
@@ -392,7 +414,23 @@ export default {
             }
         },
         getItemComment: function (id) {
-            return this.comments[id];
+            return this.comments[ id ];
+        },
+        cloneItem(id) {
+            var cloneId = id+''+Date.now()
+            this.clones[cloneId] = id;
+            this.tierItemsMask[cloneId] = true;
+            if (this.skin[id])
+                this.skin[cloneId] = this.skin[id];
+            return cloneId;
+        },
+        destroyClone(cloneId) {
+            delete this.comments[cloneId]
+            delete this.skin[cloneId]
+            delete this.clones[cloneId]
+        },
+        isClone(id) {
+            return this.clones[id] != null
         },
         addNewTierRow(index) {
             newTierRow(this.tiers, index)
@@ -404,11 +442,13 @@ export default {
             id: 0,
             tier_type: this.tierType,
             type: this.elementType,
+            labelWidth: this.settings.labelWidth,
             name: this.tierListName,
             tiers: this.tiers,
             xy: this.xy || {},
             skin: this.skin,
-            comments: this.comments
+            comments: this.comments,
+            clones: this.clones
           }
         },
         autosave() {
@@ -442,7 +482,6 @@ export default {
                         flip()
                     ]
                 }).then( ({x, y}) => {
-                  console.log(x,y)
                     this.$refs['filter-modal'].$.props.xy = {
                         top: y+'px',
                         left: x+'px'
@@ -454,10 +493,16 @@ export default {
             this.showFilterModal=false;
         },
         applyFilter: function() {
-            for (const item in this.database) { // set true to hide icon
+            for (const item in this.tierItemsMask) { // set true to hide icon
                 let isRanked = !this.charList.includes(item);
                 this.tierItemsMask[item] = isRanked && !this.filterPlacedElements ? true : this.applyFilterItem(this.filterModel, item);
             }
+        },
+        focusSearchBar(e) {
+            if (e.ctrlKey && e.key == 'f')
+              e.preventDefault(),
+              this.$refs['tierlist-maker-search-bar'].focus(),
+              this.$refs['tierlist-maker-search-bar'].select();
         },
         typingSearchQuery: debounce( function(e) {
             this.filterModel.name = e.target.value
@@ -494,16 +539,34 @@ export default {
         updateItemComment(value) {
             this.comments[this.openCommentModal] = value;
         },
-        itemContextMenu(item,e) {
+        itemContextMenu(item, e, list) {
             var data = this.getItem(item),
-                options = [
-                  {
-                      name: this.$t('strings.edit_item_comment'),
-                      class: 'fas fa-edit',
-                      handler: () => {this.openCommentModal = item}
-                  }
-                ];
-
+            options = [
+                {
+                    name: this.$t('strings.edit_item_comment'),
+                    class: 'fas fa-edit',
+                    handler: () => {this.openCommentModal = item}
+                }
+            ];
+            if (list) {
+                options.push({
+                    name: this.$t('strings.clone_item'),
+                    class: 'far fa-clone',
+                    handler: () => {
+                        list.splice(list.indexOf(item)+1, 0, this.cloneItem(this.getItemId(item)))
+                    }
+                })
+                if (this.isClone(item)) {
+                    options.push({
+                        name: this.$t('strings.destroy_clone'),
+                        class: 'far fa-times-circle',
+                        handler: () => {
+                            list.splice(list.indexOf(item), 1)
+                            this.destroyClone(item)
+                        }
+                    })
+                }
+            }
             if (this.elementType === 'character')
                 options.push({
                     name: this.$t('strings.view_model'),
@@ -512,10 +575,11 @@ export default {
                 })
             else {
                 const name = this.getItemName(item)
+                const artiId = this.getItemId(item)
                 options.push({
                     name: 'View artwork',
                     class: 'fas fa-image',
-                    handler: () => this.$gallery([{description: name, src: this.$store.getters.getArtifactImage(item)}, {description: 'Icon: ' + name, src: this.$store.getters.getArtifactIcon(item)}])
+                    handler: () => this.$gallery([{description: name, src: this.$store.getters.getArtifactImage(artiId)}, {description: 'Icon: ' + name, src: this.$store.getters.getArtifactIcon(artiId)}])
                 })
             }
             if (data.skin) {
@@ -721,7 +785,7 @@ export default {
       padding-bottom: 100px;
       align-content: flex-start;
     }
-    .tier-name[contenteditable]:focus {
+    .tier-name div[contenteditable]:focus {
       outline: 0px solid transparent;
     }
     .type1 {
@@ -730,7 +794,6 @@ export default {
     .type1 .tier-name {
       background-color: #e3b972;
       border-radius: 6px;
-      padding: 5px 20px;
       display: inline-block;
       margin-left: 10px;
       /*
@@ -744,6 +807,10 @@ export default {
       position: relative;
       z-index: 1;
     }
+    .type1 .tier-name .center-tier-label-input {
+      padding: 5px 20px;
+    }
+
     .tier-list {
       display: flex;
       flex-wrap: wrap;
@@ -758,6 +825,7 @@ export default {
     }
     .type2 {
       display: flex;
+      align-items: stretch;
       border: solid 1px black;
       border-bottom: none;
       background-color: #0000006e;
@@ -765,7 +833,7 @@ export default {
     .type2:last-of-type {
       border-bottom: solid 1px black;
     }
-    .type2 .tier-name {
+    .type2 .tier-name1 {
       flex: 0 0 100px;
       white-space: break-spaces;
       word-break: break-word;
@@ -775,6 +843,17 @@ export default {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      border-right: solid 1px black;
+      /*box-shadow: inset 0 0 0 .5px black;*/
+    }
+    .type2 .tier-name {
+      width: var(--label-width, 100px);
+      white-space: break-spaces;
+      word-break: break-word;
+      background: rgb(180,58,58);
+      color: black;
+      display: table;
       text-align: center;
       border-right: solid 1px black;
       /*box-shadow: inset 0 0 0 .5px black;*/
@@ -1016,7 +1095,7 @@ export default {
       min-width: 40px;
       cursor: pointer;
       height: 40px;
-      line-height: 40px;
+      line-height: 37px;
     }
     .tier-control-buttons > button .icon:not(:last-child) {
       margin-right: 10px;

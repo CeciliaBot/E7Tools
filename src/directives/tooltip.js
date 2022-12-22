@@ -4,7 +4,6 @@
   For dynamic tooltips (Localized text) the value must be passed as a function to allow updates -> v-tooltip="{value: () => $t('translation key') }"
 */
 import { computePosition, offset, shift, flip, arrow } from '@floating-ui/dom';
-import './tooltip.css'
 import { state } from './drag-drop.js'
 var tNode = document.getElementById('simple-tooltip');
 var arrowEl = tNode.children[0];

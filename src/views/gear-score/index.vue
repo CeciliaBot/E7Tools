@@ -2,6 +2,7 @@
 import { h } from 'vue'
 import MobileFloatingMenu from '@/components/mobile-floating-menu.vue'
 import Multiselect from '@vueform/multiselect'
+//import GearSubsResult from './SubstatsRollGraph.vue'
 
 import { score } from '@/utils/gear-utils.js'; 
 
@@ -90,9 +91,10 @@ export default {
   },
   render: function () {
     return h('div', {style: {color: 'var(--font-color)', width: '100%', 'max-width': '600px', margin: 'auto', 'padding-top': '20px'}}, [
+      //h(GearSubsResult, {rolls: this.userStats}),
       h(MobileFloatingMenu,{options: [{title: 'Home', class: 'fa fa-home', click: 'home'}], onHome: ()=>this.$store.commit('toggleMainMenu') }),
       [0,1,2,3].map( i => {
-        return h('div', {style: {margin: '5px', display: 'flex', height: '44px'}}, [
+        return h('div', {style: {margin: '5px', display: 'flex'}}, [
           h(Multiselect, {
             key: `multiselect-${i}`,
             options: this.notSelected,
@@ -105,7 +107,8 @@ export default {
             placeholder: this.$t('strings.gear_select_substat'),
             searchable: true,
             required: false,
-            style: {flex: '1.3', color: 'black'}
+            style: {flex: '1.3'},
+            class: 'multiselect-styling'
           }),
           h('input', {key: 'input_val-'+i, type: 'number', placeholder: 0, onKeyup: (e) => {console.log(e), this.setGearSub(i,'value',e.target.value||0)}, style: {'font-size': '16px', height: '40px', 'border-radius': '8px', border: 'none', padding: '5px 10px', 'vertical-align': 'bottom', flex: 0.7 } })
         ])
@@ -123,3 +126,15 @@ export default {
 }
 </script>
 <style src="@vueform/multiselect/themes/default.css"></style>
+<style>
+  .multiselect-styling {
+    color: white;
+    --ms-font-size: 1.4rem;
+    --ms-option-font-size: 1.4rem;
+    --ms-max-height: 20rem;
+
+    --ms-bg: var(--background-modifier-darken-alpha);
+
+    --ms-dropdown-bg: var(--background-color-tertiary)
+  }
+</style>

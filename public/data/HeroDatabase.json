@@ -2509,6 +2509,26 @@
         "sex": 2,
         "zodiac": "lion"
     },
+    "holy-flame-adin": {
+        "_id": "holy-flame-adin",
+        "id": "c4141",
+        "name": "Holy Flame Adin",
+        "rarity": 3,
+        "role": "assassin",
+        "attribute": "fire",
+        "sex": 2,
+        "zodiac": "lion"
+    },
+    "serene-purity-adin": {
+        "_id": "serene-purity-adin",
+        "id": "c4142",
+        "name": "Serene Purity Adin",
+        "rarity": 3,
+        "role": "assassin",
+        "attribute": "ice",
+        "sex": 2,
+        "zodiac": "lion"
+    },
     "jacko": {
         "id": "c1130",
         "_id": "jacko",
@@ -2598,5 +2618,146 @@
         "attribute": "light",
         "sex": 2,
         "zodiac": "bull"
+    },
+    "commander-pavel": {
+        "_id": "commander-pavel",
+        "id": "c2080",
+        "name": "Commander Pavel",
+        "rarity": 5,
+        "role": "ranger",
+        "attribute": "light",
+        "sex": 1,
+        "zodiac": "bull"
+    },
+    "edward-elric": {
+        "_id": "edward-elric",
+        "id": "c1134",
+        "name": "Edward Elric",
+        "rarity": 5,
+        "role": "warrior",
+        "attribute": "fire",
+        "sex": 1,
+        "zodiac": "ram"
+    },
+    "roy-mustang": {
+        "_id": "roy-mustang",
+        "id": "c1135",
+        "name": "Roy Mustang",
+        "rarity": 5,
+        "role": "mage",
+        "attribute": "fire",
+        "sex": 1,
+        "zodiac": "lion"
+    },
+    "riza-hawkeye": {
+        "_id": "riza-hawkeye",
+        "id": "c1136",
+        "name": "Riza Hawkeye",
+        "rarity": 5,
+        "role": "ranger",
+        "attribute": "ice",
+        "sex": 2,
+        "zodiac": "ram"
+    },
+    "lua": {
+        "_id": "lua",
+        "id": "c1126",
+        "name": "Lua",
+        "rarity": 5,
+        "role": "ranger",
+        "attribute": "ice",
+        "sex": 2,
+        "zodiac": "fish"
+    },
+    "astromancer-elena": {
+        "_id": "astromancer-elena",
+        "id": "c2091",
+        "name": "Astromancer Elena",
+        "rarity": 5,
+        "role": "ranger",
+        "attribute": "light",
+        "sex": 2,
+        "zodiac": "scales"
+    },
+    "unbound-knight-arowell": {
+        "_id": "unbound-knight-arowell",
+        "id": "c4004",
+        "name": "Unbound Knight Arowell",
+        "rarity": 3,
+        "role": "knight",
+        "attribute": "light",
+        "sex": 2,
+        "zodiac": "scales"
+    },
+    "arunka": {
+        "_id": "arunka",
+        "id": "c1124",
+        "name": "Arunka",
+        "rarity": 5,
+        "role": "warrior",
+        "attribute": "wind",
+        "sex": 2,
+        "zodiac": "scorpion"
+    },
+    "savior-adin": {
+        "_id": "savior-adin",
+        "id": "c4144",
+        "name": "Savior Adin",
+        "rarity": 3,
+        "role": "assassin",
+        "attribute": "light",
+        "sex": 2,
+        "zodiac": "leo",
+        "gacha": false
+    },
+    "zio": {
+        "_id": "zio",
+        "id": "c1133",
+        "name": "Zio",
+        "rarity": 5,
+        "role": "mage",
+        "attribute": "dark",
+        "sex": 1,
+        "zodiac": "ram"
+    },
+    "aewinter": {
+        "_id": "aewinter",
+        "id": "c1139",
+        "name": "ae-WINTER",
+        "rarity": 5,
+        "role": "assassin",
+        "attribute": "fire",
+        "sex": 2,
+        "zodiac": "ram"
+    },
+    "aeningning": {
+        "_id": "aeningning",
+        "id": "c1140",
+        "name": "ae-NINGNING",
+        "rarity": 5,
+        "role": "manauser",
+        "attribute": "fire",
+        "sex": 2,
+        "zodiac": "scorpion"
+    },
+    "aegiselle": {
+        "_id": "aegiselle",
+        "id": "c1138",
+        "name": "ae-GISELLE",
+        "rarity": 5,
+        "role": "mage",
+        "attribute": "wind",
+        "sex": 2,
+        "zodiac": "scorpion"
+    },
+    "aekarina": {
+        "_id": "aekarina",
+        "id": "npc1234",
+        "name": "ae-KARINA",
+        "rarity": 5,
+        "role": "knight",
+        "attribute": "ice",
+        "sex": 2,
+        "zodiac": "goat"
     }
 }

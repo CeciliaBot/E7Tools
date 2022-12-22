@@ -1,6 +1,6 @@
 <template>
     <div v-if="open" style="position: fixed; left: 0; top: 0; height: 100%; width: 100%; background-color: #00000033" @click="hide"></div>
-    <div :class="['lang-picker glass-container-2', {show: open}]">
+    <div :class="['lang-picker glass-container-2 overflow-auto hide-scrollbar', {show: open}]">
         <div v-for="locales in availableLangs" v-show="locale!==locales.code" :key="locales.code" class="locale mat-hover" @click="setLocale(locales)">
             <div :class="'flag-box'">
                 <img :data-src="locales.flag" style="width: 100%;" v-lazyloader/>
@@ -59,7 +59,8 @@ export default {
             loadLocaleMessagesAsync(locale.code).then(() => {
                 localStorage.setItem('USER_PREFERED_LOCALE', locale.code);
                 this.hide();
-            }).finally( () => {
+                this.$store.commit('loading',false);
+            }).catch( () => {
                 this.$store.commit('loading',false);
             })
         }

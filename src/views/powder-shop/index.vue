@@ -4,7 +4,7 @@ import { Transition, h, withDirectives } from 'vue'
 import ctrlf from '../timeline/components/ctrlf.vue'
 import FloatingMenu from '@/components/mobile-floating-menu.vue'
 import tooltip from '@/directives/tooltip.js'
-import {throttle} from '@/utils/helpers.js'
+import { throttle } from '@/utils/helpers.js'
 
 var mobileTouch = {};
 function touchStart (e) {
@@ -169,7 +169,7 @@ export default {
       });
     },
     searchToDisplay: function (result) {
-      return result.dt.join(' ~ ');
+      return result.dt.map( date => this.$d(date) ).join(' ~ ');
     },
     goToResult: function (result) {
       this.shop.forEach( (rotation,i) => {
@@ -270,7 +270,7 @@ export default {
                 )
               : null,
               h('span', {style: {float: 'left', 'padding-left': '10px'}}, (this.slide+1) + '/' + this.shop.length ),
-              h('div', {style: {margin: '0 180px 0 55px',overflow: 'hidden','text-overflow': 'ellipsis','white-space': 'nowrap'}}, this.shop[this.slide].dt.join(' ~ '))
+              h('div', {style: {margin: '0 180px 0 55px',overflow: 'hidden','text-overflow': 'ellipsis','white-space': 'nowrap'}}, this.shop[this.slide].dt.map(date => this.$d(date)).join(' - ') )
             ]),
             h('div', {class: 'rotation'}, [
                 !this.saveDataMode ?
@@ -315,7 +315,7 @@ export default {
       ]),
       this.shop&&this.openShopList ? h('div', {class: 'glass-container rotation-list-box'}, [
         this.shop.map( (rotation,i) => {
-          return h('div', {class: ['elements', {active: this.slide === i}], onClick: () => this.scrollToSelected(i) }, (i+1) + '. ' + rotation.dt[0])
+          return h('div', {class: ['elements', {active: this.slide === i}], onClick: () => this.scrollToSelected(i) }, (i+1) + '. ' + this.$d(rotation.dt[0]))
         })
       ]) : null
     ]);

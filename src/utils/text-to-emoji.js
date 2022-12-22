@@ -22,68 +22,84 @@ export var emj = {
     LifestealSet: cdn+'item/icon_set_vampire.png',
 
     /* Stats */
-    attack: cdn+'img/icon_menu_att.png',
-    defense: cdn+'img/icon_menu_def.png',
-    health: cdn+'img/icon_menu_max_hp.png',
-    speed: cdn+'img/icon_menu_speed.png',
-    critchance: cdn+'img/icon_menu_cri.png',
-    critdamage: cdn+'img/icon_menu_cri_dmg.png',
-    effectivness: cdn+'img/icon_menu_acc.png',
-    effectresist: cdn+'img/icon_menu_res.png',
-    dual: cdn+'img/icon_menu_coop.png',
-    counter: cdn+'img/icon_menu_counter.png',
+    Attack: cdn+'img/icon_menu_att.png',
+    Defense: cdn+'img/icon_menu_def.png',
+    Health: cdn+'img/icon_menu_max_hp.png',
+    Speed: cdn+'img/icon_menu_speed.png',
+    CritChance: cdn+'img/icon_menu_cri.png',
+    CritDamage: cdn+'img/icon_menu_cri_dmg.png',
+    Effectivness: cdn+'img/icon_menu_acc.png',
+    EffectResistance: cdn+'img/icon_menu_res.png',
+    DualAttack: cdn+'img/icon_menu_coop.png',
+    Counter: cdn+'img/icon_menu_counter.png',
 
     /* Rarity */
-    rarity: cdn+'cm_icon_star.png',
+    Rarity: cdn+'cm_icon_star.png',
 
     /* Roles */
-    warrior: cdn+'class/cm_icon_role_warrior.png',
-    knight: cdn+'class/cm_icon_role_knight.png',
-    thief: cdn+'class/cm_icon_role_thief.png',
-    ranger: cdn+'class/cm_icon_role_ranger.png',
-    mage: cdn+'class/cm_icon_role_mage.png',
-    'soul-weaver': cdn+'class/cm_icon_role_soul-weaver.png',
+    Warrior: cdn+'class/cm_icon_role_warrior.png',
+    Knight: cdn+'class/cm_icon_role_knight.png',
+    Thief: cdn+'class/cm_icon_role_thief.png',
+    Ranger: cdn+'class/cm_icon_role_ranger.png',
+    Mage: cdn+'class/cm_icon_role_mage.png',
+    SoulWeaver: cdn+'class/cm_icon_role_soul-weaver.png',
 
     /* Attributes */
-    fire: cdn+'attribute/cm_icon_profire.png',
-    ice: cdn+'attribute/cm_icon_proice.png',
-    grass: cdn+'attribute/cm_icon_proearth.png',
-    dark: cdn+'attribute/cm_icon_promdark.png',
-    light: cdn+'attribute/cm_icon_prolight.png',
+    Fire: cdn+'attribute/cm_icon_profire.png',
+    Ice: cdn+'attribute/cm_icon_proice.png',
+    Grass: cdn+'attribute/cm_icon_proearth.png',
+    Dark: cdn+'attribute/cm_icon_promdark.png',
+    Light: cdn+'attribute/cm_icon_prolight.png',
 
     /* Zodiac */
-    aries: cdn+'img/cm_icon_zodiac_ram.png',
-    taurus: cdn+'img/cm_icon_zodiac_bull.png',
-    gemini: cdn+'img/cm_icon_zodiac_twins.png',
-    cancer: cdn+'img/cm_icon_zodiac_crab.png',
-    leo: cdn+'img/cm_icon_zodiac_lion.png',
-    virgo: cdn+'img/cm_icon_zodiac_maiden.png',
-    libra: cdn+'img/cm_icon_zodiac_scales.png',
-    scorpius: cdn+'img/cm_icon_zodiac_scorpion.png',
-    sagittarius: cdn+'img/cm_icon_zodiac_archer.png',
-    capricornus: cdn+'img/cm_icon_zodiac_goat.png',
-    aquarius: cdn+'img/cm_icon_zodiac_waterbearer.png',
-    pisces: cdn+'img/cm_icon_zodiac_fish.png',
+    Aries: cdn+'img/cm_icon_zodiac_ram.png',
+    Taurus: cdn+'img/cm_icon_zodiac_bull.png',
+    Gemini: cdn+'img/cm_icon_zodiac_twins.png',
+    Cancer: cdn+'img/cm_icon_zodiac_crab.png',
+    Leo: cdn+'img/cm_icon_zodiac_lion.png',
+    Virgo: cdn+'img/cm_icon_zodiac_maiden.png',
+    Libra: cdn+'img/cm_icon_zodiac_scales.png',
+    Scorpius: cdn+'img/cm_icon_zodiac_scorpion.png',
+    Sagittarius: cdn+'img/cm_icon_zodiac_archer.png',
+    Capricornus: cdn+'img/cm_icon_zodiac_goat.png',
+    Aquarius: cdn+'img/cm_icon_zodiac_waterbearer.png',
+    Pisces: cdn+'img/cm_icon_zodiac_fish.png',
 
     CermiaWeird: cdn + 'ui/emote/CermiaWeird.png',
     /* E7 Emotes */
     CharlotteNoted: cdn+'ui/emote/c5009_hard_001.webp',
     MelanyLaugh: cdn+'ui/emote/c3121_provoke_001.webp',
     ChristieTired: cdn+'ui/emote/c3123_tired_001.webp',
+    DieneL: cdn + 'ui/emote/c1076_heart_001.webp',
+    DienePray: cdn + 'ui/emote/c1076_pray_001.webp',
+    RasOk: cdn + 'ui/emote/RasOk_x150.gif',
+    RasWave: cdn + 'ui/emote/RasWave_x150.gif',
+    RasLaugh: cdn + 'ui/emote/RasLaugh_x150.gif',
+    VildredThink: cdn + 'ui/emote/VildredThink_x150.gif',
+    VildredAngry: cdn + 'ui/emote/VildredAngry_x150.gif',
+    MercedesShocked: cdn + 'ui/emote/MercedesSurprised_x150.gif',
+    MercedesCry: cdn + 'ui/emote/MercedesCry_x150.gif',
+    AitherFlex: cdn + 'ui/emote/AitherFlex_x150.gif',
+    AitherTongue: cdn + 'ui/emote/AitherTongue_x150.gif',
 
     /* E7 Items */
-    skystone: cdn+'item/token_crystal.png',
-    transmit: cdn+'item/token_hero1.png',
-    transmit2: cdn+'item/token_hero2.png',
-    powder: cdn+'item/token_powder.png',
-    covenant: cdn+'item/token_ticket_rare.png',
-    mystic: cdn+'item/token_ticket_special.png',
-    galaxy: cdn+'item/token_ticket_moon.png',
-    molagoraseed: cdn+'item/token_mura.png',
-    molagora: cdn+'item/ma_moragora1.png',
+    Skystone: cdn+'item/token_crystal.png',
+    Transmit: cdn+'item/token_hero1.png',
+    GoldTransmit: cdn+'item/token_hero2.png',
+    Powder: cdn+'item/token_powder.png',
+    Covenant: cdn+'item/token_ticket_rare.png',
+    Mystic: cdn+'item/token_ticket_special.png',
+    Galaxy: cdn+'item/token_ticket_moon.png',
+    MolagoraSeed: cdn+'item/token_mura.png',
+    Molagora: cdn+'item/ma_moragora1.png',
 
     /* Other E7Stuff */
-    banned: cdn+'img/_cm_banned_res.png',
+    Banned: cdn+'img/_cm_banned_res.png',
+    AttackSuccessful: cdn + 'img/battle_pvp_icon_win.png',
+    AttackFailed: cdn + 'img/battle_pvp_icon_lose.png',
+    DefenseSuccessful: cdn + 'img/battle_pvp_icon_def.png',
+    DefenseDefeated: cdn + 'img/battle_pvp_icon_defeat.png',
+    BattleDraw: cdn + 'img/battle_pvp_icon_draw.png',
     D: cdn+'img/hero_dedi_a_d.png',
     C: cdn+'img/hero_dedi_a_c.png',
     B: cdn+'img/hero_dedi_a_b.png',
@@ -107,10 +123,11 @@ export var emj = {
     PepegaCredit: cdn+'ui/emote/PepegaCredit.webp',
     PepeLaugh: cdn+'ui/emote/PepeLaugh.gif',
     Copium: cdn+'ui/emote/copium.png',
-    GiGACHAD: cdn+'ui/emote/GIGACHAD.webp',
+    GIGACHAD: cdn+'ui/emote/GIGACHAD.webp',
     SUSSY: cdn+'ui/emote/SUSSY.webp',
     Bedge: cdn+'ui/emote/bedge.webp',
-    Smadge: cdn+'ui/emote/Smadge.webp'
+    Smadge: cdn+'ui/emote/Smadge.webp',
+    Nerd: cdn+'ui/emote/Nerd.webp'
 }
 
 export var emotes = Object.keys(emj).map(key => {
@@ -126,7 +143,7 @@ export function buildEmoteElement (emote) {
     img.setAttribute('draggable', false);
     img.title = ':'+emote+':';
     img.style.height='1.5em';
-    img.style.verticalAlign = 'middle';
+    img.style.verticalAlign = 'top';
     img.style.pointerEvents = 'none'; //allows user to click around the emote
     img.setAttribute('SameSite', 'Lax');
     return img;
@@ -140,7 +157,7 @@ export function stringToHtmlEmotes (text) {
     let newString = str.replace(/:[a-zA-Z0-9_-]+:/g, function (match) {
         var emote = emj[match.replace(/:/g,'')];
         if (emote) {
-            return '<img src="' + emote + '" title="' + match + '" draggable="false" style="height: 1.5em; vertical-align: middle; pointer-events: none;" SameSite="Lax" />'
+            return '<img src="' + emote + '" title="' + match + '" draggable="false" style="height: 1.5em; vertical-align: top; pointer-events: none;" SameSite="Lax" />'
         } else
             return match;
     })

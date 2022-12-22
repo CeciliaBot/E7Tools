@@ -1,4 +1,6 @@
 import { createI18n } from 'vue-i18n'
+//import { createI18n } from 'vue-i18n/dist/vue-i18n.cjs.js' // remove waning about flags
+
 function requireAll(r) { return r.keys().map(r); }
 const datetimeFormats = {
   'en': {
@@ -11,6 +13,13 @@ const datetimeFormats = {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
+    },
+    'long-with-time': {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric'
     }
   }
 }
@@ -20,7 +29,8 @@ const i18n = createI18n({
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
   datetimeFormats,
   messages: {},
-  missingWarn: false, fallbackWarn: false // turn this on to see warnings in the console when a string is missing translation
+  silentFallbackWarn: true,
+  silentTranslationWarn: true
 })
 //i18n._availableLocales = requireAll(require.context('./locales', true, /info\.json$/)).map(x=> {console.log(x); return x})
 i18n.global._availableLocales = requireAll(require.context('./locales', true, /info\.json$/))
@@ -36,10 +46,10 @@ function getLanguagePack(locale) {
   }
   // If the language hasn't been loaded yet
   return Promise.all([
-    import(/* webpackChunkName: "[request]" */ `./locales/${locale}/strings.json`).catch(() => {return {}}),
-    import(/* webpackChunkName: "[request]" */ `./locales/${locale}/heroes.json`).catch(() => {return {}}),
-    import(/* webpackChunkName: "[request]" */ `./locales/${locale}/artifacts.json`).catch(() => {return {}}),
-    import(/* webpackChunkName: "[request]" */ `./locales/${locale}/camping.json`).catch(() => {return {}})
+    import(/* webpackChunkName: "locales/[request]" */ `./locales/${locale}/strings.json`).catch(() => {return {}}),
+    import(/* webpackChunkName: "locales/[request]" */ `./locales/${locale}/heroes.json`).catch(() => {return {}}),
+    import(/* webpackChunkName: "locales/[request]" */ `./locales/${locale}/artifacts.json`).catch(() => {return {}}),
+    import(/* webpackChunkName: "locales/[request]" */ `./locales/${locale}/camping.json`).catch(() => {return {}})
   ]).then(([strings, heroes, artifacts, camping]) => {
     //Object.assign(strings.default, camping.default, heroes.default, artifacts.default)  // Merge!
     i18n.global.setLocaleMessage(locale, {strings:strings.default, heroes: heroes.default, artifacts: artifacts.default, camping: camping.default})
@@ -61,7 +71,26 @@ export function loadLocaleMessagesAsync(locale) { // Load and set as active
 
 export default i18n;
 
+
+
 /********************* Load Fallback and Current/Local Language at start up *********************/
+export function getUserLocaleCode() {
+  var userLang = localStorage.getItem('USER_PREFERED_LOCALE');
+  if (!userLang) { // TRY TO DETECT AND APPLAY THE CORRECT LOCALE
+      const tLang = navigator.language || navigator.userLanguage;
+      i18n.global._availableLocales.forEach(locale => {
+          locale.langCodes.forEach(code => {
+              const langCode = code.split('-')[0];
+              const zoneCode = code.split('-').slice(1).join('');
+              const tZoneCode = tLang.split('-').slice(1).join('');
+              if (langCode === tLang.split('-')[0] && (zoneCode=== '*' || !tZoneCode || zoneCode===tZoneCode))
+                userLang = locale.code
+          })
+      })
+  }
+  return userLang || i18n.global.fallbackLocale
+}
+
 var init = [
   getLanguagePack(i18n.global.fallbackLocale)
 ];

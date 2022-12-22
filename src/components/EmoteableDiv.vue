@@ -1,22 +1,12 @@
 <template>
-    <div class="emotable-div" v-if="icon">
-        <!-- <div v-if="icon" class="emote-icon-toggle" @mousedown.prevent @click="toggleEmoteSelector" data-html2canvas-ignore>
-            <button class="material-button flat basic" style="font-size: 20px; line-height: 2em; pointer-events: none;">
-                <i class="fas fa-smile"></i>
-            </button>
-        </div> v-if="showEmoteSelector"-->
+    <!-- <div class="emotable-div" v-if="icon">
         <div ref="emote-selector" v-if="showEmoteSelector" class="emote-selector" :style="selectorStyling">
             <span v-for="emote in emotes" :key="emote.code" class="emote-wrapper" @mousedown.prevent @click="clickToInserEmote(emote.code)" style="min-width: 40px; min-height: 40px;">
                 <img :src="emote.src" :title="':'+ emote.code +':'" height="40" SameSite="Lax" />
             </span>
         </div>
-        <div v-if="autocomplete.length">
-            <div v-for="emote in autocomplete" :key="emote.code">
-                <img :src="emote.src" style="height: 1.5em" />
-            </div>
-        </div>
-    </div>
-
+    </div> -->
+    <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component  -->
     <component :is="tagName" key="text-content" ref="text-box" v-bind="$attrs" class="input-box" :contenteditable="editable" spellcheck="false" @blur="onBlur" @click="onClick" v-emote v-html="text" />
 </template>
 <script>
@@ -55,8 +45,6 @@ export default {
         return {
             showEmoteSelector: false,
             emotes: emotes,
-            autocomplete: [],
-            autocompleteIndex: 0,
             selectorStyling: {
                 left: 0,
                 right: 0

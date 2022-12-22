@@ -1,0 +1,607 @@
+[
+    {
+        "nid": 2357453,
+        "dt": [
+            1542837600000
+        ],
+        "c": [
+            {
+                "id": "vildred"
+            },
+            {
+                "id": "rose"
+            },
+            {
+                "id": "mercedes"
+            },
+            {
+                "id": "rin"
+            },
+            {
+                "id": "wanderer-silk"
+            },
+            {
+                "id": "guider-aither"
+            },
+            {
+                "id": "challenger-dominiel"
+            },
+            {
+                "id": "falconer-kluri"
+            },
+            {
+                "id": "judith"
+            },
+            {
+                "id": "azalea"
+            },
+            {
+                "id": "mucacha"
+            },
+            {
+                "id": "carrot"
+            },
+            {
+                "id": "hurado"
+            }
+        ],
+        "a": []
+    },
+    {
+        "nid": [
+            2488018,
+            2488024
+        ],
+        "dt": [
+            1544742000000
+        ],
+        "name": "Molagora reduction, 4*-5* Hero Stats increase (Recall: Ravi, Tieria, Church of Ilryos Axe, Mucacha, Rikoris, Elson, Kiris)",
+        "c": [
+            {
+                "id": "baal-sezan"
+            },
+            {
+                "id": "yufine"
+            },
+            {
+                "id": "dingo"
+            },
+            {
+                "id": "coli"
+            },
+            {
+                "id": "tieria"
+            },
+            {
+                "id": "elson"
+            },
+            {
+                "id": "rikoris"
+            },
+            {
+                "id": "church-of-ilryos-axe"
+            },
+            {
+                "id": "mucacha"
+            },
+            {
+                "id": "butcher-corps-inquisitor"
+            }
+        ],
+        "a": [
+            {
+                "id": "time-matter"
+            },
+            {
+                "id": "rod-of-amaryllis"
+            },
+            {
+                "id": "sashe-ithanes"
+            },
+            {
+                "id": "goblins-lamp"
+            }
+        ]
+    },
+    {
+        "nid": 2517982,
+        "dt": [
+            1545195600000
+        ],
+        "c": [
+            {
+                "id": "yufine"
+            },
+            {
+                "id": "kayron"
+            },
+            {
+                "id": "serila"
+            },
+            {
+                "id": "church-of-ilryos-axe"
+            }
+        ],
+        "a": []
+    },
+    {
+        "nid": 2637316,
+        "dt": [
+            1547074800000
+        ],
+        "c": [
+            {
+                "id": "ken"
+            },
+            {
+                "id": "cidd"
+            }
+        ]
+    },
+    {
+        "nid": 2679919,
+        "dt": [
+            1547679600000
+        ],
+        "c": [
+            {
+                "id": "ken"
+            }
+        ],
+        "a": []
+    },
+    {
+        "nid": 2871954,
+        "dt": [
+            1550098800000
+        ],
+        "c": [
+            {
+                "id": "tamarinne"
+            },
+            {
+                "id": "basar"
+            },
+            {
+                "id": "tenebria"
+            },
+            {
+                "id": "mercedes"
+            },
+            {
+                "id": "celestial-mercedes"
+            },
+            {
+                "id": "zerato"
+            }
+        ],
+        "a": []
+    },
+    {
+        "nid": 2951808,
+        "dt": [
+            1551308400000
+        ],
+        "c": [
+            {
+                "id": "ludwig"
+            }
+        ],
+        "a": []
+    },
+    {
+        "nid": 3042848,
+        "dt": [
+            1553122800000
+        ],
+        "c": [
+            {
+                "id": "blaze-dingo"
+            }
+        ],
+        "a": []
+    },
+    {
+        "nid": [
+            3068522,
+            3068515
+        ],
+        "dt": [
+            1553727600000
+        ],
+        "nam": "3/27 Molagora reduction",
+        "c": [
+            {
+                "id": "specimen-sez"
+            },
+            {
+                "id": "specter-tenebria"
+            },
+            {
+                "id": "auxiliary-lots"
+            },
+            {
+                "id": "kitty-clarissa"
+            },
+            {
+                "id": "tywin"
+            },
+            {
+                "id": "cecilia"
+            },
+            {
+                "id": "basar"
+            },
+            {
+                "id": "zerato"
+            },
+            {
+                "id": "silk"
+            },
+            {
+                "id": "crozet"
+            },
+            {
+                "id": "falconer-kluri",
+                "recall": true
+            }
+        ]
+    },
+    {
+        "nid": 3255041,
+        "dt": [
+            1559170800000
+        ],
+        "c": [
+            {
+                "id": "aither"
+            }
+        ],
+        "a": []
+    },
+    {
+        "nid": 3368213,
+        "dt": [
+            1561590000000
+        ],
+        "c": [
+            {
+                "id": "ravi"
+            },
+            {
+                "id": "maid-chloe"
+            },
+            {
+                "id": "judge-kise"
+            },
+            {
+                "id": "arbiter-vildred"
+            },
+            {
+                "id": "sigret"
+            },
+            {
+                "id": "violet"
+            },
+            {
+                "id": "blood-blade-karin"
+            },
+            {
+                "id": "purrgis"
+            },
+            {
+                "id": "corvus"
+            },
+            {
+                "id": "cartuja"
+            },
+            {
+                "id": "lots"
+            }
+        ],
+        "a": [
+            {
+                "id": "wind-rider"
+            }
+        ]
+    },
+    {
+        "nid": 3429150,
+        "dt": [
+            1562263200000,
+            1563375540000
+        ],
+        "name": "Jade Wind Skorpion Incident"
+    },
+    {
+        "nid": 3586361,
+        "dt": [
+            1563967800000,
+            1565189940000
+        ],
+        "name": "Sez recall"
+    },
+    {
+        "nid": 3718827,
+        "dt": [
+            1565215200000
+        ],
+        "c": [
+            {
+                "id": "luluca"
+            },
+            {
+                "id": "baal-sezan"
+            },
+            {
+                "id": "ludwig"
+            },
+            {
+                "id": "tenebria"
+            },
+            {
+                "id": "leo"
+            },
+            {
+                "id": "romann"
+            },
+            {
+                "id": "captain-rikoris"
+            },
+            {
+                "id": "ras"
+            }
+        ],
+        "a": []
+    },
+    {
+        "nid": [
+            3943909,
+            3944356,
+            3944576,
+            3944860
+        ],
+        "dt": [
+            1567639800000
+        ],
+        "name": "Mage stat increase",
+        "c": [
+            {
+                "id": "silver-blade-aramintha"
+            },
+            {
+                "id": "sage-baal-sezan"
+            },
+            {
+                "id": "arbiter-vildred"
+            },
+            {
+                "id": "crimson-armin"
+            },
+            {
+                "id": "lilibet"
+            },
+            {
+                "id": "lidica"
+            },
+            {
+                "id": "basar"
+            },
+            {
+                "id": "yufine"
+            },
+            {
+                "id": "aramintha"
+            },
+            {
+                "id": "armin"
+            },
+            {
+                "id": "otillie"
+            },
+            {
+                "id": "gunther"
+            },
+            {
+                "id": "yuna"
+            },
+            {
+                "id": "assassin-coli"
+            },
+            {
+                "id": "purrgis"
+            },
+            {
+                "id": "crozet"
+            },
+            {
+                "id": "kitty-clarissa"
+            },
+            {
+                "id": "achates"
+            },
+            {
+                "id": "kikirat-v2"
+            }
+        ],
+        "a": [
+            {
+                "id": "justice-for-all"
+            },
+            {
+                "id": "violet-talisman"
+            },
+            {
+                "id": "noble-oath"
+            },
+            {
+                "id": "alexas-basket"
+            }
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/70764bd78e3b4a1da5990692eea1f2e7/b6a02ff8fd174d83bf315beaac8598f0_1567592797.png"
+    },
+    {
+        "nid": 4030094,
+        "dt": [
+            1568848800000
+        ],
+        "c": [
+            {
+                "id": "carrot"
+            }
+        ]
+    },
+    {
+        "nid": 4166001,
+        "dt": [
+            1571301000000
+        ],
+        "c": [
+            {
+                "id": "serila"
+            }
+        ]
+    },
+    {
+        "nid": 4213610,
+        "dt": [
+            1572526800000
+        ],
+        "name": "Imprint Concentration",
+        "c": [
+            {
+                "id": "specimen-sez"
+            },
+            {
+                "id": "tenebria"
+            },
+            {
+                "id": "assassin-cidd"
+            },
+            {
+                "id": "champion-zerato"
+            },
+            {
+                "id": "dominiel"
+            },
+
+            {
+                "id": "corvus"
+            },
+            {
+                "id": "rin"
+            },
+            {
+                "id": "elson"
+            },
+            {
+                "id": "arowell"
+            },
+            {
+                "id": "mirsa"
+            }
+        ],
+        "a": [],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/6bd90cb8bf5f491da9278c1c2485fa32/210306ed86124d8a8c7fe7821a0e2d05_1572423014.jpg"
+    },
+    {
+        "nid": 4434088,
+        "dt": [
+            1577350800000
+        ],
+        "c": [
+            {
+                "id": "apocalypse-ravi"
+            },
+            {
+                "id": "kise"
+            },
+            {
+                "id": "cartuja"
+            },
+            {
+                "id": "dingo"
+            }
+        ],
+        "a": [],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/60f53da769e34548b65c15b8c20e64af/bf979e2327b4465297e4e39e42627c2a_1577189048.png"
+    },
+    {
+        "nid": 4747231,
+        "type": "balance",
+        "dt": [
+            1582182000000
+        ],
+        "c": [
+            {
+                "id": "specter-tenebria"
+            },
+            {
+                "id": "melissa"
+            },
+            {
+                "id": "cecilia"
+            },
+            {
+                "id": "tenebria"
+            },
+            {
+                "id": "fighter-maya"
+            },
+            {
+                "id": "celestial-mercedes"
+            },
+            {
+                "id": "rose"
+            },
+            {
+                "id": "clarissa"
+            },
+            {
+                "id": "khawazu"
+            },
+            {
+                "id": "doris"
+            },
+            {
+                "id": "requiemroar"
+            }
+        ],
+        "a": [
+            {
+                "id": "holy-sacrifice"
+            },
+            {
+                "id": "shimadra-staff"
+            },
+            {
+                "id": "uberiuss-tooth"
+            },
+            {
+                "id": "dignus-orb"
+            }
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/a03da1d578344e4b8b760b22e71756b5/7f93c5e97c674d2badcdfc79ef5259aa_1582006876.jpg"
+    },
+    {
+        "nid": 4842093,
+        "dt": [
+            1583404200000
+        ],
+        "name": "Charlotte Remake",
+        "c": [
+            {
+                "id": "charlotte"
+            }
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/95decfac987b4b5aa83df336bd47d652/c6146c9c4e44439dacac9cac50880224_1583231744.png"
+    },
+    {
+        "nid": 0,
+        "dt": [
+            1584601200000,
+            1585796340000
+        ],
+        "name": "Charlotte recall"
+    }
+]

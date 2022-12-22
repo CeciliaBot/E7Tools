@@ -1,52 +1,53 @@
 <template>
-    <div>
-        <div v-for="(group,index) in maps" :key="index" class="map-container" :style="{'backgroundColor': group.background}" >
-            <div class="dungeon-title">{{ $t('strings.'+group.name) }}</div>
-            <div style="text-align: center" v-html="group['description_'+lang]||group['description_en']"></div>
-            <div v-for="(img,mapIndex) in (group[lang] || group['en'] || [])" :key="mapIndex" class="image-container noselect" :style="{minWidth: img.size ? (200/img.size[1]*img.size[0] ) + 'px' : '200px', minHeight: '200px'}">
-                <img :data-src="img.src" SameSite="Lax" style="opacity: 0" @click="openImage(index, mapIndex)" v-lazyloader />
-                <span class="map-name">{{ img.description }}</span>
+    <div class="full-size">
+        <div v-if="!mapMaker">
+            <div v-for="(group,index) in maps" :key="index" class="map-container" :style="{'backgroundColor': group.background}" >
+                <div class="dungeon-title">{{ $t('strings.'+group.name) }}</div>
+                <div style="text-align: center" v-html="group['description_'+lang]||group['description_en']"></div>
+                <div v-for="(img,mapIndex) in (group[lang] || group['en'] || [])" :key="mapIndex" class="image-container noselect" :style="{minWidth: img.size ? (200/img.size[1]*img.size[0] ) + 'px' : '200px', minHeight: '200px'}">
+                    <img :data-src="img.src" SameSite="Lax" style="opacity: 0" @click="openImage(index, mapIndex)" v-lazyloader />
+                    <span class="map-name">{{ img.description }}</span>
 
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="noselect" style="overflow: hidden; position: relative; height: 100px; width: 300px; z-index: 0; display: inline-block; text-align: start;">
+                    <div style="position: absolute; bottom: 0; width: 100%; z-index: -1;">
+                        <button class="material-button flat primary" style="width: 99%; vertical-align: bottom; border: solid 2px; padding-left: 80px;" v-ripple-effect>Map Maker Coming Soon<i class="fa fa-arrow-right" style="float: right; line-height: 2.4em;" /></button>
+                    </div>
+                    <div style="pointer-events: none;">
+                        <img :src="require('@/assets/chibi-maid-chloe.png')" style="height: 98px;" />
+                    </div>
+                </div>
             </div>
         </div>
-        <template v-if="openImageGallery">
-            <PhotoGallery
-                :index="galleryIndex"
-                :album="openImageGallery"
-                @close="closeImage"
-            />
-        </template>
+        <!-- <LabMaker v-else @close="mapMaker = false" /> -->
     </div>
 </template>
 
 <script>
-import PhotoGallery from '@/components/PhotoGallery.vue'
+// import LabMaker from './LabyrinthMapBuilder.vue'
 import maps from '../util/maps.js'
 
 export default {
     components: {
-        PhotoGallery
+        // LabMaker
     },
     data() {
         return {
-            openImageGallery: false,
-            galleryIndex: 0,
-            maps: maps
+            maps: maps,
+            mapMaker: false
         }
     },
+    renderTriggered (e) {console.log('Maps', e)},
     computed: {
         lang: function () {
             return this.$i18n.locale || 'en';
         }
     },
-    renderTriggered (e) {console.log('Maps', e)},
     methods: {
         openImage(index, mapIndex) {
-            this.openImageGallery = this.maps[index][this.lang] || this.maps[index]['en'] || [];
-            this.galleryIndex=mapIndex
-        },
-        closeImage() {
-            this.openImageGallery = false;
+            this.$gallery(this.maps[index][this.lang] || this.maps[index]['en'] || [], mapIndex)
         }
     }
 }
@@ -59,7 +60,6 @@ export default {
         width: 100%;
         padding: 20px 0 20px 100px;
         background-color: rgb(0, 0, 0);
-        color: white;
     }
     .dungeon-title {
         position: absolute;

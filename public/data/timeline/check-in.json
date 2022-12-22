@@ -1,0 +1,483 @@
+[
+    {
+        "nid": "9066144",
+        "dt": [
+            1671073200000,
+            1672282740000
+        ],
+        "name": "5★ ae-GISELLE Limited Summon Special Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/81a9926d07f44e03b5219a68f223ae36/5f72d4aabb0b4d389928007abbe100ea.jpg"
+    },
+    {
+        "nid": "9065768",
+        "dt": [
+            1669863600000,
+            1671073140000
+        ],
+        "name": "5★ ae-NINGNING Limited Summon Special Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/e97ca9b12c5b49f1adaf5bf482f4f592/7cf84876a8354766a1a048d2a1bc3d26.jpg"
+    },
+    {
+        "nid": "9043097",
+        "dt": [
+            1669280400000,
+            1670468340000
+        ],
+        "name": "5★ ae-WINTER Limited Summon Special Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/dd7ddd80531d4f179d4bf6909ce3edf1/8dfb2520ba394c69b3c7d61c18471da2.jpg"
+    },
+    {
+        "nid": "8977382",
+        "dt": [
+            1666861200000
+        ],
+        "name": "6★ Promotion Celebration Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/2bc06c9176d6483e9f491f86b4d79018/5e0481697ac04a7c879de2da71d36875.png"
+    },
+    {
+        "nid": "8977980",
+        "dt": [
+            1666861200000,
+            1669258740000
+        ],
+        "name": "Unforgettable Memories Celebration! Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/e86f2addaff341bb9d3e902deed29a81/9dd2bfc03ffd4354a327922f146423b7.jpg"
+    },
+    {
+        "nid": "8931914",
+        "dt": [
+            1665025200000,
+            1665629940000
+        ],
+        "name": "2022 Google Play Days 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/application_no/96001/default/COMMUNITY2be74ed8ef8f427aa7f81650e17a07b4/1316571aaec14ee4b271e7390b3ff8e9.jpg"
+    },
+    {
+        "nid": "8841498",
+        "dt": [
+            1662692400000,
+            1663037940000
+        ],
+        "name": "Autumn Celebration! Check-in & Buff Event!",
+        "c": [],
+        "a": [],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/application_no/96001/default/COMMUNITY90524139dfda42cfb9cddab55b731a61/c8b46fb6efa44377a7d3e1a00c3cd722.png"
+    },
+    {
+        "nid": "8818775",
+        "dt": [
+            1662022800000,
+            1664420340000
+        ],
+        "name": "Ezeran Foundation Day Celebration! 15-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/application_no/96001/default/COMMUNITY68c47ee330484b79ad863185cf31e334/c8ed0473c9004f9587c03de7156e53d1.jpg"
+    },
+    {
+        "nid": "8797678",
+        "dt": [
+            1661396400000,
+            1663210740000
+        ],
+        "name": "FULLMETAL ALCHEMIST BROTHERHOOD Collaboration Celebration 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/application_no/96001/default/COMMUNITY8fae233bbdfa4fd5b7f4cced615ec753/66e746be2dfb4bcfaf744f13fcc85f67.png"
+    },
+    {
+        "nid": "8519611",
+        "dt": [
+            1653555600000,
+            1655348340000
+        ],
+        "name": "Re:ZERO Collaboration Rerun 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/f1459acb815e42f5a121f12f4373c4e3/88756b83b7094bd28091afc5e47cc80b_1653461054.png"
+    },
+    {
+        "nid": "8450367",
+        "dt": [
+            1651136400000,
+            1653533940000
+        ],
+        "name": "Awaken Update 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/a15c08f3d4554d04b758fd29dd2eab08/fffe5b041e2148fe83cbaaf60e20957b_1651035576.png"
+    },
+    {
+        "nid": "8406173",
+        "dt": [
+            1649926800000,
+            1652324340000
+        ],
+        "name": "Moonlight Summon Revamp Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/7b0626f13c3748a8ae6afb8980a92550/17b1a42b24534374a8a76d0ba5a6a89f_1649846770.jpg"
+    },
+    {
+        "nid": "8322179",
+        "dt": [
+            1647507600000,
+            1649300340000
+        ],
+        "name": "Epic Seven x Guilty Gear Collaboration 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/238da42d43f440e2bb5d55d2dbb1b502/2670cb2cdf4743b19bed74a30c7496ba_1647418840.png"
+    },
+    {
+        "nid": "8259325",
+        "dt": [
+            1645671600000,
+            1647485940000
+        ],
+        "name": "Mystic Summon Revamp Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/2f88f08d9c244f48805ea1dc583bd267/f85eb13d1e1646dd921009c5d90cb107_1645603156.jpg"
+    },
+    {
+        "nid": "8211977",
+        "dt": [
+            1644462000000,
+            1646881140000
+        ],
+        "name": "Valentine's Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/44e25f5d4f694fd89dda9901de62a4e4/2d5bb7c28266472f9cd7a88ee1ce31bf_1644383961.png"
+    },
+    {
+        "nid": "8080218",
+        "dt": [
+            1640685600000,
+            1641117600000
+        ],
+        "name": "Adieu 2021! Surprise! New-Year Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/a338fccb7fa549a1aaaef9a517e77818/a9cff2cb47d140f8b0f66e99c8b707a6_1640600290.png"
+    },
+    {
+        "nid": "8064274",
+        "dt": [
+            1640250000000,
+            1642042740000
+        ],
+        "name": "Gifts Falling From the Sky 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/495026369b4b44f080f1a0c1ae54f130/8855cc127a23473ebc0c8e8d7df655dd_1640105778.jpg"
+    },
+    {
+        "nid": "7927224",
+        "dt": [
+            1635994800000,
+            1638413940000
+        ],
+        "name": "Days of Brilliance 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/2bada6a157ea4dbc8f49c1a4bbd7362b/24a9f189a965496584d1adadab677f9f_1635923869.jpg"
+    },
+    {
+        "nid": "7902459",
+        "dt": [
+            1635411600000,
+            1637204340000
+        ],
+        "name": "Epic Seven x That Time I Got Reincarnated as a Slime 7 Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/e143ff93075d46dbbfbcb612cc789c8f/2fb354da7e8e458f8cd7d5a25882760a_1635326750.png"
+    },
+    {
+        "nid": "7743265",
+        "dt": [
+            1631782800000,
+            1632304800000
+        ],
+        "name": "Happy Weekend! Epic Seven Check-in Event and Buff Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/5b61311a9c864af59a771603009360d1/31d36dd52a194681a07779ab19d9ecfa_1631685965.jpg"
+    },
+    {
+        "nid": "7493223",
+        "dt": [
+            1628866800000,
+            1629125940000
+        ],
+        "name": "Summer Weekend Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/fdf7c46a1ac144bc8f30f5d99064aac1/caa950c3e8b84777aca4df432864d643_1628731268.jpg"
+    },
+    {
+        "nid": "7452375",
+        "dt": [
+            1628154000000,
+            1629341940000
+        ],
+        "name": "Re:ZERO Collaboration 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/6be12ffa44824940a250733dfd52cd48/fd1e093dbe7c494689b6869d66f2d5a5_1628037153.png"
+    },
+    {
+        "nid": "7353695",
+        "dt": [
+            1626274800000,
+            1627570740000
+        ],
+        "name": "7-Day Check-In Event (Round 2)",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/437162e5413b495d9dfcfbba895a7f01/15f198ee82ce474db28c48b5d7979354_1626243445.png"
+    },
+    {
+        "nid": "7314522",
+        "dt": [
+            1625734800000,
+            1627527540000
+        ],
+        "name": "Straze Celebration 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/4847d97bb1d84171992610708a1b9e9d/feaf0d00bc10481a899ef8025d65a854_1625639740.png"
+    },
+    {
+        "nid": "7263705",
+        "dt": [
+            1624460400000,
+            1625756340000
+        ],
+        "name": "7 Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/364a5ff226004ca7b9ac334682d8e6e4/c12dc8c6183046edb568dda7d004bf0e_1624414564.png"
+    },
+    {
+        "nid": "7129914",
+        "dt": [
+            1622106000000
+        ],
+        "name": "7 Day Check-in Event for New and Returning Players (Edited on 5/18)",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/7b938a25d35a443fbcf9bac541045798/250439383be44708a176c642a30cbc63_1620803294.png"
+    },
+    {
+        "nid": "7088629",
+        "dt": [
+            1619686800000,
+            1620874740000
+        ],
+        "name": "Happy May Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/b5b8c25fda7c4cf79359b2edd7505852/10ed964d9453430287c78e1324c2b7e7_1619588547.png"
+    },
+    {
+        "nid": "6994100",
+        "dt": [
+            1617181200000,
+            1618455540000
+        ],
+        "name": "Epic Seven x Guilty Gear Collaboration Special Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/f2df237bf8674a0e88d664521318a2bb/61ed611c8d3e4b1b87fb0fc1bac6a135_1617097556.png"
+    },
+    {
+        "nid": "6798401",
+        "dt": [
+            1613012400000,
+            1614826740000
+        ],
+        "name": "Happy Valentine’s Day 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/657a6054d8d74e0b82970c9c21431a93/4272e4630a6e4c129eeecce9b5061821_1612853822.jpg"
+    },
+    {
+        "nid": "6531287",
+        "dt": [
+            1608800400000,
+            1610593140000
+        ],
+        "name": "The Season of Snowflakes and Starlight Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/af17794b5154478b91657d5dbffcb293/578c15a1d66b4703b4425e9589c2157d_1608715482.jpg"
+    },
+    {
+        "nid": "6296140",
+        "dt": [
+            1604545200000,
+            1606964340000
+        ],
+        "name": "Days of Destiny - 7 Day Check-In Event & 70 Free Covenant Summon Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/34776fb3ec6e4731896372f13c81a07b/af3faea77c4b443aac9d19e0c509e9f3_1604476220.png"
+    },
+    {
+        "nid": "6132156",
+        "dt": [
+            1601434800000,
+            1601866740000
+        ],
+        "name": "Autumn Check-In & Buff event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/53438bc2a0e048f6b3a48ca94f536e47/e7dbe3a53d294dc5b06aeab338a51c2d_1601347898.png"
+    },
+    {
+        "nid": "5952847",
+        "dt": [
+            1599123600000,
+            1601521140000
+        ],
+        "name": "Ezeran Foundation Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/119a9466e841494386732f256565cfe0/550b2b5911aa40958a7a08976e3a77a8_1598755536.jpg"
+    },
+    {
+        "nid": "5415349",
+        "dt": [
+            1619773200000
+        ],
+        "name": "Check-in Event for New Players",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/82195de76caa42658a94cd16944ce02f/2f4d3d9b74844854bbd6827f649befc2_1590566315.jpg"
+    },
+    {
+        "nid": "5225921",
+        "dt": [
+            1588237200000,
+            1590660000000
+        ],
+        "name": "Collaboration Special Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/8bb98699d4ff4a8d9f9bbd59082deb6f/3992f68bd49e4a899b334627e522699d_1588147710.png"
+    },
+    {
+        "nid": "5048783",
+        "dt": [
+            1585818000000,
+            1588240800000
+        ],
+        "name": "Re:Birth Update Celebration! 7-Day Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/22bd719ef0b6491eafe1770f144f6e0b/cd3d45a171534cafa05384e4ac6b14f1_1585789190.png"
+    },
+    {
+        "nid": "4574312",
+        "dt": [
+            1579860000000,
+            1582192800000
+        ],
+        "name": "Lunar New Year Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/70944312b8644a4e98a88f462f3add5e/5baf1dce927248bdbb622c2dd5cc0e87_1579597989.jpg"
+    },
+    {
+        "nid": "4403368",
+        "dt": [
+            1576749600000,
+            1577959200000
+        ],
+        "name": "Winter Celebration Check-In Event Notice",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/05137347bea4416c8e9f1bf58efeb577/8e524d7f4b8b4d40b0b225c8bc3e33a7_1576664178.png"
+    },
+    {
+        "nid": "4322704",
+        "dt": [
+            1575169200000,
+            1575773940000
+        ],
+        "name": "Check-in every day for Homemade Snacks",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/20e698fcec7e4ada88f483cfad9495f7/10643ab2a7db4a20b41933bac21a5113_1575022568.png"
+    },
+    {
+        "nid": "4214127",
+        "dt": [
+            1572516000000,
+            1573034400000
+        ],
+        "name": "Pet Update Celebration 7 Day Check-In Reward",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/4fbfbe47a97744fbb9938f4f81f5e2bf/d32ec06372f34e3a9f096e0211d8e362_1572429697.png"
+    },
+    {
+        "nid": "3898743",
+        "dt": [
+            1567015200000,
+            1568829540000
+        ],
+        "name": "Epic Seven’s Launch Check-in Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/28e2d03ee06a428a9df2ac408680c490/f0255fdcbf184f94ae4e200319bed484_1566981036.jpg"
+    },
+    {
+        "nid": "3352226",
+        "dt": [
+            1561539600000,
+            1562781600000
+        ],
+        "name": "Summer Party Check-in Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/77a6cdae26724aaeac91d5b8db388a29/4a289d952e5748c8a072f38137097c62_1561427869.png"
+    },
+    {
+        "nid": "3150769",
+        "dt": [
+            1556096400000,
+            1558547940000
+        ],
+        "name": "Collaboration Special Check-In Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/123431aa51c64873a3db4f4a9cc8acda/7bd189b6a862489ebafab49f6c11ed58_1556096468.jpg"
+    },
+    {
+        "nid": "2780245",
+        "dt": [
+            1548838800000,
+            1550080740000
+        ],
+        "name": "Lunar New Year Check-in Event",
+        "c": [],
+        "a": [],
+        "thumbnail": "//d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/1f7a054420284138a5b65f3350b6ead2/e0e35c46dda044eca6197071248e1557_1548850938.jpg"
+    }
+]

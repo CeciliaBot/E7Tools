@@ -12,10 +12,10 @@ export function lazyOnload(e) {
   const prev = e.target.previousSibling;
   if (prev && prev.tagName === 'IMG' && prev.getAttribute('data-lazy-fader')) prev.style.opacity = 0;
   e.target.onload = null; // delete self
-  ImgMap.push(e.target.src);
+  ImgMap.push(e.target.src.valueOf()+'');
 }
 
-const lazyImage = new IntersectionObserver((entries) => {
+export const lazyImage = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         var target = entry.target;

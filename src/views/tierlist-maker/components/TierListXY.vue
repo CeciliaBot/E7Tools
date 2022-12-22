@@ -33,8 +33,8 @@
         >
             <component
                 :is="isComponentType"
-                :hero="c.id"
-                :artifact="c.id"
+                :hero="getItemId(c.id)"
+                :artifact="getItemId(c.id)"
                 :skin="skin[c.id]"
                 :type="settings.fullArtwork?1:0"
                 :hover="false"
@@ -44,7 +44,7 @@
                 :size="settings.iconSize"
                 :lazyload="true"
                 :class="{'no-padding': !iconPadding}"
-                @context="itemContextMenu"
+                @context="(h,e) => itemContextMenu(c.id,e)"
             ></component>
         </span>
 
@@ -79,6 +79,7 @@ export default {
         /* From TierList.vue */
         'tierItemsMask',
         'elementType',
+        'getItemId',
         'getItemTooltip',
         'itemContextMenu',
         'skin', // skin object

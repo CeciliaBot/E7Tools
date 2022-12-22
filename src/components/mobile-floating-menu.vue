@@ -8,6 +8,9 @@ export default {
       type: Array,
       required: false,
       default: function () {return []}
+    },
+    style: {
+      required: false
     }
   },
   data: function () {
@@ -33,7 +36,7 @@ export default {
     },
   },
   render: function () {
-    return h('div', {style: {zIndex: 10, position: 'absolute'}}, this.options.length >0 ? [
+    return h('div', {style: this.style || {zIndex: 10, position: 'absolute'}}, this.options.length >0 ? [
       this.options.length ===1
       ?
         h('div', {class: 'mobile-menu ' + this.options[0].class, onClick: ()=> this.clickEvent(this.options[0]) })

@@ -27,10 +27,10 @@ export default createStore({
     pulls: null
   },
   getters: {
-    getIsMobile: (state) => {
+    getIsMobile: (state) => () => {
       return state.isMobile
     },
-    getHeroDB(state) {
+    getHeroDB: (state) => () => {
       return state.HeroDB
     },
     getHero: (state) => (id) => {
@@ -202,7 +202,7 @@ export default createStore({
     GET_RATE_UP_HISTORY: function (context) {
       return new Promise((resolve, reject) => {
         if (context.state.rateUpHistory) return resolve(context.state.rateUpHistory);
-        httpGetAsync('./data/timeline-items.json').then( (res) => {
+        httpGetAsync('./data/timeline/timeline-items.json').then( (res) => {
           var data = JSON.parse(res);
           data.forEach(item => { if (item.type!='event') item.id=bannerId(item) });
           //var today = new Date();
@@ -219,7 +219,7 @@ export default createStore({
     GET_POWDER_SHOP: function (context) {
       return new Promise((resolve, reject) => {
         if (context.state.powderShop) return resolve(context.state.powderShop);
-        httpGetAsync('./data/powder-shop.json').then( (res) => {
+        httpGetAsync('./data/timeline/powder-shop.json').then( (res) => {
           var data = JSON.parse(res);
           context.commit('updatePowderShop', data);
           resolve(data);

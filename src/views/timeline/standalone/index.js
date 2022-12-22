@@ -3,8 +3,11 @@ import App from './App.vue'
 import store from '@/store'
 import i18n from '@/i18n.js'
 
+import '@/directives/drag-drop.css'
+import '@/directives/tooltip.css'
 import tooltip from '@/directives/tooltip.js'
 import lazyloader from '@/directives/lazyloader.js'
+import '@/styles/material.css';
 import rippleEffect from '@/directives/material-ripple.js'
 
 import localePlugin from '@/plugins/language'

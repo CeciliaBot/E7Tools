@@ -9,7 +9,7 @@ export default {
     install(app) {
         const { vNode, el, destroy } = mount(languagePickerModal, {app})
         state = {node: vNode, el: el, destroy: destroy, component: vNode.component.proxy}
-        console.log(state)
+        // console.log(state)
         document.body.appendChild(el)
         app.config.globalProperties.$localePicker = window.show;
     }

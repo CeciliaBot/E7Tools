@@ -1,8 +1,5 @@
 # CeciliaBot Tools Source Code
-`This version will soon replace the version running @ ceciliabot.github.io/e7tools/`
-
-# Missing parts
-    - Camping Simulator. The camping simulator running at ceciliabot.github.io/e7tools/ is using a different code different from e7tools, that old version will be replaced once the new version is created
+This is the source code for ceciliabot.github.io
 
 ## Dependencies
 ```
@@ -12,6 +9,7 @@ Vuex
 Vue  i18n 9+
 Vue Multiselect (currently only used by the gear score calculator)
 Floating UI Dom
+js-combinatorics (for camping simulator)
 ```
 Using Vue-cli
 
@@ -40,10 +38,10 @@ Inside the new folder create a `info.json` file and add the following data:
 }
 ```
 During the build process if a folder is missing the `info.json` file that language will be skipped.
-Your result should look like this: `src/locales/<code>/info.json` (where <code> is your language code identifier)
+Your result should look like this: `src/locales/<langcode>/info.json` (where <lang-code> is your language code identifier)
 
 ## How to translate a Changelog
-You can translate a changelog by creating a file named `<code>.json` (where <code> is your language code) in the changelog folder of that specific component/route/view 
+You can translate a changelog by creating a file named `<lang-code>.json` (where <lang-code> is your language code) in the changelog folder of that specific component/route/view 
 
 # Todo
     - Split HeroDatabase.json and Camping Data into 2 different files

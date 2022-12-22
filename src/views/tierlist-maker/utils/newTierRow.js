@@ -1,7 +1,8 @@
 const alphabet = ['S','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+// ':S:',':A:',':B:',':C:',':D:'  -> for emotes
 export function newTierRow (addTo, index) {
     var i;
-    if (!index)
+    if (!index === undefined)
         i = addTo.length
     else
         i = Number(index),
@@ -14,7 +15,7 @@ export function newTierRow (addTo, index) {
         list: []
     })
 }
-export function newTierRows(n, to, index) {
+export function newTierRows(n, to, index) { // n = number of tiers to add
     if (index===undefined) index=to.length;
     for (var i=0;i<n;i++) {
         newTierRow(to, index);

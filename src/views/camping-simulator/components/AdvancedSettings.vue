@@ -1,4 +1,5 @@
 <script>
+import CharacterSelect from '@/components/CharacterSelect.vue'
 import { h, withDirectives } from 'vue'
 import Ripple from '@/directives/material-ripple.js'
 
@@ -69,7 +70,7 @@ export default {
     return {
       myHeroes: [],
       lockedHeroes: [],
-      advancedSettings: this.advanced || {},
+      advancedSettings: this.advanced,
 
       characterSelect: undefined // or slot number
     }
@@ -88,6 +89,13 @@ export default {
       if (n !== o) {
         this.advancedSettings = n;
       }
+      
+    },
+    advancedSettings: {
+      deep: true,
+      handler() {
+        this.advancedSettings.update_at = Date.now() // for reactivity of the calculate computed in index.vue
+      }
     }
     // advanced: {
     //   immediate: true,
@@ -100,6 +108,7 @@ export default {
   },
   computed: {
   },
+  renderTriggered (e) {console.log('AdvancedSettings', e)},
   methods: {
     getHeroName: function (id) {
       return this.$store.getters.getHeroName(id);
@@ -119,7 +128,7 @@ export default {
     countActive: function (cat) {
       var i = 0,t = this.advancedSettings[cat];
       for (var key in t) {
-        i += t[key]
+        i += Math.max(0, t[key])
       }
       return i;
     },
@@ -128,15 +137,15 @@ export default {
       if (!t)
         this.advancedSettings[obj] = {},
         t=this.advancedSettings[obj];
-      if (!t[key]) 
-        if (val > 0) t[key] = 0;
-        else return;
-      if (val > 0 && this.countActive(obj)>3-this.lockedHeroes.length) {
-        this.$snackbar.log({type: 'info', title: 'Can\'t select more '+obj, description: 'Can\'t lock more than 4 elements for eache category.'});
+      if (!t[key])
+        t[key] = 0;
+      if (val > 0 && t[key] > -1 && this.countActive(obj)>3-this.lockedHeroes.length) {
+        this.$snackbar.log({type: 'info', title: 'Can\'t select more '+ this.$tc('strings.'+obj, 3), description: 'Can\'t lock more than 4 elements for each category.'});
         return;
       }
       t[key] = t[key]+val;
-      if (t[key]<1) delete t[key];
+      if (t[key] < -1) t[key] = -1;
+      else if (t[key] === 0) delete t[key];
     },
     addToArray: function (cat,elem) {
       var t=this.advancedSettings;
@@ -178,18 +187,24 @@ export default {
     openCartesianSelector: function (e,i) {
       e.preventDefault();
       e.stopPropagation();
+      this.getCartesianSlot(i) // make sure it exists
       this.characterSelect = i;
     },
     closeCartesianSelector: function () {
       this.characterSelect = undefined;
+    },
+    setCartesian(list) {
+      this.advancedSettings.cartesianLock[this.characterSelect] = list
+      this.closeCartesianSelector()
     }
   },
   render: function () {
     return h('div', {class: 'advanced'}, [
+      this.characterSelect!== undefined ? h(CharacterSelect, {list: this.roster, selected: this.advancedSettings.cartesianLock[this.characterSelect], onClose: this.closeCartesianSelector, onSelected: this.setCartesian}) : null,
       h('h1', [
         this.$t('strings.advanced_settings'),
         withDirectives(
-          h('button', {class: 'material-button stroked warn', style: 'float: right;', onClick: () => this.advancedSettings = {}}, [
+          h('button', {class: 'material-button stroked warn', style: 'float: right;', onClick: () => this.$emit('reset') }, [
             h('span', this.$t('strings.reset_advanced'))
           ]),
           [[Ripple]]
@@ -207,35 +222,38 @@ export default {
           ['includeCleanser','must_include_cleanse']
         ].map(opt => {
           return h('div', [
-            h('label', {class: 'custom-check', style: {margin: 0} }, [
-              h('input', {type: 'checkbox', checked: this.advancedSettings[opt[0]]===true, onChange: (e) => this.setCheckbox(opt[0], e.target.checked) }),
-              h('span', {class: 'checkmark'}),
-              h('span', this.$t(`strings.${opt[1]}`) )
-            ])
-          ])
-        })
-      ]),
-      h('div', {class: 'advanced-settings-box'}, [
-        h('h2', `Topics:`),
-        h('i', 'Teams must include the following topics:'),
-        h('div', [
-          (this.advancedSettings.lockedTopics || []).map( topic => {
-            return withDirectives(
-              h('button', {key: 'locked-'+topic, class: 'material-button stroked', onClick: () => this.addToArray('lockedTopics', topic)}, [
-                h('span', this.$t('strings.'+topic)+' '),
-                h('i', {class: 'fas fa-times'})
+            withDirectives(
+              h('label', {class: 'custom-check', style: {margin: 0, overflow: 'hidden', marginBottom: '-7px', borderRadius: '4px'} }, [
+                h('input', {type: 'checkbox', checked: this.advancedSettings[opt[0]]===true, onChange: (e) => this.setCheckbox(opt[0], e.target.checked) }),
+                h('span', {class: 'checkmark'}),
+                h('span', this.$t(`strings.${opt[1]}`) )
               ]),
               [[Ripple]]
             )
-          }),
-          withDirectives(
-            h('button', {key: 'add-new-topic-lock', class: 'material-button stroked primary', style: {display: (this.advancedSettings.lockedTopics || []).length<4 ? '':'none'}, onClick: this.lockATopic}, [
-              h('span', 'Lock a new topic')
-            ]),
-            [[Ripple]]
-          )
-        ])
+          ])
+        })
       ]),
+      // h('div', {class: 'advanced-settings-box'}, [
+      //   h('h2', `Topics:`),
+      //   h('i', 'Teams must include the following topics:'),
+      //   h('div', [
+      //     (this.advancedSettings.lockedTopics || []).map( topic => {
+      //       return withDirectives(
+      //         h('button', {key: 'locked-'+topic, class: 'material-button stroked', onClick: () => this.addToArray('lockedTopics', topic)}, [
+      //           h('span', this.$t('strings.'+topic)+' '),
+      //           h('i', {class: 'fas fa-times'})
+      //         ]),
+      //         [[Ripple]]
+      //       )
+      //     }),
+      //     withDirectives(
+      //       h('button', {key: 'add-new-topic-lock', class: 'material-button stroked primary', style: {display: (this.advancedSettings.lockedTopics || []).length<4 ? '':'none'}, onClick: this.lockATopic}, [
+      //         h('span', 'Lock a new topic')
+      //       ]),
+      //       [[Ripple]]
+      //     )
+      //   ])
+      // ]),
       h('div', {class: 'advanced-settings-box'}, [
         h('h2', `${this.$tc(`strings.role`)}:`),
         [
@@ -255,14 +273,14 @@ export default {
               h('span', {style:{color:'green'}, onClick: () => this.setReqestedNumber('role',role[0],1) },'+')
             ])
           ]);
-        }),
-        h('div', [
-          h('label', {class: 'custom-check', style: {margin: 0}, onChange: (e) => this.setCheckbox('fixedNumberOfRoles', e.target.checked) }, [
-            h('input', {type: 'checkbox', checked: this.advancedSettings['fixedNumberOfRoles'] }),
-            h('span', {class: 'checkmark'}),
-            h('span', this.$t(`strings.must_be_exact_number_of`, {item: this.$tc(`strings.role`,2)}))
-          ])
-        ])
+        })//,
+        // h('div', [
+        //   h('label', {class: 'custom-check', style: {margin: 0}, onChange: (e) => this.setCheckbox('fixedNumberOfRoles', e.target.checked) }, [
+        //     h('input', {type: 'checkbox', checked: this.advancedSettings['fixedNumberOfRoles'] }),
+        //     h('span', {class: 'checkmark'}),
+        //     h('span', this.$t(`strings.must_be_exact_number_of`, {item: this.$tc(`strings.role`,2)}))
+        //   ])
+        // ])
       ]),
       h('div', {class: 'advanced-settings-box'}, [
         h('h2', `${this.$tc(`strings.attribute`)}:`),
@@ -282,14 +300,14 @@ export default {
               h('span', {style:{color:'green'}, onClick: () => this.setReqestedNumber('attribute',role[0],1) },'+')
             ])
           ]);
-        }),
-        h('div', [
-          h('label', {class: 'custom-check', style: {margin: 0}, onChange: (e) => this.setCheckbox('fixedNumberOfAttributes', e.target.checked) }, [
-            h('input', {type: 'checkbox', checked: this.advancedSettings['fixedNumberOfAttributes'] }),
-            h('span', {class: 'checkmark'}),
-            h('span', this.$t(`strings.must_be_exact_number_of`, {item: this.$tc(`strings.attribute`,2)}))
-          ])
-        ])
+        })//,
+        // h('div', [
+        //   h('label', {class: 'custom-check', style: {margin: 0}, onChange: (e) => this.setCheckbox('fixedNumberOfAttributes', e.target.checked) }, [
+        //     h('input', {type: 'checkbox', checked: this.advancedSettings['fixedNumberOfAttributes'] }),
+        //     h('span', {class: 'checkmark'}),
+        //     h('span', this.$t(`strings.must_be_exact_number_of`, {item: this.$tc(`strings.attribute`,2)}))
+        //   ])
+        // ])
       ]),
       h('div', {class: 'advanced-settings-box'}, [
         h('h2', `${this.$tc(`strings.buff`, 2)}:`),

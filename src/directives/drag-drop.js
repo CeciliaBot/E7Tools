@@ -1,4 +1,3 @@
-import './drag-drop.css'
 /*
     HOW TO USE drag
     Add a vue directive to the element that will have the draggin trigger and pass the following modifiers:
@@ -24,7 +23,7 @@ import './drag-drop.css'
 
 
 
-export var state; // can be imported to know if it's dragging and other stuff
+export var state;
 var originalParent;
 var nextSibling;
 var placeholder;
@@ -38,14 +37,7 @@ var timer = function() {
             return time;
         }
     }
-};
-/* Helpers */
-// function findParent (el, callback) {
-//   while (el.parentNode) {
-//     el=el.parentNode;
-//     if (el && callback(el)) return el;
-//   }
-// }
+}
 
 function createPlaceholder (p,c) {
     placeholder = c.cloneNode(true);
@@ -314,5 +306,3 @@ export const drop = {
     // Reparenting complete!
 
 */
-
-

@@ -167,7 +167,7 @@ export default {
 	padding: 20px 0;
 	max-height: 300px;
 	background-color: #1d1d21;
-    color: white;
+  color: white;
 	overflow-y: auto;
 	order: 1;
 	margin: 0 10px;

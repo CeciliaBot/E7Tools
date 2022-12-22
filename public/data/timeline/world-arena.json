@@ -1,0 +1,117 @@
+[
+    {
+        "nid": [
+            5123027,
+            5642185
+        ],
+        "type": "season",
+        "dt": [
+            1587024000000,
+            1594263540000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/745532036dba4a1d9fc8f5e1564bbc01/f7b24a9494404e659c0bd1ef35b4c73c_1586856496.jpg",
+        "name": "World Arena Showdown Season (Season 1)"
+    },
+    {
+        "nid": [
+            5982429,
+            6376959
+        ],
+        "type": "season",
+        "dt": [
+            1599188400000,
+            1606359540000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/fa9b8fc5db5a4c64a4735c65948a3235/99638d3f6831404f96dfc5c40e0e99b5_1599029463.jpg",
+        "name": "World Arena Endeavor Season (Season 2)"
+    },
+    {
+        "nid": [
+            6529791,
+            6950407
+        ],
+        "type": "season",
+        "dt": [
+            1608865200000,
+            1616036340000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/7c7d943bc48d48be9d2100c280a07a3b/e283844fbe9a41a09e043d3377c09cbe_1608698438.jpg",
+        "name": "World Arena Ardor Season (Season 3)"
+    },
+    {
+        "nid": [
+            7036881,
+            7315387
+        ],
+        "type": "season",
+        "dt": [
+            1618542000000,
+            1625713140000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/47013d833c224253b7ab5f41758cd7d4/f54b258efd40480ebcb98d188cb5bd06_1618304900.jpg",
+        "name": "World Arena 「Skyward Season」 (Season 4)"
+    },
+    {
+        "nid": [
+            7527582,
+            7927301
+        ],
+        "type": "season",
+        "dt": [
+            1628917200000,
+            1636167600000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/efe4c23bd5eb4366a5b3c781317429ae/cc74c03074c044879451281af8937deb_1628661153.jpg",
+        "name": "World Arena Ambition Season (Season 5)"
+    },
+    {
+        "nid": [
+            8004157,
+            8259578
+        ],
+        "type": "season",
+        "dt": [
+            1638594000000,
+            1645844400000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/f4b44248102f4a5d99ad00e886f701fe/a0b1fdc81f6544dda322ff1bb300f14f_1638261839.jpg",
+        "name": "World Arena 「Conviction Season」 (Season 6)"
+    },
+    {
+        "nid": [
+            8356177,
+            8568439
+        ],
+        "type": "season",
+        "dt": [
+            1648720800000,
+            1655521200000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/d2d54afd094f4ae5a7ffa2037aa806c1/4148020aad4a4b8a800cf239c0785bc7_1648621801.jpg",
+        "name": "World Arena Resolution Season (Season 7)"
+    },
+    {
+        "nid": [
+            8660321,
+            8950283
+        ],
+        "type": "season",
+        "dt": [
+            1658552400000,
+            1665802799000
+        ],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/application_no/96001/default/COMMUNITY9e500d7d42114973815f083f265c266d/0b3311aafa534dffbb9df76a93b17e17.jpg",
+        "name": "World Arena Conquest Season (Season 8)"
+    },
+    {
+        "nid": [
+            9010034
+        ],
+        "type": "season",
+        "dt": [
+            1668229200000
+        ],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/f8d339f53c40445886b4485e8ba97b9c/d1feeaec27fa466bb290be636e5a0193.jpg",
+        "name": "World Arena Triumph Season (Season 9)"
+    }
+]

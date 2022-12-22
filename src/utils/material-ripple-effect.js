@@ -4,12 +4,12 @@
         position: relative;
 */
 
-import '@/styles/material.css';
-
 const events = ['mouseup','touchend'];
 
 function ripple (event) {
     const button = event.currentTarget;
+    if (button.disabled)
+        return;
     let clientX = event.clientX, clientY = event.clientY;
     if (event.touches) {
         if (button.getAttribute('disabled')) return;

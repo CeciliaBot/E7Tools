@@ -69,7 +69,7 @@ export default {
     if (!this.hero) return;
     //console.log('Rerendering hero', this.name)
     return h('div', {class: ['hero-icon-comp noselect', {hoverable: this.hover}], style: [this.style, {'font-size': this.size + 'px'}], onClick: event => {event.target.className.indexOf('remove') !=-1 ? this.$emit('remove', this.hero, event) : this.$emit('click', this.hero, event)}, onContextmenu: event => {event.preventDefault(); this.$emit('context',this.hero, event) } }, [
-      h('div', {style: {position: 'relative', height: '1em', 'min-width': (1+(this.removable ? 0.35 : 0))+'em', 'text-align': 'start', 'pointer-events': 'none'}}, [
+      h('div', {style: {position: 'relative', height: '1em', 'min-width': (1+(this.removable ? 0.35 : 0))+'em', 'text-align': 'start', 'pointer-events': 'none', zIndex: 0}}, [
         this.selected ? [
           h('div', {class: 'circle', style: {'animation-delay': '-3s'}}),
           h('div', {class: 'circle', style: {'animation-delay': '-2s'}}),

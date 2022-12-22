@@ -10,7 +10,7 @@
             </div>
             <div>
                 <h3>{{ $t('strings.label_text') }}:</h3>
-                <EmoteableDiv :value="localTier.name" :icon="true" @update="localTier.name=$event" style="display: inline-block; border: solid 1px; width: 100%; max-width: 470px; height: 70px; font-size: 16px;" />
+                <EmoteableDiv :value="localTier.name" :icon="true" @update="localTier.name=$event" style="display: inline-block; border: solid 1px; width: 100%; max-width: 470px; height: 70px; font-size: 16px; overflow: auto;" />
             </div>
             <div style="margin-top: 20px;">
                 <button class="flat-button material-button basic basic" v-ripple-effect @click="$emit('newAbove', localTier)"><span>{{ $t('strings.new_tier_above') }}</span></button>

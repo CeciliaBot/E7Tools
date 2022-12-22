@@ -3,8 +3,9 @@
         <span v-for="(c,i) in list" :key="'item-'+c" v-show="tierItemsMask[c]" class="tier-item" v-drag="{drops: ['tierlist-element'], index: i, item: c, list: list}" @dragclick="itemContextMenu(c, $event)" v-tooltip="()=>getItemTooltip(c)">
             <component
                 :is="isComponentType"
-                :hero="c"
-                :artifact="c"
+                :data-item="c"
+                :hero="getItemId(c)"
+                :artifact="getItemId(c)"
                 :skin="skin[c]"
                 :type="settings.fullArtwork?1:0"
                 :hover="false"
@@ -14,7 +15,7 @@
                 :size="settings.iconSize"
                 :lazyload="true"
                 :class="{'no-padding': !iconPadding}"
-                @context="itemContextMenu"
+                @context="(h,e) => itemContextMenu(c, e, list)"
             ></component>
         </span>
     </div>
@@ -42,6 +43,7 @@ export default {
         /* From TierList.vue */
         'tierItemsMask',
         'elementType',
+        'getItemId',
         'getItemTooltip',
         'itemContextMenu',
         'skin', // skin object

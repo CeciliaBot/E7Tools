@@ -8,7 +8,7 @@ function getSuggestionBox (el) {
     var div = document.createElement( 'div' )
     div.classList.add('hide-scrollbar')
     div.onmousedown = (e) => e.preventDefault() // keep focus on the input box
-    div.style="background:  var(--background-color-secondary); padding: 5px 0; border-radius: 8px; z-index: 100; cursor: pointer; position: absolute; top: 0; left: 0; transform: translate(-100%, -100%); max-height: 200px; overflow: auto;"
+    div.style="background: var(--background-color-secondary); padding: 5px 0; border-radius: 8px; z-index: 100; cursor: pointer; position: absolute; top: 0; left: 0; transform: translate(-100%, -100%); max-height: 200px; overflow: auto;"
     suggestionWeak.set(el, {el: div, results: [], index: 0, matchLength: 0})
     document.body.appendChild(div)
     return div;
@@ -44,7 +44,7 @@ function clickSuggestion (e, ref) {
 
 export function liveHtmlToEmote (e) {
     if ([17,18,16,20].includes(e.keyCode)) return; // Shift, control, alt, caps lock
-    if (e.key===':' || e.keyCode==229) { // = : ..... e.key doesn't work on mobile
+    if (e.key===':' || e.keyCode==229) {
         deleteSuggestionBox(e)
         window.requestAnimationFrame( () => {
             var cart = getSelection();
@@ -67,23 +67,25 @@ export function liveHtmlToEmote (e) {
                 }
             }
         }) //animation frame
+    } else if ( e.keyCode === 37 || e.keyCode===39 ) { // on arrow key left or right remove the suggestion box
+        deleteSuggestionBox(e)
     } else if ([38,40,13,9].includes(e.keyCode)) {
         var data = suggestionWeak.get(e.target);
         if (!data || !data.results.length) return;
         if (!data.index) data.index = 0;
         if (e.keyCode === 38) { // up;
             e.preventDefault()
-            data.el.children[data.index].classList.remove('active');
+            data.el.children[data.index].style.background = '';
             data.index--
             if (data.index<0) data.index = data.results.length-1;
-            data.el.children[data.index].classList.add('active');
+            data.el.children[data.index].style.background = 'black';
             data.el.children[data.index].scrollIntoView(false);
         } else if (e.keyCode === 40) { // down;
             e.preventDefault()
-            data.el.children[data.index].classList.remove('active');
+            data.el.children[data.index].style.background = '';
             data.index++
             if (data.index>data.results.length-1) data.index = 0;
-            data.el.children[data.index].classList.add('active');
+            data.el.children[data.index].style.background = 'black';
             data.el.children[data.index].scrollIntoView(false);
         } else if (e.keyCode === 13 || e.keyCode === 9) { // enter or tab
             e.preventDefault()
@@ -121,8 +123,9 @@ export function liveHtmlToEmote (e) {
                         let block = document.createElement( 'div' )
                         block.style='padding: 0 5px';
                         block.onclick = (ev) => clickSuggestion(ev, e.target);
-                        block.onmouseenter = (e) => {autocomplete.children[data.index].classList.remove('active'); data.index = results.indexOf(res); e.target.classList.add('active')}
+                        block.onmouseenter = (e) => {autocomplete.children[data.index].style.background = ''; data.index = results.indexOf(res); e.target.style.background = 'black'; }
                         let emote = buildEmoteElement(res.code);
+                        emote.style.minWidth = '1.5em';
                         block.appendChild(emote);
                         var name = document.createTextNode(res.code)
                         block.appendChild(name)
@@ -134,11 +137,9 @@ export function liveHtmlToEmote (e) {
                         return
                     } else {
                         autocomplete.style.display = "block"
-                        //autocomplete.innerHTML = inner.join('')
                     }
-
+                    autocomplete.children[data.index].style.background = 'black';
                     window.requestAnimationFrame(()=>{
-                        autocomplete.children[data.index].classList.add('active');
                         computePosition(cart, autocomplete, {
                             strategy: 'absolute',
                             placement: 'top',

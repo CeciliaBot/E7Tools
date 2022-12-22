@@ -2,10 +2,10 @@
 /* This is a port to vue 3 of the old version, this will probably remade sometime in the future */
 
 import { h, withDirectives } from 'vue'
+import Changelog from '@/components/changelog.vue'
 import tooltip from '@/directives/tooltip.js'
 import lazyImage from '@/directives/lazyloader.js'
 import shopOverlay from './components/shop-overlay.vue'
-import Changelog from '@/components/changelog.vue'
 import MobileFloatingMenu from '@/components/mobile-floating-menu.vue'
 import ctrlf from './components/ctrlf.vue'
 import ajax from '@/utils/ajax.js'
@@ -40,24 +40,26 @@ export default {
     created: function () {
         this.toggleLoading(true, 'downloading');
         Promise.all([
-            this.$store.dispatch('GET_RATE_UP_HISTORY'),     // get full list of known banners
+            //this.$store.dispatch('GET_RATE_UP_HISTORY'),     // get full list of known banners
+            ajax('./data/timeline/covenant.json').catch( () => {return '[]'}),
+            ajax('./data/timeline/mystic.json').catch( () => {return '[]'}),
             this.$store.dispatch('GET_HERO_DB'),       // not assined but this will update the $store
             this.$store.dispatch('GET_ARTIFACT_DB')
         ]).then(data => {
-            this.events=[].concat(data[0]/*,JSON.parse(data[1])*/);
+            this.events=this.compatibilityModeDates( [].concat(JSON.parse(data[0]), JSON.parse(data[1])) )
             this.today = new Date().toISOString().substr(0, 10)
             this.$nextTick(() => {
                 this.toggleLoading(false);
             })
 
             Promise.all([
-                ajax('./data/powder-shop.json').catch( () => {return '[]'}),
-                ajax('./data/galaxy-coin-shop.json').catch( () => {return '[]'}),
-                ajax('./data/covenant-coin-shop.json').catch( () => {return '[]'}),
+                ajax('./data/timeline/powder-shop.json').catch( () => {return '[]'}),
+                ajax('./data/timeline/galaxy-coin-shop.json').catch( () => {return '[]'}),
+                ajax('./data/timeline/covenant-coin-shop.json').catch( () => {return '[]'}),
             ]).then(data => {
-                this.powderShop = JSON.parse(data[0]);
-                this.galaxyShop = JSON.parse(data[1]);
-                this.covenantShop = JSON.parse(data[2]);
+                this.powderShop = this.compatibilityModeDates( JSON.parse(data[0]) )
+                this.galaxyShop = this.compatibilityModeDates( JSON.parse(data[1]) )
+                this.covenantShop = this.compatibilityModeDates( JSON.parse(data[2]) )
             });
             /*
             ajax('./data/balance.json').then(data => {
@@ -123,6 +125,16 @@ export default {
         }
     },
     methods: {
+        compatibilityModeDates(events) {
+            var pad = (n) => {return n<10 ? '0'+n : n};
+            events.forEach(rotation => {
+                rotation.dt = (rotation.dt || []).map(d => {
+                    var date = new Date(d)
+                    return date.getUTCFullYear() + '-' + pad(date.getUTCMonth()+1) + '-' + pad(date.getUTCDate())
+                })
+            })
+            return events
+        },
         home: function () {
             this.$store.commit('toggleMainMenu');             // open and close the main menu for e7tools
         },

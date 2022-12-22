@@ -1,8 +1,8 @@
 <template>
     <div class="center-modal" @click="outOfBounds">
         <div class="flat-modal">
-            <h1 class="n-window-title"><slot name="title"></slot></h1>
-            <div style="text-align: center; padding: 30px 10px;"><slot></slot></div>
+            <h1 v-if="title" class="n-window-title"><slot name="title"></slot></h1>
+            <div style="text-align: center;"><slot></slot></div>
         </div>
     </div>
 </template>
@@ -10,6 +10,12 @@
 export default {
     emits: ['close'],
     name: 'FlatModal',
+    props: {
+        title: {
+            type: Boolean,
+            default: true
+        }
+    },
     methods: {
         outOfBounds(e) {
             if (e.target===e.currentTarget)

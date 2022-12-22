@@ -1,6 +1,6 @@
 <template>
   <div class="container" v-cloak>
-    <Main :standalone="true" />
+    <MainComponent :standalone="true" />
   </div>
   <!-- LOADING COMPONENTS ETC -->
   <div id="loading" class="noselect loading-container animatefade" v-show="loading" @contextmenu="(e)=>{return e.preventDefault();}" v-cloak>
@@ -33,7 +33,7 @@ function setScreenType () {
 window.onresize = setScreenType;
 export default {
   components: {
-    Main: mainComponent
+    MainComponent: mainComponent
   },
   data: function () {
     return {
@@ -78,6 +78,7 @@ export default {
     })
   }
 }
+//
 </script>
 
 <style src='@/styles/main.css'></style>

@@ -1,0 +1,169 @@
+[
+    {
+        "nid": [
+            0,
+            2637316
+        ],
+        "type": "season",
+        "dt": [
+            1541030400000,
+            1550620800000
+        ],
+        "name": "Seasaon 1"
+    },
+    {
+        "nid": [
+            3068522,
+            3586361
+        ],
+        "type": "season",
+        "dt": [
+            1554112800000,
+            1564318800000
+        ],
+        "name": "Seasaon 2"
+    },
+    {
+        "nid": [
+            3943909,
+            4213346
+        ],
+        "type": "season",
+        "dt": [
+            1568023200000,
+            1573707600000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/387bf8cfb2f64b3a8ef7ba570a365925/9475c1bac15d454c9bbbdadad5217e6f_1567592664.png",
+        "name": "Seasaon 3"
+    },
+    {
+        "nid": [
+            4314868,
+            4711611
+        ],
+        "type": "season",
+        "dt": [
+            1575248400000,
+            1582520400000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/3e66625a33b54b3a9b6a03579474f24b/e7fcff4bc92743698daa948eecdd629e_1574843417.jpg",
+        "name": "Arena Honor Season (Seasaon 4)"
+    },
+    {
+        "nid": [
+            4945062,
+            5500537
+        ],
+        "type": "season",
+        "dt": [
+            1584957600000,
+            1592197200000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/ec4e4253e2424dcc96ac9fa4f1c79caa/a65eb3a703a8452d827b9d7bd2bf0576_1584499050.jpg",
+        "name": "Arena Determination Season (Seasaon 5)"
+    },
+    {
+        "nid": [
+            5722308,
+            6212189
+        ],
+        "type": "season",
+        "dt": [
+            1595844000000,
+            1603083600000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/4cbb7c328cc34fc485f8c7f44beee6be/78e72e6cff47480bbc1e49c4824d0a7b_1595394002.jpg",
+        "name": "Arena Endeavor Season (Seasaon 6)"
+    },
+    {
+        "nid": [
+            6320819,
+            6767979
+        ],
+        "type": "season",
+        "dt": [
+            1605520800000,
+            1612760400000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/1aa710938aaf4e5d86bdc904ca5127b0/690df737e966480bb90d8acc3e76fcc7_1605080579.jpg",
+        "name": "Arena Ardor Season (Seasaon 7)"
+    },
+    {
+        "nid": [
+            6901468,
+            7167497
+        ],
+        "type": "season",
+        "dt": [
+            1615197600000,
+            1622437200000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/a035d0647f0d46daa1ae10e9b64d7e71/f387ff65944d49f1aab189f6d8e8fadd_1614747148.jpg",
+        "name": "Arena Skyward Season (Seasaon 8)"
+    },
+    {
+        "nid": [
+            7265112,
+            7743146
+        ],
+        "type": "season",
+        "dt": [
+            1624874400000,
+            1632114000000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/7fdf888f26ed408cad97a1ccf20b107c/c2373203480b45e6a7249236c54a4a2d_1624437210.jpg",
+        "name": "Arena Ambition Season (Seasaon 9)"
+    },
+    {
+        "nid": [
+            7854539,
+            8103944
+        ],
+        "type": "season",
+        "dt": [
+            1634551200000,
+            1641790800000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/956ac676ee8849ae8db433050cbcd177/c4ca9e15b4494a89b03c77e6304b49cf_1634100996.jpg",
+        "name": "Arena Conviction Season (Seasaon 10)"
+    },
+    {
+        "nid": [
+            8172747,
+            8452182
+        ],
+        "type": "season",
+        "dt": [
+            1644228000000,
+            1651467600000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/b2902137367c417eb51351ee0e7e5793/807f9188b39d45f5a86c75e8dcab293f_1643362581.jpg",
+        "name": "Arena Resolution Season (Seasaon 11)"
+    },
+    {
+        "nid": [
+            8519300,
+            8772728
+        ],
+        "type": "season",
+        "dt": [
+            1653904800000,
+            1661144400000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/42605a48217c4fc7a0d14e2bc5f388ac/f5abf20c939d42eab7942f6b7ad71cc6_1653454913.jpg",
+        "name": "Arena Conquest Season (Seasaon 12)"
+    },
+    {
+        "nid": [
+            8875623,
+            9084838
+        ],
+        "type": "season",
+        "dt": [
+            1663581600000,
+            1670821200000
+        ],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/application_no/96001/default/COMMUNITY7126dfa31f684522adad3c9faf3c0c8f/ee54cf9aea224212b28960f380f9b11a.jpg",
+        "name": "Arena Triumph Season (Seasaon 13)"
+    }
+]

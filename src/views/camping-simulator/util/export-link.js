@@ -1,27 +1,27 @@
-export function cleanUrl (router) {
-    console.log(router)
+export function cleanUrl () {
     let url = window.location.href.split('?')[0];
-    let segments = url.split('#'), maxSegments = router && router.mode==='hash' ? 2 : 1;
-    while (segments.length > maxSegments) segments.pop();
+    let segments = url.split('#')
+    while (segments.length > 1 && !/^\/\w+/.test(segments[segments.length-1]) ) segments.pop();
     return segments.join('#')
 }
-export function generateUrl (_this) {
+export function generateUrl (list, heroList, _this) {
+    console.log(_this)
     window.$promiseAlert(
         _this.$t('strings.generate_export_url'),
         new Promise ( resolve => {
             setTimeout( () => {
                 resolve(
                 `<div style="height: 100%; overflow: hidden;">
-                    <textarea readonly style="height: 100%; width: 100%; word-break: break-all;resize: none;" onmouseup="event.preventDefault()" onclick="event.target.select();document.execCommand('copy'); $snackbar.show({type: 'info', title: 'Info', description: '${_this.$t('strings.copied_to_clipboard')}'})">${cleanUrl(_this.$router)}#roster=${exportLink(_this.roster, _this.$store.state.HeroDB)}&version=${(_this.version || 1)}</textarea>
+                    <textarea readonly style="height: 100%; width: 100%; word-break: break-all;resize: none;" onmouseup="event.preventDefault()" onclick="event.target.select();document.execCommand('copy'); window.$snackbar.log({type: 'info', title: 'Info', description: '${_this.$t('strings.copied_to_clipboard')}'})">${cleanUrl()}#roster=${exportLink(list, heroList)}&version=${(_this.VERSION || 1)}</textarea>
                 </div>`
                 )
-            }, 2000)
+            }, 1000) // let the animation play
         }),
         [_this.$t('strings.back')]
     )
 }
-export function exportLink (roster, database) {
-    let numbers = Object.keys(database).map( c => {return roster.includes(c) ? 1 : 0})
+export function exportLink (roster, availableList) {
+    let numbers = availableList.map( c => {return roster.includes(c) ? 1 : 0})
     let newNumbers = [];
     numbers.forEach( (n,i) => {
         if (i>0 && numbers[i-1]===n) {
@@ -36,11 +36,11 @@ export function exportLink (roster, database) {
 export function decodeOldLink (link) {
     return JSON.parse(atob(link));
 }
-export function decodeLink (link, database) {
+export function decodeLink (link, availableList) {
     let linkSplit = link.split(/x/)
     let shouldAdd = true;
     
-    let heroes = Object.keys(database)
+    let heroes = availableList
     let roster = [], index = 0;
     for (let i=0;i<linkSplit.length; i++) {
         let len = parseInt(linkSplit[i])

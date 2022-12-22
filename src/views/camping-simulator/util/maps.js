@@ -4,12 +4,6 @@ export default [
         'background': 'rgba(255, 0, 0, 0.133)',
         en: [
             {
-                src: 'paolo.png',
-                description: 'does not exist',
-                author: '',
-                size: [1398, 1080]
-            },
-            {
                 src: 'https://ceciliabot.github.io/img/Raid-Normal_en.png',
                 description: 'Normal Raid Map',
                 author: '',
@@ -22,16 +16,30 @@ export default [
                 size: [1101, 1080]
             }
         ],
-        'zh': [
+        'zh-CN': [
             {
                 src: 'https://raw.githubusercontent.com/CeciliaBot/CeciliaBot.github.io/master/img/Raid-Normal_zht.png',
-                description: '',
+                description: '普通',
                 author: '',
                 size: [1398, 1080]
             },
             {
                 src: 'https://raw.githubusercontent.com/CeciliaBot/CeciliaBot.github.io/master/img/Raid-Hell_zht.png',
-                description: '',
+                description: '地狱',
+                author: '',
+                size: [799, 593]
+            }
+        ],
+        'zh-TW': [
+            {
+                src: 'https://raw.githubusercontent.com/CeciliaBot/CeciliaBot.github.io/master/img/Raid-Normal_zht.png',
+                description: '普通',
+                author: '',
+                size: [1398, 1080]
+            },
+            {
+                src: 'https://raw.githubusercontent.com/CeciliaBot/CeciliaBot.github.io/master/img/Raid-Hell_zht.png',
+                description: '地狱',
                 author: '',
                 size: [799, 593]
             }
@@ -41,6 +49,7 @@ export default [
         name: 'nixied_sanctum',
         'background': 'rgba(15, 255, 255, 0.133)',
         description_en: 'Nixied\'s maps by game8. They have a full guide here:<br><a href ="https://game8.co/games/Epic-Seven/archives/284193">https://game8.co/games/Epic-Seven/archives/284193</a>',
+        'description_zh-CN': '尼克斯特的圣所地图 by game8. 点击查看详细说明:<br><a href ="https://game8.co/games/Epic-Seven/archives/284193">https://game8.co/games/Epic-Seven/archives/284193</a>',
         en: [
             {
                 src: 'https://img.game8.co/3235580/df915e10aa933192c93773c9ee67c6ed.png/original',
@@ -73,29 +82,29 @@ export default [
                 size: [2318, 2160]
             }
         ]
-    },
-    {
-        name: 'test gallery',
-        description_en: 'Photogallery.vue test images',
-        en: [
-            {
-                src: 'https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg'
-            },
-            {
-                src: 'https://farm6.staticflickr.com/5591/15008867125_b61960af01_h.jpg'
-            },
-            {
-                src: 'https://farm4.staticflickr.com/3902/14985871946_24f47d4b53_h.jpg'
-            },
-            {
-                src: 'https://farm6.staticflickr.com/5584/14985868676_b51baa4071_h.jpg'
-            },
-            {
-                src: 'https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg'
-            },
-            {
-                src: 'https://www.pngitem.com/pimgs/m/249-2498312_epic-seven-logo-png-transparent-png.png'
-            }
-        ]
-    }
+    }//,
+    // {
+    //     name: 'test gallery',
+    //     description_en: 'Photogallery.vue test images',
+    //     en: [
+    //         {
+    //             src: 'https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg'
+    //         },
+    //         {
+    //             src: 'https://farm6.staticflickr.com/5591/15008867125_b61960af01_h.jpg'
+    //         },
+    //         {
+    //             src: 'https://farm4.staticflickr.com/3902/14985871946_24f47d4b53_h.jpg'
+    //         },
+    //         {
+    //             src: 'https://farm6.staticflickr.com/5584/14985868676_b51baa4071_h.jpg'
+    //         },
+    //         {
+    //             src: 'https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg'
+    //         },
+    //         {
+    //             src: 'https://www.pngitem.com/pimgs/m/249-2498312_epic-seven-logo-png-transparent-png.png'
+    //         }
+    //     ]
+    // }
 ]

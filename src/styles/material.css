@@ -1,7 +1,7 @@
 .material-button {
     display: inline-block;
     vertical-align: middle;
-    font-family: 'Roboto';
+    /* font-family: 'Roboto'; */
     font-size: 14px;
     font-weight: 500;
     padding: 0em 1em;
@@ -50,6 +50,18 @@
     color: #ff4081;
 }
 
+.material-button.basic,
+.material-button.stroked {
+    background-color: transparent;
+    color: inherit;
+}
+.material-button.basic {
+    border: none;
+}
+
+.material-button.flat.basic {
+    background-color: var(--background-modifier-darken-alpha)
+}
 .material-button.flat.primary {
     color: #fff;
     background-color: #2196f3;
@@ -67,16 +79,8 @@
     background-color: #ff4081;
 }
 
-.material-button.basic,
-.material-button.stroked {
-    border: none;
-    background-color: transparent;
-    color: inherit;
-    /*box-shadow: none;*/
-}
-
 @media (hover: hover) {
-    .material-button.basic:hover,
+    .material-button.basic:hover:not(.flat),
     .material-button.stroked:hover {
         background-color: #00000013;
     }
@@ -99,21 +103,24 @@
 }
 
 .material-button:disabled {
-    color: #00000042;
-    cursor: initial;
+    color: rgba(0,0,0,0.38);
+    cursor: default !important;
+    font-weight: 500;
     box-shadow: none;
-}
-.material-button:disabled {
-    background-color: #0000001f !important;
+    background-color: rgba(0,0,0,0.12) !important;
 }
 .material-button.basic:disabled,
 .material-button.stroked:disabled {  
     background-color: transparent !important;
 }
-.material-button:disabled {
-    color: #0000001f !important;
+.material-button.flat:disabled {
+    color: #2020201f !important;
 }
 
+.material-button.flat:disabled {
+    background-color: #b8b8b8 !important;
+    color: rgb(77, 77, 77) !important;
+}
 
 .ripple {
     vertical-align: inherit;

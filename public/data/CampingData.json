@@ -64,7 +64,10 @@
         "debuffs": [
             18
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "ambitious-tywin": {
         "camping": {
@@ -132,7 +135,9 @@
             19
         ],
         "common": [
-            56
+            56,
+            "aoe",
+            "cleanse"
         ]
     },
     "apocalypse-ravi": {
@@ -265,7 +270,9 @@
             31,
             20
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "arbiter-vildred": {
         "camping": {
@@ -325,7 +332,9 @@
         "debuffs": [
             22
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "archdemons-shadow": {
         "camping": {
@@ -396,7 +405,8 @@
             31
         ],
         "common": [
-            35
+            35,
+            "aoe"
         ]
     },
     "baal-sezan": {
@@ -464,7 +474,9 @@
             27,
             18
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "baiken": {
         "camping": {
@@ -608,7 +620,9 @@
             29
         ],
         "common": [
-            36
+            36,
+            "aoe",
+            "dispel"
         ]
     },
     "bellona": {
@@ -673,7 +687,10 @@
         "debuffs": [
             18
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "blood-moon-haste": {
         "camping": {
@@ -738,7 +755,8 @@
         ],
         "debuffs": [],
         "common": [
-            34
+            34,
+            "dispel"
         ]
     },
     "bomb-model-kanna": {
@@ -801,7 +819,10 @@
             3
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "briar-witch-iseria": {
         "camping": {
@@ -870,7 +891,10 @@
             29,
             17
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "cecilia": {
         "camping": {
@@ -944,7 +968,10 @@
             17,
             25
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "celine": {
         "camping": {
@@ -1004,7 +1031,9 @@
             10
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "cerise": {
         "camping": {
@@ -1078,7 +1107,8 @@
             61
         ],
         "common": [
-            33
+            33,
+            "aoe"
         ]
     },
     "cermia": {
@@ -1216,7 +1246,10 @@
         "debuffs": [
             17
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "charlotte": {
         "camping": {
@@ -1285,7 +1318,9 @@
             17,
             27
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "chloe": {
         "camping": {
@@ -1353,7 +1388,9 @@
             20,
             30
         ],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "choux": {
         "camping": {
@@ -1418,7 +1455,8 @@
         ],
         "debuffs": [],
         "common": [
-            34
+            34,
+            "aoe"
         ]
     },
     "dark-corvus": {
@@ -1543,7 +1581,10 @@
         "debuffs": [
             20
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "cleanse"
+        ]
     },
     "designer-lilibet": {
         "camping": {
@@ -1603,7 +1644,10 @@
         "debuffs": [
             28
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "cleanse"
+        ]
     },
     "destina": {
         "camping": {
@@ -1662,7 +1706,8 @@
         "buffs": [],
         "debuffs": [],
         "common": [
-            33
+            33,
+            "cleanse"
         ]
     },
     "diene": {
@@ -1728,7 +1773,9 @@
             40
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "dizzy": {
         "camping": {
@@ -1795,7 +1842,9 @@
             17,
             22
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "eda": {
         "camping": {
@@ -1858,7 +1907,10 @@
             27,
             20
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "elena": {
         "camping": {
@@ -1920,7 +1972,10 @@
             57
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe",
+            "cleanse"
+        ]
     },
     "elphelt": {
         "camping": {
@@ -1997,7 +2052,8 @@
             18
         ],
         "common": [
-            35
+            35,
+            "dispel"
         ]
     },
     "ervalen": {
@@ -2139,7 +2195,9 @@
             29,
             65
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "faithless-lidica": {
         "camping": {
@@ -2203,7 +2261,10 @@
         "debuffs": [
             22
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "fallen-cecilia": {
         "camping": {
@@ -2270,7 +2331,9 @@
         "debuffs": [
             25
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "flan": {
         "camping": {
@@ -2338,7 +2401,9 @@
             18,
             27
         ],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "haste": {
         "camping": {
@@ -2409,7 +2474,8 @@
             32
         ],
         "common": [
-            51
+            51,
+            "aoe"
         ]
     },
     "holiday-yufine": {
@@ -2474,7 +2540,10 @@
         "debuffs": [
             31
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "cleanse"
+        ]
     },
     "iseria": {
         "camping": {
@@ -2542,7 +2611,8 @@
             18
         ],
         "common": [
-            35
+            35,
+            "dispel"
         ]
     },
     "judge-kise": {
@@ -2603,7 +2673,9 @@
         "debuffs": [
             18
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "kawerik": {
         "camping": {
@@ -2676,7 +2748,9 @@
             28
         ],
         "common": [
-            34
+            34,
+            "aoe",
+            "dispel"
         ]
     },
     "kayron": {
@@ -2744,7 +2818,9 @@
         "debuffs": [
             22
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "ken": {
         "camping": {
@@ -2898,7 +2974,8 @@
         ],
         "debuffs": [],
         "common": [
-            34
+            34,
+            "aoe"
         ]
     },
     "krau": {
@@ -3033,7 +3110,8 @@
         ],
         "debuffs": [],
         "common": [
-            34
+            34,
+            "aoe"
         ]
     },
     "last-rider-krau": {
@@ -3103,7 +3181,8 @@
         ],
         "debuffs": [],
         "common": [
-            34
+            34,
+            "aoe"
         ]
     },
     "lidica": {
@@ -3173,7 +3252,10 @@
             27,
             19
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "lilias": {
         "camping": {
@@ -3240,7 +3322,9 @@
             25
         ],
         "common": [
-            33
+            33,
+            "aoe",
+            "cleanse"
         ]
     },
     "lilibet": {
@@ -3448,7 +3532,9 @@
             20
         ],
         "common": [
-            34
+            34,
+            "aoe",
+            "dispel"
         ]
     },
     "luluca": {
@@ -3518,7 +3604,9 @@
             18,
             18
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "luna": {
         "camping": {
@@ -3711,7 +3799,9 @@
             17,
             18
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "mediator-kawerik": {
         "camping": {
@@ -3850,7 +3940,8 @@
             54
         ],
         "common": [
-            35
+            35,
+            "dispel"
         ]
     },
     "mort": {
@@ -3931,7 +4022,8 @@
             21
         ],
         "common": [
-            64
+            64,
+            "aoe"
         ]
     },
     "mui": {
@@ -4001,7 +4093,10 @@
             32,
             20
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "operator-sigret": {
         "camping": {
@@ -4069,7 +4164,9 @@
         "debuffs": [],
         "common": [
             35,
-            34
+            34,
+            "aoe",
+            "dispel"
         ]
     },
     "pavel": {
@@ -4134,7 +4231,9 @@
         "debuffs": [
             22
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "politis": {
         "camping": {
@@ -4199,7 +4298,10 @@
             29,
             22
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "ravi": {
         "camping": {
@@ -4265,7 +4367,8 @@
             20
         ],
         "common": [
-            33
+            33,
+            "aoe"
         ]
     },
     "ray": {
@@ -4329,7 +4432,9 @@
             12
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "remnant-violet": {
         "camping": {
@@ -4533,7 +4638,8 @@
         ],
         "debuffs": [],
         "common": [
-            33
+            33,
+            "cleanse"
         ]
     },
     "sage-baal-sezan": {
@@ -4606,7 +4712,9 @@
         ],
         "common": [
             33,
-            34
+            34,
+            "aoe",
+            "dispel"
         ]
     },
     "seaside-bellona": {
@@ -4675,7 +4783,9 @@
             29,
             27
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "senya": {
         "camping": {
@@ -4745,7 +4855,9 @@
             25,
             22
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "sez": {
         "camping": {
@@ -4808,7 +4920,9 @@
             27,
             27
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "sigret": {
         "camping": {
@@ -4952,7 +5066,9 @@
             31,
             20
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "sol": {
         "camping": {
@@ -5011,7 +5127,8 @@
             29
         ],
         "common": [
-            35
+            35,
+            "dispel"
         ]
     },
     "solitaria-of-the-snow": {
@@ -5085,7 +5202,10 @@
             "c2111_r",
             20
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "specimen-sez": {
         "camping": {
@@ -5156,7 +5276,8 @@
         ],
         "common": [
             52,
-            34
+            34,
+            "aoe"
         ]
     },
     "specter-tenebria": {
@@ -5220,7 +5341,9 @@
             24,
             20
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "tamarinne": {
         "camping": {
@@ -5289,7 +5412,10 @@
         "debuffs": [],
         "common": [
             33,
-            35
+            35,
+            "aoe",
+            "dispel",
+            "cleanse"
         ]
     },
     "tenebria": {
@@ -5365,7 +5491,8 @@
             21
         ],
         "common": [
-            33
+            33,
+            "aoe"
         ]
     },
     "top-model-luluca": {
@@ -5508,7 +5635,9 @@
             18
         ],
         "common": [
-            35
+            35,
+            "aoe",
+            "dispel"
         ]
     },
     "vildred": {
@@ -5569,7 +5698,9 @@
             1
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "violet": {
         "camping": {
@@ -5632,7 +5763,8 @@
             17
         ],
         "common": [
-            35
+            35,
+            "cleanse"
         ]
     },
     "vivian": {
@@ -5697,7 +5829,9 @@
             12
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "yufine": {
         "camping": {
@@ -5769,7 +5903,10 @@
             28,
             20
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "yuna": {
         "camping": {
@@ -5834,7 +5971,8 @@
         ],
         "debuffs": [],
         "common": [
-            35
+            35,
+            "aoe"
         ]
     },
     "zeno": {
@@ -5900,7 +6038,9 @@
             28,
             32
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "achates": {
         "camping": {
@@ -5966,7 +6106,9 @@
         "debuffs": [
             17
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "angelica": {
         "camping": {
@@ -6104,7 +6246,9 @@
             22,
             24
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "assassin-cartuja": {
         "camping": {
@@ -6383,7 +6527,8 @@
             28
         ],
         "common": [
-            35
+            35,
+            "aoe"
         ]
     },
     "benevolent-romann": {
@@ -6447,7 +6592,10 @@
             28,
             28
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "blaze-dingo": {
         "camping": {
@@ -6509,7 +6657,9 @@
             1
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "blood-blade-karin": {
         "camping": {
@@ -6568,7 +6718,8 @@
         "buffs": [],
         "debuffs": [],
         "common": [
-            35
+            35,
+            "aoe"
         ]
     },
     "cartuja": {
@@ -6636,7 +6787,9 @@
             18,
             17
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "celestial-mercedes": {
         "camping": {
@@ -6700,7 +6853,9 @@
         "debuffs": [
             27
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "challenger-dominiel": {
         "camping": {
@@ -6840,7 +6995,8 @@
             17
         ],
         "common": [
-            36
+            36,
+            "aoe"
         ]
     },
     "cidd": {
@@ -6987,7 +7143,9 @@
             32,
             18
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "coli": {
         "camping": {
@@ -7138,7 +7296,8 @@
         ],
         "common": [
             36,
-            35
+            35,
+            "aoe"
         ]
     },
     "crescent-moon-rin": {
@@ -7209,7 +7368,8 @@
             20
         ],
         "common": [
-            35
+            35,
+            "dispel"
         ]
     },
     "crimson-armin": {
@@ -7345,7 +7505,9 @@
             17,
             25
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "dingo": {
         "camping": {
@@ -7420,7 +7582,9 @@
         ],
         "common": [
             35,
-            35
+            35,
+            "aoe",
+            "cleanse"
         ]
     },
     "dominiel": {
@@ -7490,7 +7654,9 @@
             19,
             20
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "fighter-maya": {
         "camping": {
@@ -7557,7 +7723,8 @@
             25
         ],
         "common": [
-            35
+            35,
+            "cleanse"
         ]
     },
     "free-spirit-tieria": {
@@ -7763,7 +7930,9 @@
             25,
             20
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "great-chief-khawana": {
         "camping": {
@@ -7835,7 +8004,8 @@
         ],
         "common": [
             33,
-            35
+            35,
+            "cleanse"
         ]
     },
     "guider-aither": {
@@ -8036,7 +8206,9 @@
             32,
             20
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "khawazu": {
         "camping": {
@@ -8105,7 +8277,9 @@
             18,
             27
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "kitty-clarissa": {
         "camping": {
@@ -8183,7 +8357,9 @@
         ],
         "common": [
             33,
-            35
+            35,
+            "aoe",
+            "dispel"
         ]
     },
     "kizuna-ai": {
@@ -8248,7 +8424,9 @@
             1
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "leo": {
         "camping": {
@@ -8316,7 +8494,9 @@
             20,
             19
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "lots": {
         "camping": {
@@ -8512,7 +8692,9 @@
             1
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "purrgis": {
         "camping": {
@@ -8578,7 +8760,9 @@
             20,
             20
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "rin": {
         "camping": {
@@ -8642,7 +8826,9 @@
         "debuffs": [
             18
         ],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "roaming-warrior-leo": {
         "camping": {
@@ -8713,7 +8899,8 @@
             53
         ],
         "common": [
-            51
+            51,
+            "aoe"
         ]
     },
     "romann": {
@@ -8774,7 +8961,10 @@
         "debuffs": [
             24
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "rose": {
         "camping": {
@@ -8846,7 +9036,9 @@
         "debuffs": [
             25
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "schuri": {
         "camping": {
@@ -8909,7 +9101,8 @@
             24
         ],
         "common": [
-            35
+            35,
+            "aoe"
         ]
     },
     "serila": {
@@ -9049,7 +9242,10 @@
             27,
             18
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "shooting-star-achates": {
         "camping": {
@@ -9118,7 +9314,8 @@
             22
         ],
         "common": [
-            35
+            35,
+            "cleanse"
         ]
     },
     "silk": {
@@ -9186,7 +9383,8 @@
             19
         ],
         "common": [
-            35
+            35,
+            "aoe"
         ]
     },
     "sinful-angelica": {
@@ -9406,7 +9604,10 @@
             29,
             28
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "cleanse"
+        ]
     },
     "troublemaker-crozet": {
         "camping": {
@@ -9467,7 +9668,9 @@
         "debuffs": [
             20
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "wanderer-silk": {
         "camping": {
@@ -9603,7 +9806,9 @@
             26
         ],
         "common": [
-            34
+            34,
+            "aoe",
+            "dispel"
         ]
     },
     "zerato": {
@@ -9667,7 +9872,9 @@
             19,
             20
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "adlay": {
         "camping": {
@@ -9727,7 +9934,9 @@
         "debuffs": [
             20
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "adventurer-ras": {
         "camping": {
@@ -9775,7 +9984,9 @@
                     33
                 ],
                 "buff": [],
-                "debuff": []
+                "debuff": [
+                    18
+                ]
             },
             {
                 "common": [],
@@ -9788,9 +9999,13 @@
         "buffs": [
             2
         ],
-        "debuffs": [],
+        "debuffs": [
+            18
+        ],
         "common": [
-            33
+            33,
+            "aoe",
+            "dispel"
         ]
     },
     "ainos": {
@@ -9857,7 +10072,9 @@
         "debuffs": [
             18
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "ains": {
         "camping": {
@@ -9985,7 +10202,9 @@
         "debuffs": [
             19
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "alexa": {
         "camping": {
@@ -10177,7 +10396,9 @@
         "debuffs": [
             21
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "arowell": {
         "camping": {
@@ -10241,7 +10462,9 @@
         "debuffs": [
             20
         ],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "azalea": {
         "camping": {
@@ -10374,7 +10597,9 @@
         "debuffs": [
             17
         ],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "batisse": {
         "camping": {
@@ -10442,9 +10667,14 @@
             17,
             18
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "butcher-corps-inquisitor": {
+        "linked_hero": [
+            "chaos-inquisitor"
+        ],
         "camping": {
             "personalities": [
                 "Psychopath",
@@ -10498,7 +10728,9 @@
         ],
         "buffs": [],
         "debuffs": [],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "captain-rikoris": {
         "camping": {
@@ -10570,9 +10802,15 @@
             61,
             20
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "carmainerose": {
+        "linked_hero": [
+            "zealot-carmainerose"
+        ],
         "camping": {
             "personalities": [
                 "Arrogant",
@@ -10639,9 +10877,14 @@
         "debuffs": [
             19
         ],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "carrot": {
+        "linked_hero": [
+            "researcher-carrot"
+        ],
         "camping": {
             "personalities": [
                 "Cool-Headed",
@@ -10714,7 +10957,8 @@
             31
         ],
         "common": [
-            51
+            51,
+            "aoe"
         ]
     },
     "celeste": {
@@ -10782,7 +11026,8 @@
             22
         ],
         "common": [
-            35
+            35,
+            "aoe"
         ]
     },
     "chaos-inquisitor": {
@@ -10839,7 +11084,9 @@
         ],
         "buffs": [],
         "debuffs": [],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "chaos-sect-axe": {
         "camping": {
@@ -10909,10 +11156,14 @@
             18
         ],
         "common": [
-            35
+            35,
+            "aoe"
         ]
     },
     "church-of-ilryos-axe": {
+        "linked_hero": [
+            "chaos-sect-axe"
+        ],
         "camping": {
             "personalities": [
                 "Religious",
@@ -10977,7 +11228,9 @@
             25,
             18
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "commander-lorina": {
         "camping": {
@@ -11103,9 +11356,14 @@
             18,
             21
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "doris": {
+        "linked_hero": [
+            "magic-scholar-doris"
+        ],
         "camping": {
             "personalities": [
                 "Introvert",
@@ -11235,7 +11493,10 @@
         "debuffs": [
             25
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "cleanse"
+        ]
     },
     "elson": {
         "camping": {
@@ -11301,7 +11562,9 @@
         "debuffs": [
             17
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "enott": {
         "camping": {
@@ -11434,9 +11697,14 @@
             25,
             18
         ],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "glenn": {
+        "linked_hero": [
+            "vigilante-leader-glenn"
+        ],
         "camping": {
             "personalities": [
                 "Heroism",
@@ -11575,7 +11843,8 @@
         ],
         "common": [
             35,
-            36
+            36,
+            "aoe"
         ]
     },
     "godmother": {
@@ -11781,6 +12050,9 @@
         "common": []
     },
     "hazel": {
+        "linked_hero": [
+            "mascot-hazel"
+        ],
         "camping": {
             "personalities": [
                 "Loyal",
@@ -11845,6 +12117,9 @@
         "common": []
     },
     "helga": {
+        "linked_hero": [
+            "mercenary-helga"
+        ],
         "camping": {
             "personalities": [
                 "Arrogant",
@@ -11969,7 +12244,9 @@
             28
         ],
         "common": [
-            35
+            35,
+            "aoe",
+            "dispel"
         ]
     },
     "ian": {
@@ -12040,7 +12317,9 @@
             22
         ],
         "common": [
-            35
+            35,
+            "aoe",
+            "dispel"
         ]
     },
     "jecht": {
@@ -12107,7 +12386,9 @@
         "debuffs": [
             22
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "jena": {
         "camping": {
@@ -12172,7 +12453,9 @@
             19,
             22
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "judith": {
         "camping": {
@@ -12306,7 +12589,10 @@
         "debuffs": [
             22
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "kiris": {
         "camping": {
@@ -12372,10 +12658,14 @@
             24
         ],
         "common": [
-            35
+            35,
+            "aoe"
         ]
     },
     "kluri": {
+        "linked_hero": [
+            "falconer-kluri"
+        ],
         "camping": {
             "personalities": [
                 "Escapist",
@@ -12495,9 +12785,14 @@
             1
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "lorina": {
+        "linked_hero": [
+            "commander-lorina"
+        ],
         "camping": {
             "personalities": [
                 "Altruistic",
@@ -12620,7 +12915,9 @@
             61,
             19
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "magic-scholar-doris": {
         "camping": {
@@ -12686,7 +12983,9 @@
         "debuffs": [
             22
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "mascot-hazel": {
         "camping": {
@@ -12954,6 +13253,9 @@
         "common": []
     },
     "montmorancy": {
+        "linked_hero": [
+            "angelic-montmorancy"
+        ],
         "camping": {
             "personalities": [
                 "Introvert",
@@ -13015,7 +13317,9 @@
         "debuffs": [
             21
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "mucacha": {
         "camping": {
@@ -13215,7 +13519,9 @@
         "debuffs": [
             22
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "otillie": {
         "camping": {
@@ -13283,6 +13589,9 @@
         "common": []
     },
     "pearlhorizon": {
+        "linked_hero": [
+            "doll-maker-pearlhorizon"
+        ],
         "camping": {
             "personalities": [
                 "Individualistic",
@@ -13348,9 +13657,14 @@
             20,
             21
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "pyllis": {
+        "linked_hero": [
+            "shadow-knight-pyllis"
+        ],
         "camping": {
             "personalities": [
                 "Loyal",
@@ -13421,6 +13735,9 @@
         "common": []
     },
     "ras": {
+        "linked_hero": [
+            "adventurer-ras"
+        ],
         "camping": {
             "personalities": [
                 "Heroism",
@@ -13481,7 +13798,9 @@
         ],
         "debuffs": [],
         "common": [
-            33
+            33,
+            "aoe",
+            "dispel"
         ]
     },
     "requiemroar": {
@@ -13620,7 +13939,8 @@
             31
         ],
         "common": [
-            51
+            51,
+            "aoe"
         ]
     },
     "righteous-thief-roozid": {
@@ -13693,6 +14013,9 @@
         "common": []
     },
     "rikoris": {
+        "linked_hero": [
+            "captain-rikoris"
+        ],
         "camping": {
             "personalities": [
                 "Hot and Cold",
@@ -13757,9 +14080,15 @@
         "debuffs": [
             18
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "rima": {
+        "linked_hero": [
+            "muse-rima"
+        ],
         "camping": {
             "personalities": [
                 "Traumatized",
@@ -13824,6 +14153,9 @@
         ]
     },
     "roozid": {
+        "linked_hero": [
+            "righteous-thief-roozid"
+        ],
         "camping": {
             "personalities": [
                 "Altruistic",
@@ -13955,7 +14287,9 @@
             12
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "sven": {
         "camping": {
@@ -14017,7 +14351,9 @@
             14
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "taranor-guard": {
         "camping": {
@@ -14145,7 +14481,9 @@
         "debuffs": [
             25
         ],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "tieria": {
         "camping": {
@@ -14208,6 +14546,9 @@
         "common": []
     },
     "wanda": {
+        "linked_hero": [
+            "allrounder-wanda"
+        ],
         "camping": {
             "personalities": [
                 "Selfish",
@@ -14342,69 +14683,6 @@
         "debuffs": [
             19,
             29
-        ],
-        "common": []
-    },
-    "dark-tyrant-tenebria": {
-        "camping": {
-            "personalities": [
-                "Psychopath",
-                "Obsessive"
-            ],
-            "topics": [
-                "Happy Memory",
-                "Advice"
-            ],
-            "values": {
-                "Criticism": 3,
-                "Reality Check": 2,
-                "Heroic Tale": 0,
-                "Comforting Cheer": 3,
-                "Cute Cheer": 1,
-                "Heroic Cheer": 1,
-                "Sad Memory": 4,
-                "Joyful Memory": 0,
-                "Happy Memories": 0,
-                "Unique Comment": 8,
-                "Self-Indulgent": 1,
-                "Occult": 4,
-                "Myth": 0,
-                "Bizarre Story": 10,
-                "Food Story": 0,
-                "Horror Story": 8,
-                "Gossip": 0,
-                "Dream": 4,
-                "Advice": 5,
-                "Complain": 0,
-                "Belief": 6,
-                "Interesting Story": 1
-            }
-        },
-        "skills": [
-            {
-                "common": [],
-                "buff": [],
-                "debuff": [
-                    24
-                ]
-            },
-            {
-                "common": [],
-                "buff": [],
-                "debuff": []
-            },
-            {
-                "common": [],
-                "buff": [],
-                "debuff": [
-                    20
-                ]
-            }
-        ],
-        "buffs": [],
-        "debuffs": [
-            24,
-            20
         ],
         "common": []
     },
@@ -14582,7 +14860,10 @@
             6
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "emilia": {
         "camping": {
@@ -14641,7 +14922,9 @@
             5
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "rem": {
         "camping": {
@@ -14704,7 +14987,10 @@
             22,
             27
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "cleanse"
+        ]
     },
     "ram": {
         "camping": {
@@ -14828,7 +15114,9 @@
             20,
             "stigma"
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "helen": {
         "camping": {
@@ -15077,7 +15365,9 @@
             17,
             20
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "summertime-iseria": {
         "camping": {
@@ -15138,7 +15428,10 @@
             17,
             53
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "closer-charles": {
         "camping": {
@@ -15197,7 +15490,9 @@
             10
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "angel-of-light-angelica": {
         "camping": {
@@ -15260,7 +15555,9 @@
             29,
             28
         ],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "belian": {
         "camping": {
@@ -15328,7 +15625,10 @@
             22,
             25
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "ran": {
         "camping": {
@@ -15391,7 +15691,10 @@
             18,
             "stigma"
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "cleanse"
+        ]
     },
     "rimuru": {
         "camping": {
@@ -15515,7 +15818,10 @@
         "debuffs": [
             21
         ],
-        "common": []
+        "common": [
+            "dispel",
+            "cleanse"
+        ]
     },
     "milim": {
         "camping": {
@@ -15695,9 +16001,17 @@
             14
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "cleanse"
+        ]
     },
     "adin": {
+        "linked_hero": [
+            "verdant-adin",
+            "serene-purity-adin",
+            "holy-flame-adin",
+            "savior-adin"
+        ],
         "camping": {
             "personalities": [
                 "Optimistic",
@@ -15757,7 +16071,9 @@
             18,
             29
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "zahhak": {
         "camping": {
@@ -15879,7 +16195,9 @@
             17,
             "redirected_provoke"
         ],
-        "common": []
+        "common": [
+            "dispel"
+        ]
     },
     "command-model-laika": {
         "camping": {
@@ -15942,7 +16260,9 @@
             26,
             21
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "peira": {
         "camping": {
@@ -16496,7 +16816,9 @@
             9
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "pirate-captain-flan": {
         "camping": {
@@ -16560,7 +16882,9 @@
             31,
             53
         ],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "vigilante-leader-glenn": {
         "camping": {
@@ -16749,7 +17073,10 @@
         "debuffs": [
             22
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "taeyou": {
         "camping": {
@@ -16808,7 +17135,11 @@
             46
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel",
+            "cleanse"
+        ]
     },
     "yulha": {
         "camping": {
@@ -16930,7 +17261,9 @@
             9
         ],
         "debuffs": [],
-        "common": []
+        "common": [
+            "aoe"
+        ]
     },
     "sharun": {
         "camping": {
@@ -16997,7 +17330,10 @@
             "stic_venom",
             19
         ],
-        "common": []
+        "common": [
+            "aoe",
+            "dispel"
+        ]
     },
     "summer-break-charlotte": {
         "camping": {
@@ -17060,6 +17396,890 @@
         "debuffs": [
             20
         ],
+        "common": [
+            "aoe"
+        ]
+    },
+    "moon-bunny-dominiel": {
+        "camping": {
+            "personalities": [
+                "Arrogant",
+                "Envious"
+            ],
+            "topics": [
+                "Food Story",
+                "Heroic Tale"
+            ],
+            "values": {
+                "Criticism": 8,
+                "Reality Check": 0,
+                "Heroic Tale": 7,
+                "Comforting Cheer": 3,
+                "Cute Cheer": 6,
+                "Heroic Cheer": 3,
+                "Sad Memory": 0,
+                "Joyful Memory": 1,
+                "Happy Memories": 3,
+                "Unique Comment": 1,
+                "Self-Indulgent": 2,
+                "Occult": 5,
+                "Myth": 9,
+                "Bizarre Story": 0,
+                "Food Story": 5,
+                "Horror Story": 0,
+                "Gossip": 0,
+                "Dream": 3,
+                "Advice": 3,
+                "Complain": 0,
+                "Belief": 3,
+                "Interesting Story": 1
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [
+                    21
+                ],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            1,
+            12,
+            5,
+            46
+        ],
+        "debuffs": [
+            21
+        ],
+        "common": []
+    },
+    "edward-elric": {
+        "camping": {
+            "personalities": [
+                "Academic",
+                "Hard Worker"
+            ],
+            "topics": [
+                "Sad Memory",
+                "Complain"
+            ],
+            "values": {
+                "Criticism": 4,
+                "Reality Check": 3,
+                "Heroic Tale": 2,
+                "Comforting Cheer": 6,
+                "Cute Cheer": 3,
+                "Heroic Cheer": 3,
+                "Sad Memory": 3,
+                "Joyful Memory": 3,
+                "Happy Memories": 0,
+                "Unique Comment": 0,
+                "Self-Indulgent": 5,
+                "Occult": 3,
+                "Myth": 5,
+                "Bizarre Story": 0,
+                "Food Story": 3,
+                "Horror Story": 0,
+                "Gossip": 2,
+                "Dream": 3,
+                "Advice": 3,
+                "Complain": 1,
+                "Belief": 1,
+                "Interesting Story": 3
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            5
+        ],
+        "debuffs": [
+            17,
+            22,
+            25,
+            28,
+            61
+        ],
+        "common": [
+            "aoe",
+            "dispel"
+        ]
+    },
+    "roy-mustang": {
+        "camping": {
+            "personalities": [
+                "Heroism",
+                "Envious"
+            ],
+            "topics": [
+                "Reality Check",
+                "Belief"
+            ],
+            "values": {
+                "Criticism": 3,
+                "Reality Check": 0,
+                "Heroic Tale": 5,
+                "Comforting Cheer": 3,
+                "Cute Cheer": 3,
+                "Heroic Cheer": 6,
+                "Sad Memory": 3,
+                "Joyful Memory": 4,
+                "Happy Memories": 4,
+                "Unique Comment": 3,
+                "Self-Indulgent": 2,
+                "Occult": 2,
+                "Myth": 7,
+                "Bizarre Story": 0,
+                "Food Story": 4,
+                "Horror Story": 2,
+                "Gossip": 0,
+                "Dream": 5,
+                "Advice": 2,
+                "Complain": 0,
+                "Belief": 3,
+                "Interesting Story": 2
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [],
+        "debuffs": [],
+        "common": [
+            "aoe"
+        ]
+    },
+    "riza-hawkeye": {
+        "camping": {
+            "personalities": [
+                "Loyal",
+                "Cool-Headed"
+            ],
+            "topics": [
+                "Joyful Memory",
+                "Gossip"
+            ],
+            "values": {
+                "Criticism": 2,
+                "Reality Check": 3,
+                "Heroic Tale": 3,
+                "Comforting Cheer": 3,
+                "Cute Cheer": 1,
+                "Heroic Cheer": 5,
+                "Sad Memory": 3,
+                "Joyful Memory": 3,
+                "Happy Memories": 2,
+                "Unique Comment": 3,
+                "Self-Indulgent": 0,
+                "Occult": 0,
+                "Myth": 1,
+                "Bizarre Story": 0,
+                "Food Story": 2,
+                "Horror Story": 0,
+                "Gossip": 0,
+                "Dream": 1,
+                "Advice": 2,
+                "Complain": 0,
+                "Belief": 0,
+                "Interesting Story": 1
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [
+                    26
+                ],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            12
+        ],
+        "debuffs": [
+            26
+        ],
+        "common": [
+            "dispel"
+        ]
+    },
+    "commander-pavel": {
+        "camping": {
+            "personalities": [
+                "Realistic",
+                "Cool-Headed"
+            ],
+            "topics": [
+                "Belief",
+                "Dream"
+            ],
+            "values": {
+                "Criticism": 5,
+                "Reality Check": 5,
+                "Heroic Tale": 0,
+                "Comforting Cheer": 0,
+                "Cute Cheer": 1,
+                "Heroic Cheer": 2,
+                "Sad Memory": 0,
+                "Joyful Memory": 1,
+                "Happy Memories": 0,
+                "Unique Comment": 3,
+                "Self-Indulgent": 0,
+                "Occult": 0,
+                "Myth": 0,
+                "Bizarre Story": 0,
+                "Food Story": 0,
+                "Horror Story": 2,
+                "Gossip": 1,
+                "Dream": 0,
+                "Advice": 2,
+                "Complain": 0,
+                "Belief": 2,
+                "Interesting Story": 1
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [
+                    17
+                ],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            1
+        ],
+        "debuffs": [
+            17
+        ],
+        "common": [
+            "aoe"
+        ]
+    },
+    "lua": {
+        "camping": {
+            "personalities": [
+                "Arrogant",
+                "Envious"
+            ],
+            "topics": [
+                "Belief",
+                "Myth"
+            ],
+            "values": {
+                "Criticism": 8,
+                "Reality Check": 0,
+                "Heroic Tale": 7,
+                "Comforting Cheer": 3,
+                "Cute Cheer": 6,
+                "Heroic Cheer": 3,
+                "Sad Memory": 0,
+                "Joyful Memory": 1,
+                "Happy Memories": 3,
+                "Unique Comment": 1,
+                "Self-Indulgent": 2,
+                "Occult": 5,
+                "Myth": 9,
+                "Bizarre Story": 0,
+                "Food Story": 5,
+                "Horror Story": 0,
+                "Gossip": 0,
+                "Dream": 3,
+                "Advice": 3,
+                "Complain": 0,
+                "Belief": 3,
+                "Interesting Story": 1
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [
+                    18
+                ],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            3
+        ],
+        "debuffs": [
+            18,
+            21
+        ],
+        "common": [
+            "dispel"
+        ]
+    },
+    "astromancer-elena": {
+        "camping": {
+            "personalities": [
+                "Arrogant",
+                "Religious"
+            ],
+            "topics": [
+                "Self-Indulgent",
+                "Happy Memories"
+            ],
+            "values": {
+                "Criticism": 5,
+                "Reality Check": 0,
+                "Heroic Tale": 5,
+                "Comforting Cheer": 6,
+                "Cute Cheer": 4,
+                "Heroic Cheer": 2,
+                "Sad Memory": 4,
+                "Joyful Memory": 2,
+                "Happy Memories": 4,
+                "Unique Comment": 2,
+                "Self-Indulgent": 0,
+                "Occult": 3,
+                "Myth": 8,
+                "Bizarre Story": 0,
+                "Food Story": 4,
+                "Horror Story": 0,
+                "Gossip": 0,
+                "Dream": 2,
+                "Advice": 5,
+                "Complain": 2,
+                "Belief": 3,
+                "Interesting Story": 0
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [],
+        "debuffs": [
+            61,
+            "stic_no_counter"
+        ],
+        "common": [
+            "aoe",
+            "dispel"
+        ]
+    },
+    "unbound-knight-arowell": {
+        "camping": {
+            "personalities": [
+                "Hard Worker",
+                "Free"
+            ],
+            "topics": [
+                "Interesting Story",
+                "Happy Memories"
+            ],
+            "values": {
+                "Criticism": 3,
+                "Reality Check": 1,
+                "Heroic Tale": 2,
+                "Comforting Cheer": 6,
+                "Cute Cheer": 4,
+                "Heroic Cheer": 3,
+                "Sad Memory": 4,
+                "Joyful Memory": 4,
+                "Happy Memories": 1,
+                "Unique Comment": 2,
+                "Self-Indulgent": 1,
+                "Occult": 1,
+                "Myth": 1,
+                "Bizarre Story": 2,
+                "Food Story": 4,
+                "Horror Story": 1,
+                "Gossip": 1,
+                "Dream": 7,
+                "Advice": 3,
+                "Complain": 1,
+                "Belief": 1,
+                "Interesting Story": 6
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            5,
+            "stic_escort"
+        ],
+        "debuffs": [
+            20
+        ],
+        "common": [
+            "dispel"
+        ]
+    },
+    "arunka": {
+        "camping": {
+            "personalities": [
+                "Heroism",
+                "Extrovert"
+            ],
+            "topics": [
+                "Reality Check",
+                "Advice"
+            ],
+            "values": {
+                "Criticism": 0,
+                "Reality Check": 0,
+                "Heroic Tale": 6,
+                "Comforting Cheer": 6,
+                "Cute Cheer": 4,
+                "Heroic Cheer": 6,
+                "Sad Memory": 3,
+                "Joyful Memory": 6,
+                "Happy Memories": 5,
+                "Unique Comment": 2,
+                "Self-Indulgent": 2,
+                "Occult": 1,
+                "Myth": 4,
+                "Bizarre Story": 2,
+                "Food Story": 3,
+                "Horror Story": 5,
+                "Gossip": 2,
+                "Dream": 4,
+                "Advice": 4,
+                "Complain": 0,
+                "Belief": 1,
+                "Interesting Story": 3
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [
+                    32
+                ],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            1
+        ],
+        "debuffs": [
+            32
+        ],
+        "common": []
+    },
+    "savior-adin": {
+        "camping": {
+            "personalities": [
+                "Heroism",
+                "Free"
+            ],
+            "topics": [
+                "Dream",
+                "Complain"
+            ],
+            "values": {
+                "Criticism": 1,
+                "Reality Check": 0,
+                "Heroic Tale": 3,
+                "Comforting Cheer": 4,
+                "Cute Cheer": 3,
+                "Heroic Cheer": 4,
+                "Sad Memory": 4,
+                "Joyful Memory": 4,
+                "Happy Memories": 4,
+                "Unique Comment": 4,
+                "Self-Indulgent": 1,
+                "Occult": 1,
+                "Myth": 4,
+                "Bizarre Story": 2,
+                "Food Story": 3,
+                "Horror Story": 3,
+                "Gossip": 1,
+                "Dream": 6,
+                "Advice": 3,
+                "Complain": 1,
+                "Belief": 0,
+                "Interesting Story": 6
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [
+                    29
+                ],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            1,
+            6
+        ],
+        "debuffs": [
+            29
+        ],
+        "common": [
+            "aoe",
+            "dispel"
+        ]
+    },
+    "zio": {
+        "camping": {
+            "personalities": [
+                "Arrogant",
+                "Envious"
+            ],
+            "topics": [
+                "Happy Memories",
+                "Myth"
+            ],
+            "values": {
+                "Criticism": 8,
+                "Reality Check": 0,
+                "Heroic Tale": 7,
+                "Comforting Cheer": 3,
+                "Cute Cheer": 6,
+                "Heroic Cheer": 3,
+                "Sad Memory": 0,
+                "Joyful Memory": 1,
+                "Happy Memories": 3,
+                "Unique Comment": 1,
+                "Self-Indulgent": 2,
+                "Occult": 5,
+                "Myth": 9,
+                "Bizarre Story": 0,
+                "Food Story": 5,
+                "Horror Story": 0,
+                "Gossip": 0,
+                "Dream": 3,
+                "Advice": 3,
+                "Complain": 0,
+                "Belief": 3,
+                "Interesting Story": 1
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            1
+        ],
+        "debuffs": [
+            28
+        ],
+        "common": [
+            "dispel"
+        ]
+    },
+    "aewinter": {
+        "camping": {
+            "personalities": [
+                "Cherub",
+                "Indifferent"
+            ],
+            "topics": [
+                "Food Story",
+                "Cute Cheer"
+            ],
+            "values": {
+                "Criticism": 0,
+                "Reality Check": 0,
+                "Heroic Tale": 3,
+                "Comforting Cheer": 2,
+                "Cute Cheer": 3,
+                "Heroic Cheer": 2,
+                "Sad Memory": 2,
+                "Joyful Memory": 3,
+                "Happy Memories": 2,
+                "Unique Comment": 1,
+                "Self-Indulgent": 2,
+                "Occult": 0,
+                "Myth": 2,
+                "Bizarre Story": 0,
+                "Food Story": 8,
+                "Horror Story": 0,
+                "Gossip": 1,
+                "Dream": 2,
+                "Advice": 1,
+                "Complain": 1,
+                "Belief": 0,
+                "Interesting Story": 2
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [
+                    20
+                ],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            12,
+            15
+        ],
+        "debuffs": [
+            20
+        ],
+        "common": [
+            "cleanse"
+        ]
+    },
+    "aeningning": {
+        "camping": {
+            "personalities": [
+                "Cherub",
+                "Indifferent"
+            ],
+            "topics": [
+                "Food Story",
+                "Heroic Tale"
+            ],
+            "values": {
+                "Criticism": 0,
+                "Reality Check": 0,
+                "Heroic Tale": 3,
+                "Comforting Cheer": 2,
+                "Cute Cheer": 3,
+                "Heroic Cheer": 2,
+                "Sad Memory": 2,
+                "Joyful Memory": 3,
+                "Happy Memories": 2,
+                "Unique Comment": 1,
+                "Self-Indulgent": 2,
+                "Occult": 0,
+                "Myth": 2,
+                "Bizarre Story": 0,
+                "Food Story": 8,
+                "Horror Story": 0,
+                "Gossip": 1,
+                "Dream": 2,
+                "Advice": 1,
+                "Complain": 1,
+                "Belief": 0,
+                "Interesting Story": 2
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [
+                    20
+                ],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            1,
+            5
+        ],
+        "debuffs": [
+            20
+        ],
+        "common": []
+    },
+    "aegiselle": {
+        "camping": {
+            "personalities": [
+                "Academic",
+                "Altruistic"
+            ],
+            "topics": [
+                "Food Story",
+                "Interesting Story"
+            ],
+            "values": {
+                "Criticism": 2,
+                "Reality Check": 2,
+                "Heroic Tale": 0,
+                "Comforting Cheer": 4,
+                "Cute Cheer": 4,
+                "Heroic Cheer": 3,
+                "Sad Memory": 5,
+                "Joyful Memory": 3,
+                "Happy Memories": 3,
+                "Unique Comment": 0,
+                "Self-Indulgent": 5,
+                "Occult": 3,
+                "Myth": 6,
+                "Bizarre Story": 0,
+                "Food Story": 0,
+                "Horror Story": 0,
+                "Gossip": 3,
+                "Dream": 3,
+                "Advice": 6,
+                "Complain": 2,
+                "Belief": 0,
+                "Interesting Story": 3
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [],
+        "debuffs": [],
         "common": []
     }
 }

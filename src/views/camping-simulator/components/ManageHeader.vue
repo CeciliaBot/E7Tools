@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { debounce } from '@/utils/helpers.js'
 export default {
     name: 'CampManageHeader',
     emits: ['more', 'filter', 'search'],
@@ -31,11 +32,15 @@ export default {
             searchQuery: ''
         }
     },
+    renderTriggered (e) {console.log('Header', e)},
     methods: {
         updateQuery(e) {
             this.searchQuery=e.target.value;
-            this.$emit('search', this.searchQuery)
+            this.emitQuery()
         },
+        emitQuery: debounce( function () {
+            this.$emit('query', this.searchQuery)
+        }, 300),
         moreMenu(e) {
             this.$emit('more', e)
         },
@@ -45,6 +50,7 @@ export default {
         handleGoSearchBar() {
             if (this.searchQuery) {
                 this.searchQuery = '';
+                this.$emit('query', this.searchQuery)
                 if (!this.mobile) document.getElementById('camp_heroesw_input').focus()
             }
         }

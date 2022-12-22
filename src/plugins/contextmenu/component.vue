@@ -240,6 +240,7 @@ export default {
     .option-wrapper .context-icon img {
         height: 100%;
         vertical-align: top;
+        transform: scale(2);
     }
     .option-wrapper .context-label {
         display: inline-block;

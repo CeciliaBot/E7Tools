@@ -297,6 +297,16 @@
         "role": "mage",
         "gacha": true
     },
+    "exif-detective-ed-gadget": {
+        "_id": "exif-detective-ed-gadget",
+        "id": "art0173",
+        "identifier": "",
+        "name": "EXIF Detective (E.d.) Gadget",
+        "rarity": 5,
+        "role": "manauser",
+        "gacha": true,
+        "limited": true
+    },
     "fairy-tale-for-a-nightmare": {
         "_id": "fairy-tale-for-a-nightmare",
         "id": "art0123",
@@ -315,6 +325,26 @@
         "role": "manauser",
         "limited": true,
         "gacha": false
+    },
+    "frame-of-light": {
+        "_id": "frame-of-light",
+        "id": "art0171",
+        "identifier": "",
+        "name": "Frame of Light",
+        "rarity": 5,
+        "role": "mage",
+        "limited": true,
+        "gacha": true
+    },
+    "fullmetals-automail": {
+        "_id": "fullmetals-automail",
+        "id": "art0157",
+        "identifier": "",
+        "name": "Fullmetal's Automail",
+        "rarity": 5,
+        "role": "warrior",
+        "limited": true,
+        "gacha": true
     },
     "glowings-21": {
         "_id": "glowings-21",
@@ -377,6 +407,16 @@
         "name": "Idol's Cheer",
         "rarity": 5,
         "role": "manauser",
+        "gacha": true
+    },
+    "ignition-cloth-gloves": {
+        "_id": "ignition-cloth-gloves",
+        "id": "art0158",
+        "identifier": "",
+        "name": "Ignition Cloth Gloves",
+        "rarity": 5,
+        "role": "mage",
+        "limited": true,
         "gacha": true
     },
     "indestructible-gaiters": {
@@ -588,6 +628,15 @@
         "role": "mage",
         "gacha": true
     },
+    "seal-of-capture": {
+        "_id": "seal-of-capture",
+        "id": "art0168",
+        "identifier": "",
+        "name": "Seal of Capture",
+        "rarity": 5,
+        "role": "ranger",
+        "gacha": true
+    },
     "secret-art-storm-sword": {
         "_id": "secret-art-storm-sword",
         "id": "art0096",
@@ -604,6 +653,16 @@
         "name": "Severed Horn Wand",
         "rarity": 5,
         "role": "mage",
+        "gacha": false
+    },
+    "sharpshooters-handgun": {
+        "_id": "sharpshooters-handgun",
+        "id": "art0159",
+        "identifier": "",
+        "name": "Sharpshooter's Handgun",
+        "rarity": 5,
+        "role": "ranger",
+        "limited": true,
         "gacha": false
     },
     "shepherd-of-the-hollow": {
@@ -647,6 +706,15 @@
         "id": "art5_2",
         "identifier": "efr02",
         "name": "Song of Stars",
+        "rarity": 5,
+        "role": "ranger",
+        "gacha": true
+    },
+    "spatiotemporal-fan": {
+        "_id": "spatiotemporal-fan",
+        "id": "art0166",
+        "identifier": "",
+        "name": "Spatiotemporal Fan",
         "rarity": 5,
         "role": "ranger",
         "gacha": true
@@ -706,6 +774,24 @@
         "role": "manauser",
         "gacha": true
     },
+    "sword-of-autumn-eclipse": {
+        "_id": "sword-of-autumn-eclipse",
+        "id": "art0167",
+        "identifier": "",
+        "name": "Sword of Autumn Eclipse",
+        "rarity": 5,
+        "role": "warrior",
+        "gacha": true
+    },
+    "sword-of-cycling-seasons": {
+        "_id": "sword-of-cycling-seasons",
+        "id": "art0169",
+        "identifier": "",
+        "name": "Sword of Cycling Seasons",
+        "rarity": 5,
+        "role": "assassin",
+        "gacha": false
+    },
     "sword-of-ezera": {
         "_id": "sword-of-ezera",
         "id": "art0046",
@@ -742,6 +828,16 @@
         "rarity": 5,
         "role": "assassin",
         "gacha": true
+    },
+    "the-armament": {
+        "_id": "the-armament",
+        "id": "art0172",
+        "identifier": "",
+        "name": "The Armament",
+        "rarity": 5,
+        "role": "assassin",
+        "gacha": true,
+        "limited": true
     },
     "time-matter": {
         "_id": "time-matter",
@@ -1165,6 +1261,26 @@
         "id": "art0048",
         "identifier": "ef403",
         "name": "Portrait of the Saviors",
+        "rarity": 4,
+        "role": "",
+        "limited": true,
+        "gacha": false
+    },
+    "pos": {
+        "_id": "pos",
+        "id": "art0174",
+        "identifier": "",
+        "name": "P.O.S",
+        "rarity": 5,
+        "role": "",
+        "limited": true,
+        "gacha": false
+    },
+    "prelude-to-a-new-era": {
+        "_id": "prelude-to-a-new-era",
+        "id": "art0165",
+        "identifier": "",
+        "name": "Prelude to a New Era",
         "rarity": 4,
         "role": "",
         "limited": true,

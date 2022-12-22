@@ -1,0 +1,7 @@
+{
+    "months": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+    "day": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
+    "day_short": ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa"],
+    "Dhms": ["GG", "o", "m", "s"],
+    "language": "Lingua"
+}

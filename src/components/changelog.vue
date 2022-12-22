@@ -1,5 +1,6 @@
 <script>
 import { h } from 'vue'
+
 export default {
     name: 'ChangelogComponent',
     props: ['path'],
@@ -62,8 +63,8 @@ export default {
             this.changelogFailed = false;
             this.changelogFetching = true;
             return Promise.all([
-                import(/* webpackChunkName: "[request]" */ `../${this.normalizedPath}${'changelog/'+this.$i18n.locale}.json`).catch(async () => {
-                    return await import(/* webpackChunkName: "camping-changelog" */ `../${this.normalizedPath}changelog/en.json`)
+                import(/* webpackChunkName: "changelog/[request]" */ `../${this.normalizedPath}changelog/${this.$i18n.locale}.json`).catch(async () => {
+                    return await import(/* webpackChunkName: "changelog/[request]" */ `../${this.normalizedPath}changelog/en.json`)
                 })
             ]).then(([res]) => {
                 var data = res.default || [];
@@ -72,14 +73,14 @@ export default {
             }).catch((error) => {
                 this.changelogFailed = error;
                 return Promise.resolve(false)
-            }).finally(() => {
+            }).then( () => {
                 this.changelogLang=this.$i18n.locale;
                 this.changelogFetching = false;
             })
         }
     },
     render: function () {
-        return h('div', {ref: 'changelog', class: 'camping-change-log'}, [
+        return h('div', {ref: 'changelog', class: 'changelog-wrapper'}, [
           h('h2', {class: 'title'}, [this.$t('strings.changelog'), ':']),
           this.changelog.length ? 
             this.changelog.map ( vchange => {
@@ -92,7 +93,7 @@ export default {
                   return h('ul', {}, [
                     h('li', {}, [
                       h('div', {class: "changelog-badge "+change[0]}, change[0]),
-                      h('div', {class: "changelog-description", innerHTML: change[1]})
+                      h('div', {class: "changelog-description flex-fill", innerHTML: change[1]})
                     ])
                   ])
                 })
@@ -116,12 +117,12 @@ export default {
 }
 </script>
 <style>
-  .camping-change-log {
+  .changelog-wrapper {
     position: relative;
     z-index: 0;
     padding-bottom: 20px;
   }
-  .camping-change-log .title {
+  .changelog-wrapper .title {
     box-shadow: 0px 1px 0px 0px;
     max-width: 980px;
     margin: auto;
@@ -203,6 +204,8 @@ export default {
     text-align: start;
     overflow: auto;
     word-break: break-word;
+    white-space: pre-wrap;
+    font-weight: 300;
   }
   .changelog-description a {
     text-decoration: none;
@@ -221,7 +224,7 @@ export default {
       flex: 0 0 18px;
       overflow: hidden;
       border-radius: 50%;
-      color: transparent;
+      color: transparent !important;
     }
   }
 </style>

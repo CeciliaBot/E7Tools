@@ -1,11 +1,20 @@
 import { lazyOnload } from '@/directives/lazyloader.js';
+const downloadOnClick = false;
+function immediateDownload(canvas, name) {
+    var link = document.createElement('a');
+    link.download = name+'.png';
+    link.href = canvas.toDataURL()
+    link.click();
+}
+
 export default function(_this) { /* _this === vue context instance */
     _this.$store.commit('loading', true);
     _this.$nextTick(()=> {
         import(/* webpackPrefetch: true, webpackChunkName: "html2canvas.patched" */ '../utils/html2canvas.patched.js').then( module => {
             let TARGET_WIDTH = 800,
+                labelWidth = _this.settings.labelWidth || 100,
                 chPerRow = Math.ceil(TARGET_WIDTH/_this.iconFullSize),
-                size = 100+chPerRow/2+_this.iconFullSize*chPerRow;
+                size = labelWidth+chPerRow/2+_this.iconFullSize*chPerRow;
 
             var options = {
                 allowTaint: false,
@@ -64,6 +73,10 @@ export default function(_this) { /* _this === vue context instance */
                 },
             };
             module.default(document.getElementById(!_this.tierType?'tiers':'AlignChart'), options).then(canvas => {
+                if (downloadOnClick) {
+                    return immediateDownload(canvas, _this.tierListName)
+                }
+
                 try {
                     _this.$gallery(
                         [
@@ -75,14 +88,13 @@ export default function(_this) { /* _this === vue context instance */
                         ]
                     )
                 } catch(err) {
-                    var link = document.createElement('a');
-                    link.download = _this.tierListName+'.png';
-                    link.href = canvas.toDataURL()
-                    link.click();
+                    immediateDownload(canvas, _this.tierListName)
                 }
             }).finally( () => {
-                _this.$store.commit('loading', false);
+                _this.$store.commit('loading', false)
             })
+        }).then(() => {
+            _this.$store.commit('loading', false)
         })
     })
 }

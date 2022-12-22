@@ -9,11 +9,11 @@ Inside the new folder create a 'info.json' file and add the following data:
 ```
 {
     "langCodes": [
-        "it-*",             // When to automatically apply this language pack in this case 'it-*' will applay to all browsers that have it as language
-        'it-IT'             // You can also provide a region
+        "it-*",                                  // When to automatically apply this language pack in this case 'it-*' will applay to all browsers that have it as language
+        'it-IT'                                  // You can also provide a region
     ],
-    "code": "it",           // Your code, the code you used as folder name
-    "name": "Italiano",     // Name of your language
+    "code": "it",                                // Your code, the code you used as folder name
+    "name": "Italiano",                          // Name of your language
     "authors": ['Gio', 'Some other helper'],     // List of authors
     "flag": "https://someimage.png"              // Link to your flag
 }
@@ -21,7 +21,7 @@ Inside the new folder create a 'info.json' file and add the following data:
 During the build process if a folder is missing the 'info.json' file that language will be skipped.
 
 ## How to translate a Changelog
-You can translate a changelog by creating a file named <code>.json (where 'code' is your language code) in the changelog folder of that specific component/route/view 
+You can translate a changelog by creating a file named <code>.json (where '<code>' is your language code) in the changelog folder of that specific component/route/view 
 
 ## Tanslate UI
 Create a new file named 'strings.json' and translate each (or some) of the keys

@@ -235,13 +235,6 @@
             "name": "Adorable Flower Bud"
         }
     ],
-    "diene": [
-        {
-            "id": "npc1216",
-            "_id": "diene-magical-girl-d",
-            "name": "Magical Girl D"
-        }
-    ],
     "maid-chloe": [
         {
             "id": "c2049_s01",
@@ -254,6 +247,34 @@
             "id": "c1079_s01",
             "_id": "beachside-merrymaker-cermia",
             "name": "Beachside Merrymaker Cermia"
+        }
+    ],
+    "diene": [
+        {
+            "id": "c1076_s01",
+            "_id": "diene-magical-girl",
+            "name": "Magical Girl D"
+        }
+    ],
+    "apocalypse-ravi": [
+        {
+            "id": "c2019_s01",
+            "_id": "apocalypse-ravi-avatar-of-bloodlust",
+            "name": "Avatar of Bloodlust"
+        }
+    ],
+    "choux": [
+        {
+            "id": "c1101_s01",
+            "_id": "choux-2022-e7wc",
+            "name": "2022 E7WC"
+        }
+    ],
+    "alencia": [
+        {
+            "id": "c1100_s01",
+            "_id": "alencia-gift-granny",
+            "name": "Gift Granny"
         }
     ]
 }

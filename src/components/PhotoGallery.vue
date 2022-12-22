@@ -5,6 +5,7 @@
             <span class="nav-icon" @click="closeGallery" v-tooltip="() => this.$t('strings.close')">
                 <i class="fa fa-times"></i>
             </span>
+            <span v-if="canCopy" class="nav-icon" @click="copyImage" style="font-weight: 800; margin-top: -2px; font-size: 0.8em;" v-tooltip="() => this.$t('strings.copy')"><i class="fas fa-copy"></i></span>
             <span v-if="canDownload" class="nav-icon" @click="downloadImage" style="font-weight: 800; margin-top: -2px; font-size: 0.8em;" v-tooltip="() => this.$t('strings.download')"><i class="fas fa-download"></i></span>
             <span :class="['nav-icon', {invisible: isLast}]" @click="nextImage" style="font-weight: 800; margin-top: -2px;" v-tooltip="() => this.$t('strings.next')">&gt;</span>
             <span v-show="!isFirst" :class="['nav-icon', {invisible: isFirst}]" @click="prevImage" style="font-weight: 800; margin-top: -2px;" v-tooltip="() => this.$t('strings.back')">&lt;</span>
@@ -31,7 +32,7 @@
                 v-slot="{ loadEvent }"
             >
                 <!-- setting opacity and scale low for transition with loadEvent -->
-                <img v-if="album[localIndex]" :key="localIndex" style="transform: scale(0.2); opacity: 0;" @load="loadEvent($event); imageLoaded($event);" @error="imageFailedLoading" :src="album[localIndex].src" />
+                <img v-if="album[localIndex]" ref="active-image" :key="localIndex" style="transform: scale(0.2); opacity: 0;" @load="loadEvent($event); imageLoaded($event);" @error="imageFailedLoading" :src="album[localIndex].src" />
             </Interactive>
         </div>
         <div :class="['caption text-black-stroke', {invisible: !ui}]" ref="debug-gallery">
@@ -62,6 +63,10 @@ export default {
             type: Boolean,
             default: true
         },
+        copy: {
+            type: Boolean,
+            default: true
+        },
         onCloseHandler: {
             type: Function,
             default() {return undefined}
@@ -84,6 +89,9 @@ export default {
         },
         canDownload() {
             return this.download && !this.loadingImage && !this.imageFailed;
+        },
+        canCopy() {
+            return false //this.copy && !this.loadingImage && !this.imageFailed;
         }
     },
     created() {
@@ -132,16 +140,16 @@ export default {
                         const a = document.createElement('a')
                         a.style.display = 'none'
                         a.href = url
-                        a.download = isUrl[1] || 'Untitled'
+                        a.download = img.name || isUrl[1] || 'Untitled'
                         document.body.appendChild(a)
                         a.click()
                         window.URL.revokeObjectURL(url)
                         document.body.removeChild(a)
                     })
-                    .catch(() => this.$snackbar.log({title: 'Something went wrong'}) );
+                    .catch(() => this.$snackbar.error({title: 'Something went wrong'}) );
             else  {
                 var link = document.createElement('a')
-                link.download = img.name || 'Untitled'
+                link.download = img.name +'.png'
                 link.href = img.src
                 document.body.appendChild(link)
                 link.click()

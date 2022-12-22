@@ -3,7 +3,7 @@
         <div class="new-box" style="justify-content: space-evenly;">
             <div class="new-tiers-title" style="width: 100%;">
                 <button v-show="canClose" @click="$emit('close')" class="material-button flat primary raised mat-hover" v-ripple-effect><i class="fas fa-angle-left" style="padding-right: 1em;"></i><span>{{ $t('strings.back') }}</span></button>
-                <h2 style="align-self: baseline; font-weight: 200; padding: 30px 0; text-align: start;"><img style="height: 2em; vertical-align: middle;" src="/favicons/apple-touch-icon.png" />{{ $t('strings.app_cecilia_tools') }}</h2>
+                <h2 style="align-self: baseline; font-weight: 200; padding: 30px 0; text-align: start;"><img style="height: 2em; vertical-align: middle;" src="/favicons/apple-touch-icon.png" />{{ $t('strings.app_cecilia_tools') }} v{{ version.toFixed(2) }}</h2>
                 <h1 class="hide-mobile">{{ $t('strings.new_tier_list') }}</h1>
             </div>
             <div class="new-tiers-group">
@@ -64,6 +64,7 @@ export default {
         CustomChangelog: changelogComponent
     },
     props: {
+        version: {},
         canClose: { /* Can close without selecting anything */
             type: Boolean,
             required: false,
@@ -108,7 +109,7 @@ export default {
         newTierList(type) {
             let tiers = [];
             newTierRows(5, tiers);
-            this.$emit('workTierList', {type: type, name: ':' + getRandomElement(['Aware', 'Clueless', 'BOOBA', 'Copium', 'Bedge', 'Pepega', 'PepegaCredit', 'PepeLaugh', 'CharlotteNoted', 'skystone', 'molagora', 'molagoraseed']) + ': '+ this.$t('strings.untitled_tier_list'), tiers: tiers, xy: {names: [], list: []}})
+            this.$emit('workTierList', {type: type, name: ':' + getRandomElement(['Aware', 'Clueless', 'BOOBA', 'Pepega', 'PepegaCredit', 'PepeLaugh', 'Nerd', 'CharlotteNoted', 'RasOk', 'RasWave', 'RasLaugh', 'VildredThink', 'VildredAngry', 'MercedesShocked', 'MercedesCry', 'AitherFlex', 'AitherTongue', 'DieneL', 'DienePray', 'Skystone', 'Molagora', 'MolagoraSeed']) + ': '+ this.$t('strings.untitled_tier_list'), tiers: tiers, xy: {names: [], list: []}})
         },
         loadTierList(data) {
             this.$emit('workTierList', data)
@@ -161,7 +162,7 @@ export default {
 .new-box button {
     width: 100%;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
 }
 .tier-load-box {
     flex: 1;

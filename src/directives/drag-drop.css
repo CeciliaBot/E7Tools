@@ -10,8 +10,10 @@
     border-radius: 5px;
 }
 .is-dragging {
-    position: fixed !important;
+    position: absolute !important;
     /*opacity: 0.85;*/
+    top: 0;
+    left: 0;
     transform-origin: 0 0; /* Center if element has scale */
     z-index: 100;
     pointer-events: none !important;

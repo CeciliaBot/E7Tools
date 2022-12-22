@@ -103,6 +103,11 @@ export default {
             if (index===-1) return;
             newIndex=index+newIndex;
             this.$emit('move-tier-row', index, newIndex);
+            // this.$nextTick( () => {
+            //     var rows = this.$el.querySelectorAll('div .tier-wrapper');
+            //     if (rows)
+            //         rows[newIndex].scrollIntoView({block: 'center'});
+            // })
         },
         /******************* drop item into one of the tiers *******************/
         tierRowDropItem(item, to, from, newIndex) {

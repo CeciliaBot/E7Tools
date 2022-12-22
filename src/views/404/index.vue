@@ -27,7 +27,7 @@ export default {
       h('img', {src: cermia404, height: 280.95, width: 270}),
       h('div', {style: 'margin-top: 30px;'}, [
         h('h1', 'Error 404'),
-        h('div', routes.filter(route => route.path !== '*').map(route => {
+        h('div', routes.filter(route => route.path !== '/:pathMatch(.*)*').map(route => {
           return h('div', {class: 'path-options', onClick: () => this.selectRoute(route.path) }, this.$t('strings.' + route.name))
         }))
       ])

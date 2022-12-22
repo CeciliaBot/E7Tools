@@ -55,7 +55,7 @@ class Modal {
                         if (button instanceof Object) {
                             buttonEl.className = button.class || 'flat-button material-button primary';
                             buttonEl.innerText = button.name;
-                            buttonEl.style += button.style;
+                            buttonEl.style = 'width: 40%; ' + (button.style || '');
                         } else {
                             buttonEl.innerText = button;
                             buttonEl.className = 'flat-button material-button basic primary';
@@ -79,9 +79,13 @@ class Modal {
                             if ( document.body.contains(modalContent) )
                                 modalContent.innerHTML = returnedBody;
                         }).catch( (err) => {
+                            modalButtons.querySelectorAll('button').forEach((button, index) => {
+                                if (buttons[index] && buttons[index] instanceof Object && buttons[index].hideOnError)
+                                    button.style.display = 'none';
+                            })
                             if ( document.body.contains(modalContent) )
                                 modalContent.innerHTML = '<div>Error' + (err? '<br>'+err:'') + '</div>';
-                        }).finally( () => {
+                        }).then( () => {
                             if ( document.body.contains(modalContent) )
                                 modalContent.style.padding = '10px',
                                 modalButtons.style.display = '';
@@ -152,7 +156,7 @@ const callbackAlert = {
                 resolve(res)
             }).catch(err => {
                 reject(err)
-            }).finally(()=> {
+            }).then(()=> {
                 if (!preventClosing) modal.remove();
             })
         })

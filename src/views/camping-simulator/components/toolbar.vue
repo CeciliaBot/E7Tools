@@ -1,7 +1,7 @@
 <template>
     <div :class="['hide-scrollbar',!this.vertical ? 'icon-bar' : 'vertical-icon-bar']">
         <template v-for="(t,index) in tabsToDisplay" >
-            <span v-if="!vertical || (this.vertical && index !== 4)" :key="t.click" :class="{'active-icon-bar': tab === t.click}" @click="setTab(t.click, $event)" >
+            <span v-if="!vertical || (this.vertical && index !== 4)" :key="t.id" :class="{'active-icon-bar': tab === t.id}" @click="setTab(t.id, $event)" >
                 <i v-if="t.class" :class="t.class"></i>
                 <img v-else class="noselect" :src="t.img" :style="{marginBottom: '-10px', height: '40px', verticalAlign: this.vertical ? '' : 'text-top'}" />
             </span>
@@ -11,16 +11,16 @@
 
 <script>
 const tabs = [ /* Last element will be removed if in standalone mode (no vue router) */
-  {tab: 'Add Heroes', tooltip: 'Add heroes to your roster', class: 'fa fa-plus', click: 'add', mobile: 'true'},
-  {tab: 'Manage Heroes', tooltip: 'Manage your roster', class: 'fa fa-pencil-alt', click: 'manage', mobile: 'true'},
-  {tab: 'Adavanced Settings', tooltip: '(Optional) Advanced settings', class: 'fa fa-book', click: 'advanced', mobile: 'true'},
-  {tab: 'Calculate Results', tooltip: 'Go camping', img: require('@/assets/camp-fire-icon-small.png'), click: 'calculate', mobile: 'true'},
-  {tab: 'More', tooltip: 'Click for more tools', class: 'fas fa-ellipsis-h', click: 'more', mobile: 'true'},
-  {tab: 'Saved Teams', tooltip: 'View your teams', class: 'fa fa-save', click: 'recorded', mobile: 'false'},
-  {tab: 'Maps', tooltip: 'Labyrinth routes', class: 'fa fa-map', click: 'maps', mobile: 'false'},
-  {tab: 'Character Usage', tooltip: 'Character usage stats on this website', class: 'fa fa-chart-bar', click: 'usage-stats', mobile: 'false'},
-  {tab: 'Settings', tooltip: 'Settings', class: 'fa fa-cog', click: 'settings', mobile: 'false'},
-  {tab: 'Main menu', tooltip: 'E7 Tools main menu', class: 'fa fa-home', click: 'home', mobile: 'false'}
+  {id: 'add',           name: 'strings.add_heroes',             class: 'fa fa-plus',                                mobile: 'true' },
+  {id: 'manage',        name: 'strings.your_heroes',            class: 'fa fa-pencil-alt',                          mobile: 'true' },
+  {id: 'advanced',      name: 'strings.advanced_settings',      class: 'fa fa-book',                                mobile: 'true' },
+  {id: 'results',       name: 'strings.results',                img: require('@/assets/camp-fire-icon-small.png'),  mobile: 'true' },
+  {id: 'more',          name: 'strings.more',                   class: 'fas fa-ellipsis-h',                         mobile: 'true' },
+  {id: 'teams',         name: 'strings.your_teams',             class: 'fa fa-save',                                mobile: 'false'},
+  {id: 'maps',          name: 'strings.maps',                   class: 'fa fa-map',                                 mobile: 'false'},
+  {id: 'usage-stats',   name: 'strings.camping_usage_stats',    class: 'fa fa-chart-bar',                           mobile: 'false'},
+  {id: 'settings',      name: 'strings.settings',               class: 'fa fa-cog',                                 mobile: 'false'},
+  {id: 'home',          name: 'strings.app_cecilia_tools',      class: 'fa fa-home',                                mobile: 'false'}
 ];
 
 export default {
@@ -41,12 +41,13 @@ export default {
     },
     data() {
         return {
-            tabs: tabs
+            tabs: []
         }
     },
     created() {
-        if (this.standalone)
-            this.tabs.pop();
+        var t = tabs.slice(0)
+        if (this.standalone) t.pop();
+        this.tabs = t;
     },
     computed: {
         tabsToDisplay() {
@@ -63,8 +64,8 @@ export default {
                     tabs.slice(5).map( x => {
                         return {
                             class: x.class || '',
-                            name: x.tab,
-                            handler: () => this.$emit('set-tab', x.click)
+                            name: this.$t(x.name),
+                            handler: () => this.$emit('set-tab', x.id)
                         }
                     }),
                     { mobile: false }

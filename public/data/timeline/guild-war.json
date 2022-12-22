@@ -1,0 +1,132 @@
+[
+    {
+        "nid": [
+            3474012,
+            4378191
+        ],
+        "type": "season",
+        "dt": [
+            1563012000000,
+            1577613540000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/0b9386052013425394d9afcaba51932e/e835bce67453421c86b1116354d104c7_1562745201.png",
+        "name": "Guild War Season 1"
+    },
+    {
+        "nid": [
+            5043066,
+            5795285
+        ],
+        "type": "season",
+        "dt": [
+            1586167200000,
+            1596880740000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/ce924cfd41a441c38fec537449171656/abbf488d23c34e3397f84b6e0bfb1260_1585735174.jpg",
+        "name": "Guild War Challenge Season (Season 2)"
+    },
+    {
+        "nid": [
+            5902090,
+            6320819
+        ],
+        "type": "season",
+        "dt": [
+            1598090400000,
+            1605347940000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/e2ec02b8ae3742c8bd89c3390a6608ef/fc5ef24c59e5488ab23f81b08d3b295e_1597821420.jpg",
+        "name": "Guild War Endeavor Season (Season 3)"
+    },
+    {
+        "nid": [
+            6451279,
+            6901468
+        ],
+        "type": "season",
+        "dt": [
+            1607767200000,
+            1615024740000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/b6640529196341a0b07d737e12c236db/5a1e17a75d694764818239e8d8752422_1607423039.jpg",
+        "name": "Guild War Ardor Season (Season 4)"
+    },
+    {
+        "nid": [
+            6993206,
+            7265112
+        ],
+        "type": "season",
+        "dt": [
+            1617444000000,
+            1624701540000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/52f6daf786f344c39ba0e525724035d4/6fc39b30a74a453ba85c60fbed5d4437_1617079893.jpg",
+        "name": "Guild War 「Skyward Season」 (Season 5)"
+    },
+    {
+        "nid": [
+            7386019,
+            7854539
+        ],
+        "type": "season",
+        "dt": [
+            1627120800000,
+            1634378340000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/6ddd6ae93468463f89bcce3914fc00af/3e2ec1a8ab13451fa2b9d1f7c58af646_1626854216.jpg",
+        "name": "Guild War 「Ambition Season」 (Season 6)"
+    },
+    {
+        "nid": [
+            7947711,
+            8145505
+        ],
+        "type": "season",
+        "dt": [
+            1636797600000,
+            1644055140000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/2801c8d37bdf4827a8245d1440f5ef50/ca4a5c51ae0149399fa89c0d1279b177_1636535599.jpg",
+        "name": "Guild War 「Conviction Season」 (Season 7)"
+    },
+    {
+        "nid": [
+            8285054,
+            8519300
+        ],
+        "type": "season",
+        "dt": [
+            1646474400000,
+            1653731940000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/30eba17f66c348ab9827451f892e3340/e7e8e7c083fe47128dcc973fb8b15150_1646206538.jpg",
+        "name": "Guild War Resolution Season (Season 8)"
+    },
+    {
+        "nid": [
+            8582044,
+            8875623
+        ],
+        "type": "season",
+        "dt": [
+            1656237600000,
+            1663408740000
+        ],
+        "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/1cb8c66af1f14b09893911092334437f/cb84f6168ae14d008a7991859b1eb0b1_1655806570.jpg",
+        "name": "Guild War Conquest Season (Season 9)"
+    },
+    {
+        "nid": [
+            8950283,
+            9129156
+        ],
+        "type": "season",
+        "dt": [
+            1665828000000,
+            1673085540000
+        ],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/application_no/96001/default/COMMUNITYd7d3b1f3700b48028e2584cd19ae2120/411da70846604dbcb2e154124f6cb759.jpg",
+        "name": "Guild War Triumph Season (Season 10)"
+    }
+]
