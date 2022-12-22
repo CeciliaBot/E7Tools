@@ -5,7 +5,7 @@ export default function (heroList, context) { /* context === this from main camp
     if (context.$route) {
         context.$route.hash.split('&')
         .forEach(param => {
-            if (param.indexOf('roster') !== -1) {
+            if (param.indexOf(/^\s*roster/i) !== -1) {
                 urlRoster = param.split('=')[1]
             }
         })
@@ -13,7 +13,7 @@ export default function (heroList, context) { /* context === this from main camp
         window.location.href.split('#').forEach(hash => { /* if not using router (Standalone version) */
             hash.split('&')
                 .forEach(param => {
-                    if (param.indexOf('roster') !== -1) {
+                    if (param.indexOf(/^\s*roster/i) !== -1) {
                         urlRoster = param.split('=')[1]
                     }
                 })
@@ -34,7 +34,6 @@ export default function (heroList, context) { /* context === this from main camp
                 setTimeout( () => {
                     try {
                         urlRoster = oldLink ? decodeOldLink(urlRoster) : decodeLink(urlRoster, heroList);
-                        console.log(urlRoster)
                         if (!urlRoster.length) throw 'No roster found';
                         resolve('<div>Replace current roster with roster from URL?<div>'+urlRoster.map(el => {return context.$store.getters.getHeroName(el)+'<br>'}).join('') + '</div></div>')
                     } catch(err) {
@@ -42,7 +41,7 @@ export default function (heroList, context) { /* context === this from main camp
                     }
                 }, 200)
             }),
-            [ { name: context.$t('strings.replace'), class: "material-button basic warn", hideOnError: true }, context.$t('strings.cancel')]
+            [ { name: context.$t('strings.confirm'), class: "material-button basic confirm", hideOnError: true }, context.$t('strings.cancel')]
         ).then(async ([answer]) => {
             if (answer === 0)
                 context.roster = urlRoster,

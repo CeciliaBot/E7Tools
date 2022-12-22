@@ -592,6 +592,16 @@
         "role": "knight",
         "gacha": true
     },
+    "rocket-punch-gauntlet": {
+        "_id": "rocket-punch-gauntlet",
+        "id": "art0170",
+        "identifier": "",
+        "name": "Rocket Punch Gauntlet",
+        "rarity": 5,
+        "role": "knight",
+        "gacha": true,
+        "limited": true
+    },
     "rod-of-amaryllis": {
         "_id": "rod-of-amaryllis",
         "id": "art0001",

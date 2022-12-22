@@ -2752,12 +2752,22 @@
     },
     "aekarina": {
         "_id": "aekarina",
-        "id": "npc1234",
+        "id": "c1137",
         "name": "ae-KARINA",
         "rarity": 5,
         "role": "knight",
         "attribute": "ice",
         "sex": 2,
         "zodiac": "goat"
+    },
+    "death-dealer-ray": {
+        "_id": "death-dealer-ray",
+        "id": "c2090",
+        "name": "Death Dealer Ray",
+        "rarity": 5,
+        "role": "manauser",
+        "attribute": "dark",
+        "sex": 1,
+        "zodiac": "crab"
     }
 }

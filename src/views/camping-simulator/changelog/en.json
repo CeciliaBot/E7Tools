@@ -1,5 +1,11 @@
 [
     [
+        2.01, "2022/12/22",
+        [
+            ["fix", "Fixed old roster URLs not being parsed correctly."]
+        ]
+    ],
+    [
         2.00, "2022/12/22",
         [
             ["new", "New code, easier to edit and add new features. Also now it's easier to translate, contact me if you are interested in helping translate."],

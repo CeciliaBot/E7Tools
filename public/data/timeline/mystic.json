@@ -1173,7 +1173,8 @@
       ],
       "c": [
          {
-            "id": "death-dealer-ray"
+            "id": "death-dealer-ray",
+            "new": true
          },
          {
             "id": "crimson-armin"

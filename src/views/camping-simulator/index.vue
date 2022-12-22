@@ -138,7 +138,7 @@ export default {
     },
     data() {
         return {
-            VERSION: 2.00,           // Camping simulator version -> needed for data conversion of old savedata and other stuff
+            VERSION: 2.01,           // Camping simulator version -> needed for data conversion of old savedata and other stuff
             isBooting: true,
             TAB: 'welcome',
             settings: {},

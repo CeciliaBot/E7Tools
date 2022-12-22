@@ -94,6 +94,7 @@ export default function(_this) { /* _this === vue context instance */
                 _this.$store.commit('loading', false)
             })
         }).then(() => {
+            _this.$snackbar.error({title: 'Error: couldn\'t load export module.'})
             _this.$store.commit('loading', false)
         })
     })
