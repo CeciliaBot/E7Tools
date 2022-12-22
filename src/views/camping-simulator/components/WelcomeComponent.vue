@@ -9,7 +9,7 @@
                 <div class="absolute-center camp-title noselect">
                     <img :src="require('@/assets/camping-simulator-logo.png')"/>
                     <br>
-                    <span style="font-weight: 300; font-size: 12px;">Version 2.00</span>
+                    <span style="font-weight: 300; font-size: 12px;">Version {{ VERSION }}</span>
                     <br>
                     <span v-if="newHeroes" style="font-weight: 300; font-size: 12px;">
                         New characters since your last visit: {{ newHeroes.join(', ')}}
@@ -129,6 +129,7 @@ export default {
         ChangelogComponent,
         HelpSlides
     },
+    inject: ['VERSION'],
     props: {
         verticalToolbar: {
             type: Boolean,

@@ -235,7 +235,7 @@ export default {
                 })
                 this.displayableHeroes = all;
 
-                parseUrlRoster(this.heroList, this);
+                parseUrlRoster(this.heroList.slice(), this);
             }).catch(err => {
                 console.log(err);
             }).then( () => {

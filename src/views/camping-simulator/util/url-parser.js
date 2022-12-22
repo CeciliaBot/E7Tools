@@ -4,16 +4,16 @@ export default function (heroList, context) { /* context === this from main camp
     var oldLink = false;
     if (context.$route) {
         context.$route.hash.split('&')
-        .forEach(param => {
-            if (param.indexOf(/^\s*roster/i) !== -1) {
-                urlRoster = param.split('=')[1]
-            }
-        })
+            .forEach(param => {
+                if (/^\s*roster/i.test(param)) {
+                    urlRoster = param.split('=')[1]
+                }
+            })
     } else {
         window.location.href.split('#').forEach(hash => { /* if not using router (Standalone version) */
             hash.split('&')
                 .forEach(param => {
-                    if (param.indexOf(/^\s*roster/i) !== -1) {
+                    if (/^\s*roster/i.test(param)) {
                         urlRoster = param.split('=')[1]
                     }
                 })
@@ -43,9 +43,18 @@ export default function (heroList, context) { /* context === this from main camp
             }),
             [ { name: context.$t('strings.confirm'), class: "material-button basic confirm", hideOnError: true }, context.$t('strings.cancel')]
         ).then(async ([answer]) => {
-            if (answer === 0)
-                context.roster = urlRoster,
+            if (answer === 0) {
+                context.roster = urlRoster
+                // Set the add hero list tab
+                var all = heroList;
+                context.roster.forEach(hero => {
+                    var index = all.indexOf(hero);
+                    if (index!==-1)
+                        all.splice(index, 1)
+                })
+                context.displayableHeroes = all;
                 window.history.pushState("", "", cleanUrl(context.$router)); // remove ?camproster= from the URL to avoid accidental refreshes replacing your current team
+            }
         })
     }
 }
