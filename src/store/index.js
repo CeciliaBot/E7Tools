@@ -46,6 +46,9 @@ export default createStore({
       if (!state.HeroDB) return id;
       return cdn+'face/' + (state.HeroDB[id] || {id: id}).id + '_s.png';
     },
+    getArtifactDB: (state) => () => {
+      return state.ArtifactDB
+    },
     getArtifact: (state) => (id) => {
       return state.ArtifactDB[id] || {id: id, _id: id, name: id, rarity: 5};
     },

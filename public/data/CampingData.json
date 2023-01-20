@@ -18281,5 +18281,69 @@
         "buffs": [],
         "debuffs": [],
         "common": []
+    },
+    "aekarina": {
+        "camping": {
+            "personalities": [
+                "Hard Worker",
+                "Cool-Headed"
+            ],
+            "topics": [
+                "Happy Memories",
+                "Belief"
+            ],
+            "values": {
+                "Criticism": 4,
+                "Reality Check": 3,
+                "Heroic Tale": 2,
+                "Comforting Cheer": 5,
+                "Cute Cheer": 2,
+                "Heroic Cheer": 2,
+                "Sad Memory": 3,
+                "Joyful Memory": 4,
+                "Happy Memories": 0,
+                "Unique Comment": 3,
+                "Self-Indulgent": 0,
+                "Occult": 0,
+                "Myth": 0,
+                "Bizarre Story": 0,
+                "Food Story": 3,
+                "Horror Story": 0,
+                "Gossip": 0,
+                "Dream": 3,
+                "Advice": 2,
+                "Complain": 0,
+                "Belief": 1,
+                "Interesting Story": 2
+            }
+        },
+        "skills": [
+            {
+                "buff": [],
+                "debuff": [
+                    18
+                ],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            },
+            {
+                "buff": [],
+                "debuff": [],
+                "common": []
+            }
+        ],
+        "buffs": [
+            2,
+            3,
+            5
+        ],
+        "debuffs": [
+            18
+        ],
+        "common": []
     }
 }

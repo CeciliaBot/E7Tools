@@ -5,30 +5,22 @@ export function everyLocked (team, locked) {
 export function hasDuplicates(array, db) {  // check for duplicates or sc duplicates
     return array.some((val, i) => {
         return array.indexOf(val, i+1) != -1 || heroHasScDupe(array, i, db)
-    });
+    })
 }
 
 function heroHasScDupe(team, index, database) {
     var data = database[team[index]];
-    if (index===3 || !data || !data.linked_hero)
+    if (!data || !data.linked_hero)
         return false;
 
     if (!Array.isArray(data.linked_hero))
         data.linked_hero = [data.linked_hero];
     
-    if (data.linked_hero.some(s => team.indexOf(s) != -1)) {
-        return true
-    }
-
-    return false
+    return data.linked_hero.some(s => team.indexOf(s) != -1)
 }
 
 export function checkSCDupe(array, database) {
-    for (var i = 0; i<array.length; i++){
-        if (heroHasScDupe(array, i, database))
-            return true;
-    }
-    return false;
+    return array.some((el, i) => heroHasScDupe(array, i, database))
 }
 
 export function alreadyInResults(team, results) {

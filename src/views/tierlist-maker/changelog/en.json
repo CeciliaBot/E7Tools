@@ -1,12 +1,18 @@
 [
     [
+        1.61, "2022/01/20",
+        [
+            ["fix", "Fixed an issue causing the 3 star hero Suthan to not be displayed."]
+        ]
+    ],
+    [
         1.60, "04/12/2022",
         [
             ["new", "New clone/duplicate feature.\nDo you ever feel like you need to rank the same character/artifact in 2 different tiers? Now you can!\nRight click a character or artifact and select \"Clone element\" from the contextual menu.\n<img src=\"https://i.imgur.com/tJvGiZC.png\" height=\"150px\" /><img src=\"https://i.imgur.com/uq2xIdL.png\" />\nNow you can move the new element anywhere you wish. Clones can have different skins equiped and different comments.\nTo delete a duplicated element right click the clone and select \"Delete clone\", this option won't appear on the original element."]
         ]
     ],
     [
-        1.52, "25/11/2022",
+        1.52, "2022/11/25",
         [
             ["new", "Added new emotes: RasOk, RasWave, RasLaugh, VildredThink, VildredAngry, MercedesShocked, MercedesCry, AitherFlex, AitherTongue and some Guild Wars icons"],
             ["new", "Now you can resize the label's width to better fit your text!\nMove the cursor to the right border of the label then click and hold the left button to start resizing:\n<img src=\"https://i.imgur.com/1W10y6N.png\" style=\"height: 5em\" />"],
@@ -14,7 +20,7 @@
         ]
     ],
     [
-        1.5, "01/09/2022",
+        1.5, "2022/09/01",
         [
             ["new", "Now you can see this changelog!"],
             ["new", "Everything has been written from scratch with Vue 3 (from Vue 2 to Vue 3)"],
@@ -30,7 +36,7 @@
         ]
     ],
     [
-        1.4, "13/05/2022",
+        1.4, "2022/05/13",
         [
             ["new", "Alignment tier list now available."],
             ["new", "Character skins now are available. You can select a skin by pressing right click on a character with ingame skins."],
@@ -38,19 +44,19 @@
         ]
     ],
     [
-        1.2, "15/04/2022",
+        1.2, "2022/04/15",
         [
             ["new", "Comments for tier elements are now available on mobile. Tap a character to view and edit comments."]
         ]
     ],
     [
-        1.11, "27/03/2022",
+        1.11, "2022/03/27",
         [
             ["new", "Added <code>CTRL+F</code> shortcut for PC users. It will focus and select all of the text inside the search bar."]
         ]
     ],
     [
-        1.1, "18/03/2022",
+        1.1, "2022/03/18",
         [
             ["new", "Added Search bar"],
             ["new", "Added new filter: Gender."]

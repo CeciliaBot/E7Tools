@@ -22,7 +22,7 @@ module.exports = {
       entry: 'src/views/camping-simulator/standalone/',
       template: 'public/index.html',
       filename: 'index.html',
-      title: 'CeciliaBot Camp Simulator',
+      title: 'E7 Camp Simulator | CeciliaBot',
       description: 'Epic Seven Camping Simulator for Raid and Labyrinth. Add your roster to find the best team combination with high morale!',
       //chunks: ['chunk-common', 'chunk-light-vendors', 'index']
     },

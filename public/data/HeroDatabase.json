@@ -1147,7 +1147,7 @@
         "attribute": "dark",
         "role": "warrior",
         "sex": 2,
-        "zodiac": "crab"
+        "zodiac": "bull"
     },
     "guider-aither": {
         "id": "c2018",
@@ -2129,16 +2129,6 @@
         "sex": 2,
         "zodiac": "waterbearer"
     },
-    "dark-tyrant-tenebria": {
-        "id": "c2050_skin1",
-        "_id": "dark-tyrant-tenebria",
-        "name": "Dark Tyrant Tenebria",
-        "rarity": 5,
-        "attribute": "dark",
-        "role": "mage",
-        "sex": 2,
-        "zodiac": "twins"
-    },
     "ilynav": {
         "id": "c1113",
         "_id": "ilynav",
@@ -2477,7 +2467,7 @@
         "role": "warrior",
         "attribute": "dark",
         "sex": 2,
-        "zodiac": "maiden"
+        "zodiac": "ram"
     },
     "pirate-captain-flan": {
         "id": "c2110",
@@ -2657,7 +2647,7 @@
         "role": "ranger",
         "attribute": "ice",
         "sex": 2,
-        "zodiac": "ram"
+        "zodiac": "goat"
     },
     "lua": {
         "_id": "lua",
@@ -2769,5 +2759,85 @@
         "attribute": "dark",
         "sex": 1,
         "zodiac": "crab"
+    },
+    "shepherd-jena": {
+        "id": "c4052",
+        "_id": "shepherd-jena",
+        "name": "Shepherd Jena",
+        "rarity": 3,
+        "attribute": "ice",
+        "role": "mage",
+        "sex": 2,
+        "zodiac": "ram"
+    },
+    "beehoo": {
+        "id": "c1141",
+        "_id": "beehoo",
+        "name": "Beehoo",
+        "rarity": 5,
+        "attribute": "fire",
+        "role": "ranger",
+        "sex": 1,
+        "zodiac": "goat"
+    },
+    "peacemaker-furious": {
+        "id": "c2087",
+        "_id": "peacemaker-furious",
+        "name": "Peacemaker Furious",
+        "rarity": 4,
+        "attribute": "dark",
+        "role": "ranger",
+        "sex": 1,
+        "zodiac": "scorpion"
+    },
+    "juni": {
+        "id": "c3151",
+        "_id": "juni",
+        "name": "Juni",
+        "rarity": 3,
+        "attribute": "fire",
+        "role": "warrior",
+        "sex": 2,
+        "zodiac": "archer"
+    },
+    "talaz": {
+        "id": "c3152",
+        "_id": "talaz",
+        "name": "Talaz",
+        "rarity": 3,
+        "attribute": "ice",
+        "role": "warrior",
+        "sex": 1,
+        "zodiac": "leo"
+    },
+    "lilka": {
+        "id": "c3153",
+        "_id": "lilka",
+        "name": "Lilka",
+        "rarity": 3,
+        "attribute": "wind",
+        "role": "ranger",
+        "sex": 2,
+        "zodiac": "twins"
+    },
+    "talia": {
+        "id": "c3154",
+        "_id": "talia",
+        "name": "Talia",
+        "rarity": 3,
+        "attribute": "light",
+        "role": "assassin",
+        "sex": 2,
+        "zodiac": "goat"
+    },
+    "suthan": {
+        "id": "c3155",
+        "_id": "suthan",
+        "name": "Suthan",
+        "rarity": 3,
+        "attribute": "dark",
+        "role": "mage",
+        "sex": 1,
+        "zodiac": "waterbearer"
     }
 }

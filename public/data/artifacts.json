@@ -747,6 +747,15 @@
         "role": "warrior",
         "gacha": true
     },
+    "sphere-of-inferno": {
+        "_id": "sphere-of-inferno",
+        "id": "art0175",
+        "identifier": "",
+        "name": "Sphere of Inferno",
+        "rarity": 5,
+        "role": "ranger",
+        "gacha": true
+    },
     "sphere-of-sadism": {
         "_id": "sphere-of-sadism",
         "id": "art0160",

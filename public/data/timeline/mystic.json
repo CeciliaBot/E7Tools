@@ -1165,7 +1165,7 @@
       "a": []
    },
    {
-      "nid": 9132219,
+      "nid": 9181783,
       "type": "mystic",
       "dt": [
          "2023-01-05T03:00:00Z",
@@ -1180,6 +1180,35 @@
             "id": "crimson-armin"
          }
       ],
-      "a": []
+      "a": [],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/b030f2f360624a53b7d80985b701c0ad/5cd772cb9406422cb1701971cc9f3ca6.jpg"
+   },
+   {
+      "nid": 0,
+      "type": "mystic",
+      "dt": [
+         "2023-01-26T03:00:00Z",
+         "2023-02-16T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "little-queen-charlotte"
+         },
+         {
+            "id": "conqueror-lilias"
+         },
+         {
+            "id": "remnant-violet"
+         },
+         {
+            "id": "arbiter-vildred"
+         },
+         {
+            "id": "peacemaker-furious",
+            "new": true
+         }
+      ],
+      "a": [],
+      "thumbnail": ""
    }
 ]

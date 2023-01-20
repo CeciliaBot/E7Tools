@@ -907,5 +907,21 @@
                 "id": "choux"
             }
         ]
+    },
+    {
+        "nid": 9155420,
+        "type": "pass",
+        "dt": [
+            "2022-12-29T03:00:00Z",
+            "2023-01-26T02:59:59Z"
+        ],
+        "name": "Epic★Pass 「Sparkling End of the Year 2022 Season」",
+        "c": [
+            {
+                "id": "alencia",
+                "new": true
+            }
+        ],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/9d1f294c4ead4d05b94495f486dc3818/09775db6867749df994e3c8a24778bf4.jpg"
     }
 ]

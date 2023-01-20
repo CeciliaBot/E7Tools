@@ -130,7 +130,6 @@ export default {
             this.fetchError = false
             this.showHelp = false
             ajax('https://ceciliabotgithub.glitch.me/ceciliabot-team-usage', 'POST', JSON.stringify( {function: 'get', data: toRaw(this.fetchOptions)} )).then( res => {
-                console.log(res)
                 this.toDisplay = JSON.parse(res);
             }).catch( err => {
                 console.error(err);

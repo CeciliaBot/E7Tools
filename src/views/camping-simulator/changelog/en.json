@@ -1,5 +1,18 @@
 [
     [
+        2.06, "2023/01/01",
+        [
+            ["new", "Added Nightmare raid map made by reddit user SJack2."]
+        ]
+    ],
+    [
+        2.05, "2022/12/29",
+        [
+            ["fix", "SC Heroes and their normal version in the same team."],
+            ["fix", "Setting role/attribute to a negative value will no longer trigger advanced settings calculation."]
+        ]
+    ],
+    [
         2.01, "2022/12/22",
         [
             ["fix", "Fixed old roster URLs not being parsed correctly."]

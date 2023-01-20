@@ -14,6 +14,12 @@ export default [
                 description: 'Hell Raid Map',
                 author: '<a href="https://www.reddit.com/user/C0NNECT1NG/">u/C0NNECT1NG</a> (<a href="https://www.reddit.com/r/EpicSeven/comments/flg4b1/complete_hell_raid_map/">Reddit post</a>)',
                 size: [1101, 1080]
+            },
+            {
+                src: 'https://preview.redd.it/cbfoucqrqxy91.png?width=1030&format=png&auto=webp&s=73ad03545609ad9cb2c970846b6c4a22fb85fc76',
+                description: 'Nightmare Raid Map',
+                author: '<a href="https://www.reddit.com/user/SJack2">u/SJack2</a> (<a href="https://www.reddit.com/r/EpicSeven/comments/ypyagf/azmakalis_of_cycle_nightmare_lab_map/">Reddit post</a>)',
+                size: [1030, 740]
             }
         ],
         'zh-CN': [

@@ -120,7 +120,7 @@
 
 <script>
 import ChangelogComponent from '@/components/changelog.vue'
-import { cdn } from '@/utils/constant.js'
+//import { cdn } from '@/utils/constant.js'
 import HelpSlides from './WelcomeHelpSlides.vue'
 // import ajax from '@/utils/ajax.js'
 
@@ -142,8 +142,7 @@ export default {
     data() {
         return {
             welcomeTab: false,
-            bg: cdn +'/ui/camping-low-res.png',
-            cdn: cdn,
+            bg: require('@/assets/camping-bg-low-res.jpg'), //cdn +'/ui/camping-low-res.png',
             locales: (this.$i18n._availableLocales || []).slice()
         }
     },

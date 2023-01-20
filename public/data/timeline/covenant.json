@@ -6184,7 +6184,7 @@
       "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/23eabb7c4fb34f18ae05c073b9a3c0ae/0caf024f28ed4461ae35dbf2bd8b4793.jpg"
    },
    {
-      "nid": 0,
+      "nid": 9155433,
       "type": "covenant",
       "dt": [
          "2022-12-29T03:00:00Z",
@@ -6198,6 +6198,159 @@
       "a": [
          {
             "id": "alencinoxs-wrath"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/3acd5e2017ba48d5b22d24f903409648/cd12de0f52984b7ea2d250a39232fd17.jpg"
+   },
+   {
+      "nid": 9178036,
+      "type": "covenant",
+      "dt": [
+         "2023-01-05T09:00:00Z",
+         "2023-01-12T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "ilynav"
+         }
+      ],
+      "a": [
+         {
+            "id": "wings-of-light-and-shadow"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/7b8752cdd56f45f29ea872b48da8bf7e/bd1097fcd15f408eaa87e176a8889723.jpg"
+   },
+   {
+      "nid": 9178052,
+      "type": "covenant",
+      "dt": [
+         "2023-01-05T09:00:00Z",
+         "2023-01-12T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "elena"
+         }
+      ],
+      "a": [
+         {
+            "id": "stella-harpa"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/e384c6b5962749f6aedf6919306586dd/132e7c86cd08487da1404b48076f663d.jpg"
+   },
+   {
+      "nid": 9204765,
+      "type": "covenant",
+      "dt": [
+         "2023-01-12T03:00:00Z",
+         "2023-01-19T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "command-model-laika"
+         }
+      ],
+      "a": [
+         {
+            "id": "glowings-21"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/c53daaa4fe2c49818f5e902fe25a2df2/dd397164014445078d333080ae3e2404.jpg"
+   },
+   {
+      "nid": 9204794,
+      "type": "covenant",
+      "dt": [
+         "2023-01-12T03:00:00Z",
+         "2023-01-19T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "senya"
+         }
+      ],
+      "a": [
+         {
+            "id": "spear-of-a-new-dawn"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/9e83e8d60d9e4b6bbbfe4a86a3e09e69/0cb473329d744772bc6788cedd3531c3.jpg"
+   },
+   {
+      "nid": 9221632,
+      "type": "covenant",
+      "dt": [
+         "2023-01-19T09:00:00Z",
+         "2023-01-26T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "eda"
+         }
+      ],
+      "a": [
+         {
+            "id": "twilight-calamity"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/bc65cad2ae4040d4afbc751275b26605/4c4f8762b8bf4f5f98ab990f14899251.jpg"
+   },
+   {
+      "nid": 9221643,
+      "type": "covenant",
+      "dt": [
+         "2023-01-19T09:00:00Z",
+         "2023-01-26T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "ken"
+         }
+      ],
+      "a": [
+         {
+            "id": "samsara-prayer-beads"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/83e1ea65f758423d935447062a2996c6/64980ce174214b39b0f562644fa82c40.jpg"
+   },
+   {
+      "nid": 0,
+      "type": "covenant",
+      "dt": [
+         "2023-01-26T03:00:00Z",
+         "2023-02-09T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "beehoo",
+            "new": true
+         }
+      ],
+      "a": [
+         {
+            "id": "sphere-of-inferno"
+         }
+      ],
+      "thumbnail": ""
+   },
+   {
+      "nid": 0,
+      "type": "covenant",
+      "dt": [
+         "2023-01-26T03:00:00Z",
+         "2023-02-09T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "aria"
+         }
+      ],
+      "a": [
+         {
+            "id": "scroll-of-shadows"
          }
       ],
       "thumbnail": ""

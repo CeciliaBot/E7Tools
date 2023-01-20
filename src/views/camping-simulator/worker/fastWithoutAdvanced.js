@@ -117,15 +117,16 @@ export function calculateWithoutAdvanced(roster, locked, advanced, HeroDB) {
                                     break;
                                 }
 
+                                var team = [c1,c2._id,c3._id,c4._id];
+                                if (checkSCDupe(team, HeroDB)) {
+                                    continue; // dupe character detected
+                                }
+                                if (!(everyLocked(team, locked))) {
+                                    continue; // Not all locked heroes are included
+                                }
+
                                 for (var y = 0; y < results.length; y++) {
                                     if (morale >= results[y].morale) {
-                                        var team = [c1,c2._id,c3._id,c4._id];
-                                        if (checkSCDupe(team, HeroDB)) {
-                                            break; // dupe character detected
-                                        }
-                                        if (!(everyLocked(team, locked))) {
-                                            break; // Not all locked heroes are included
-                                        }
                                         var inTop = alreadyInResults(team, results);
                                         if (inTop === -1) {
                                             results.splice(y, 0,  {_type: 'morale', morale: morale, team: team, topics: topics, holder: [c1, c1]} );
@@ -158,15 +159,16 @@ export function calculateWithoutAdvanced(roster, locked, advanced, HeroDB) {
                                 break;
                             }
 
+                            var team = [c1,c2,c3._id,c4._id];
+                            if (checkSCDupe(team, HeroDB)) {
+                                continue; // dupe character detected
+                            }
+                            if (!(everyLocked(team, locked))) {
+                                continue; // Not all locked heroes are included
+                            }
+
                             for (var y = 0; y < results.length; y++) {
                                 if (morale >= results[y].morale) {
-                                    var team = [c1,c2,c3._id,c4._id];
-                                    if (checkSCDupe(team, HeroDB)) {
-                                        break; // dupe character detected
-                                    }
-                                    if (!(everyLocked(team, locked))) {
-                                        break; // Not all locked heroes are included
-                                    }
                                     var inTop = alreadyInResults(team, results);
                                     if (inTop === -1) {
                                         results.splice(y, 0,  {_type: 'morale', morale: morale, team: team, topics: topics, holder: [c1, c2]} );

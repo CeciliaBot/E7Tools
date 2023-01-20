@@ -165,5 +165,16 @@
         ],
         "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/application_no/96001/default/COMMUNITY7126dfa31f684522adad3c9faf3c0c8f/ee54cf9aea224212b28960f380f9b11a.jpg",
         "name": "Arena Triumph Season (Seasaon 13)"
+    },
+    {
+        "nid": [
+            9181783
+        ],
+        "type": "season",
+        "dt": [
+            1673258400000
+        ],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/198df477d8fb425db7015a72a1cb4095/2586842f49c24ef680ecf5acfcf771d5.jpg",
+        "name": "Arena Indomitable Season (Seasaon 14)"
     }
 ]

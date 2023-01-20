@@ -135,7 +135,7 @@ export function legacyCalculator(roster, locked, advanced, HeroDB, update) {
             var team = teamComb.concat( combo, locked );
             let toFilter = advanced.lockedMatter ? team : teamComb.concat(combo);
             
-            if (hasCartesian && hasDuplicates(team, HeroDB)) // check only if cartesian to avoid useless checks
+            if (hasDuplicates(team, HeroDB))
                 return;
 
             if (!locked.every(i => team.includes(i)))

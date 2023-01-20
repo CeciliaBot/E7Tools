@@ -1,4 +1,4 @@
-import { lazyOnload } from '@/directives/lazyloader.js';
+import { lazyImage, lazyOnload } from '@/directives/lazyloader.js';
 const downloadOnClick = false;
 function immediateDownload(canvas, name) {
     var link = document.createElement('a');
@@ -33,6 +33,7 @@ export default function(_this) { /* _this === vue context instance */
                         const src = img.getAttribute('data-src');
                         img.setAttribute('src', src);
                         img.removeAttribute('data-src');
+                        lazyImage.unobserve(img);
                         promiseAll.push(new Promise( (resolve, reject) => {
                             img.onload = (e) => {
                                 lazyOnload(e);
@@ -93,7 +94,7 @@ export default function(_this) { /* _this === vue context instance */
             }).finally( () => {
                 _this.$store.commit('loading', false)
             })
-        }).then(() => {
+        }).catch(() => {
             _this.$snackbar.error({title: 'Error: couldn\'t load export module.'})
             _this.$store.commit('loading', false)
         })

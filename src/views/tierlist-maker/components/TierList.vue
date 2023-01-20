@@ -349,8 +349,6 @@ export default {
         },
         buildItemList() {
             this.charList = [...Object.keys(this.database), ...Object.keys(this.clones)]
-            var tene = this.charList.indexOf('dark-tyrant-tenebria') // can be remove after the camp simulator update
-            if (tene) this.charList.splice(tene, 1)
             if (!this.tierType) { // remove every ranked item
                 this.tiers.forEach(tier => {
                     tier.list.forEach(el => {
