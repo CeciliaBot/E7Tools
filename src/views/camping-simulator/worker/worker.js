@@ -32,6 +32,33 @@ onmessage = function (e) {
         advanced    = payload.advanced;
     
     if (operation === 'MORALE') {
+        var roles = advanced.role || {},
+            attributes = advanced.attribute || {},
+            key,
+            rolesToRemove = [],
+            attributesToRemove = [];
+        for (key in roles) {
+            if (roles[key] == -1) {
+                rolesToRemove.push(key)
+                delete roles[key]
+            }
+        }
+        for (key in attributes) {
+            if (attributes[key] == -1) {
+                attributesToRemove.push(key)
+                delete attributes[key]
+            }
+        }
+        if (rolesToRemove.length || attributesToRemove.length) { // remove from the roster whats negative
+            for (key = 0; key < roster.length; key++) {
+                var h = roster[key];
+                if (h && !locked.includes(h) & (rolesToRemove.includes(HeroDB[h].role) || attributesToRemove.includes(HeroDB[h].attribute) ) ) {
+                    roster.splice(roster.indexOf(h), 1);
+                    key--
+                }
+            }
+        }
+
         if (checkSCDupe(locked, HeroDB)) {
             reject(PROMISE_ID, 'cant_lock_both_sc_normal')
         } else if ( roster.length < 50 || locked.length > 1 || hasAdvancedSettings(advanced) ) {    // if roster is small or 2 locked heroes or has settings use legacy calculator
