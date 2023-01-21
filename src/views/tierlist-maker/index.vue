@@ -52,7 +52,7 @@ export default {
     },
     data: function () {
         return {
-            VERSION: 1.61,
+            VERSION: 1.62,
             current: {},                                                        // Current tier list open in workspace (Passed as prop to TierList component)
             showNewComponent: true,                                             // Show Tier list main menu
             hasSomethingInWorkspace: false,                                     // Show close button in TierListMainMenu

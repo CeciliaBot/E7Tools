@@ -5,5 +5,4 @@ Source code for this website: https://github.com/CeciliaBot/E7Tools
 # Missing Character Data
 - Adin SCs (Same as Adin)
 - Summer's Disciple Alexa
-- ae-KARINA
 - Death Dealer Ray

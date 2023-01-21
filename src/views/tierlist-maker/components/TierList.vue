@@ -238,7 +238,7 @@ export default {
             }
         },
         tierType: function () {
-            this.buildItemList();
+            this.buildItemList()
         },
         filterModel: {
             deep: true,
@@ -349,6 +349,7 @@ export default {
         },
         buildItemList() {
             this.charList = [...Object.keys(this.database), ...Object.keys(this.clones)]
+            this.charList.forEach(el => this.tierItemsMask[el] = true) // set everything as visible
             if (!this.tierType) { // remove every ranked item
                 this.tiers.forEach(tier => {
                     tier.list.forEach(el => {
@@ -364,7 +365,6 @@ export default {
                       this.charList.splice(j, 1)
                 }
             }
-            this.charList.forEach(el => this.tierItemsMask[el] = true)
             this.applyFilter();
             this.sortList(this.charList, this.sort[0], false);
         },
