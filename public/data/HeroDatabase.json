@@ -2839,5 +2839,26 @@
         "role": "mage",
         "sex": 1,
         "zodiac": "waterbearer"
+    },
+    "lone-crescent-bellona": {
+        "id": "c2071",
+        "_id": "lone-crescent-bellona",
+        "name": "Lone Crescent Bellona",
+        "rarity": 5,
+        "attribute": "dark",
+        "role": "warrior",
+        "sex": 2,
+        "zodiac": "scorpion"
+    },
+    "amid": {
+        "id": "c1143",
+        "_id": "amid",
+        "name": "Amid",
+        "rarity": 5,
+        "attribute": "ice",
+        "role": "manauser",
+        "sex": 2,
+        "zodiac": "bull",
+        "limited": true
     }
 }

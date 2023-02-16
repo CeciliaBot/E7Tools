@@ -1,12 +1,12 @@
 [
     [
-        1.62, "2022/01/21",
+        1.62, "2023/01/21",
         [
-            ["fix", "Fixed an issue causing saved tier list to display all ranked heroes and artifacts with reduced opacity with no way to fix the issue from the within the website. Sorry about that, I moved a line of code without noticing. My bad.<img src=\"https://res.cloudinary.com/ceciliabot/image/upload/epic-seven/ui/emote/MercedesCry_x150.gif\" style=\"height: 1.5em; vertical-align: middle;\" />"]
+            ["fix", "Fixed an issue causing saved tier list to display all ranked heroes and artifacts with reduced opacity with no way to fix the issue from inside the website. Sorry about that, I moved a line of code without noticing. My bad.<img src=\"https://res.cloudinary.com/ceciliabot/image/upload/epic-seven/ui/emote/MercedesCry_x150.gif\" style=\"height: 1.5em; vertical-align: middle;\" />"]
         ]
     ],
     [
-        1.61, "2022/01/20",
+        1.61, "2023/01/20",
         [
             ["fix", "Fixed an issue causing the 3 star hero Suthan to not be displayed."]
         ]

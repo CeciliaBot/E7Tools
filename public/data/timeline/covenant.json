@@ -297,7 +297,19 @@
          {
             "id": "ken",
             "new": false
-         },
+         }
+      ],
+      "a": [],
+      "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/5fa3554a63024fa197a41c19af2ee504/677b61d11d2a43cba08da8e06838f7a5_1555486567.png"
+   },
+   {
+      "nid": 3131010,
+      "type": "covenant",
+      "dt": [
+         1555542000000,
+         1556117999000
+      ],
+      "c": [
          {
             "id": "haste",
             "new": false
@@ -6317,7 +6329,7 @@
       "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/83e1ea65f758423d935447062a2996c6/64980ce174214b39b0f562644fa82c40.jpg"
    },
    {
-      "nid": 0,
+      "nid": 9244556,
       "type": "covenant",
       "dt": [
          "2023-01-26T03:00:00Z",
@@ -6331,17 +6343,18 @@
       ],
       "a": [
          {
-            "id": "sphere-of-inferno"
+            "id": "sphere-of-inferno",
+            "new": true
          }
       ],
-      "thumbnail": ""
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/a2d595e39b444b488dbdf3c1521e35a7/1915bb374f0949f4b8c41d61db719aab.jpg"
    },
    {
-      "nid": 0,
+      "nid": 9244558,
       "type": "covenant",
       "dt": [
          "2023-01-26T03:00:00Z",
-         "2023-02-09T02:59:59Z"
+         "2023-02-02T02:59:59Z"
       ],
       "c": [
          {
@@ -6351,6 +6364,141 @@
       "a": [
          {
             "id": "scroll-of-shadows"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/539ded61adb34f8f98e5c20e405d4e3d/107da6fdb03d4d76a008d42140336a80.jpg"
+   },
+   {
+      "nid": 9260597,
+      "type": "covenant",
+      "dt": [
+         "2023-02-02T09:00:00Z",
+         "2023-02-09T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "yufine"
+         }
+      ],
+      "a": [
+         {
+            "id": "merciless-glutton"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/9e5e944e25654e12b7456131cb7d5851/69d2b18b03c34605b76148970fae64d3.jpg"
+   },
+   {
+      "nid": 9275067,
+      "type": "covenant",
+      "dt": [
+         "2023-02-09T03:00:00Z",
+         "2023-02-16T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "tywin"
+         }
+      ],
+      "a": [
+         {
+            "id": "crown-of-glory"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/caab8fce5b3e4ef9966e4fe9f08284bb/9fcbe4d79d2243b7a61eca0f81eb4b67.jpg"
+   },
+   {
+      "nid": 9275071,
+      "type": "covenant",
+      "dt": [
+         "2023-02-09T03:00:00Z",
+         "2023-02-16T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "ervalen"
+         }
+      ],
+      "a": [
+         {
+            "id": "doubleedged-decrescent"
+         }
+      ],
+      "thumbnail": "https://page.onstove.com/epicseven/global/view/9275071"
+   },
+   {
+      "nid": 9294955,
+      "type": "covenant",
+      "dt": [
+         "2023-02-16T09:00:00Z",
+         "2023-02-23T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "ran"
+         }
+      ],
+      "a": [
+         {
+            "id": "sword-of-winter-shadow"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/2c43c5d117454df3bff961b243ed63a6/c915fb186eba44a5ad16df74da0efc16.jpg"
+   },
+   {
+      "nid": 9294961,
+      "type": "covenant",
+      "dt": [
+         "2023-02-16T09:00:00Z",
+         "2023-02-23T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "kawerik"
+         }
+      ],
+      "a": [
+         {
+            "id": "black-hand-of-the-goddess"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/65458d50ffe24cc8a61b1f7697f9e4e0/495a6c1aa6444d0ab81504043bd1c685.jpg"
+   },
+   {
+      "nid": 0,
+      "type": "covenant",
+      "dt": [
+         "2023-02-23T03:00:00Z",
+         "2023-03-02T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "ray"
+         }
+      ],
+      "a": [
+         {
+            "id": "doctors-bag"
+         }
+      ],
+      "thumbnail": ""
+   },
+   {
+      "nid": 0,
+      "type": "limited",
+      "dt": [
+         "2023-02-23T03:00:00Z",
+         "2023-03-09T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "amid",
+            "new": true
+         }
+      ],
+      "a": [
+         {
+            "id": "fan-of-light-and-dark",
+            "new": true
          }
       ],
       "thumbnail": ""

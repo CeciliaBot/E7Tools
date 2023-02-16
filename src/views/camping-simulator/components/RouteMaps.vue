@@ -68,7 +68,7 @@ export default {
         text-align: center;
         text-orientation: mixed;
         text-transform: uppercase;
-        max-width: 50px;
+        /* max-width: 50px; */
         writing-mode: vertical-rl;
         font-size: 30px;
     }

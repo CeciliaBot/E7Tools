@@ -316,6 +316,15 @@
         "role": "mage",
         "gacha": true
     },
+    "fan-of-light-and-dark": {
+        "_id": "fan-of-light-and-dark",
+        "id": "art0176",
+        "identifier": "",
+        "name": "Fan of Light and Dark",
+        "rarity": 5,
+        "role": "manauser",
+        "gacha": true
+    },
     "flawless-garments": {
         "_id": "flawless-garments",
         "id": "art0140",
@@ -1514,6 +1523,15 @@
         "id": "art0154",
         "identifier": "",
         "name": "IV. The Emperor",
+        "rarity": 4,
+        "role": "",
+        "gacha": false
+    },
+    "vi-the-lovers": {
+        "_id": "vi-the-lovers",
+        "id": "art0177",
+        "identifier": "",
+        "name": "VI. The Lovers",
         "rarity": 4,
         "role": "",
         "gacha": false

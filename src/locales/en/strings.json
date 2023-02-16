@@ -62,7 +62,7 @@
     "remove_all_in_view": "Remove all displayed heroes",
     "remove_all_in_view_confirm": "Are you sure you want to remove {0} characters from {1}?",
     "roster": "Roster",
-    "locked_heroes_only": "Locked heroes only",
+    "locked_heroes_only_filter": "Locked heroes only",
     "reset_advanced": "Reset settings",
     "discard_if_held_by_locked": "Discard team if topic is held by a locked hero",
     "camp_locked_matter": "Locked heroes count towards the fulfillment of the selected advanced settings",
@@ -93,6 +93,7 @@
     "arakahan": "Arakahan",
     "azmakalis": "Raid",
     "nixied_sanctum": "Nixied",
+    "malicus_consciousness": "Malicus's Consciousness",
 
     "light_theme": "Light theme",
     "light_theme_desc": "Use a light color scheme instead of the default dark colors. This setting will affect the whole website",

@@ -105,11 +105,13 @@
     },
     {
         "nid": [
-            9010034
+            9010034,
+            9260569
         ],
         "type": "season",
         "dt": [
-            1668229200000
+            1668229200000,
+            1675479599000
         ],
         "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/f8d339f53c40445886b4485e8ba97b9c/d1feeaec27fa466bb290be636e5a0193.jpg",
         "name": "World Arena Triumph Season (Season 9)"

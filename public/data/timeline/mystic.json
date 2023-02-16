@@ -1210,5 +1210,24 @@
       ],
       "a": [],
       "thumbnail": ""
+   },
+   {
+      "nid": 0,
+      "type": "mystic",
+      "dt": [
+         "2023-02-16T09:00:00Z",
+         "2023-03-09T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "lone-crescent-bellona",
+            "new": true
+         },
+         {
+            "id": "benevolent-romann"
+         }
+      ],
+      "a": [],
+      "thumbnail": ""
    }
 ]

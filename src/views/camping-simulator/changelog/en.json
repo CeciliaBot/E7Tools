@@ -1,5 +1,23 @@
 [
     [
+        2.09, "2023/02/16",
+        [
+            ["fix", "Switch buff and debuff (dead) icons from EpicSevenDB to CDN."]
+        ]
+    ],
+    [
+        2.08, "2023/02/10",
+        [
+            ["new", "Added Malicus's Consciousness map by Moriyaism. Updated Raid Nightamre and Nixied 2 and Nixied 3 maps."]
+        ]
+    ],
+    [
+        2.07, "2023/02/01",
+        [
+            ["fix", "\"Locked Heroes Only\" filter is back after it went missing during the transition from Camp Simulator v1 to v2. While \"Locked Heroes Only\" is active other filters will be ignored."]
+        ]
+    ],
+    [
         2.06, "2023/01/01",
         [
             ["new", "Added Nightmare raid map made by reddit user SJack2."]

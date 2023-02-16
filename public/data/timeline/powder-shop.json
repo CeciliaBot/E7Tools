@@ -1,5 +1,19 @@
 [
   {
+    "nid": 9244501,
+    "dt": [1674702000000, 1678330799000],
+    "a": [
+      { "id": "cradle-of-life" },
+      { "id": "noble-oath" },
+      { "id": "shepherd-of-the-hollow" },
+      { "id": "idols-cheer" },
+      { "id": "hell-cutter" },
+      { "id": "hilag-lance" },
+      { "id": "kaladra" },
+      { "id": "infinity-basket" }
+    ]
+  },
+  {
     "nid": 9105601,
     "dt": [1671073199000, 1674701999000],
     "a": [

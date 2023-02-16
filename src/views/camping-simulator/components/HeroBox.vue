@@ -34,7 +34,15 @@
             :filter="filters"
             :extrasort="[{name: 'date', id: 'recent'}]"
             @close="toggleFilterModal"
-        />
+        >
+            <span @click="lockedHeroesOnly=!lockedHeroesOnly">
+                <span style="pointer-events: none;">
+                    <Checkbox :checked="lockedHeroesOnly">
+                        {{ $t('strings.locked_heroes_only_filter') }}
+                    </Checkbox>
+                </span>
+            </span>
+        </FilterModal>
     </div>
 </template>
 
@@ -42,6 +50,7 @@
 import HeaderBar from './ManageHeader.vue'
 import HeroDrawer from './HeroDrawer.vue'
 import FilterModal from '@/components/filter-modal.vue'
+import Checkbox from '@/layout/GameStyleCheckbox.vue'
 import { computePosition, shift, flip, offset } from '@floating-ui/dom';
 
 import filterHero from '../util/filter-hero.js'
@@ -53,7 +62,8 @@ export default {
     components: {
         HeaderBar,
         HeroDrawer,
-        FilterModal
+        FilterModal,
+        Checkbox
     },
     props: {
         list: {
@@ -78,6 +88,7 @@ export default {
         return {
             sort: ['recent', false], // sort by, reverse?
             filters: {name: '', rarity: [], attribute: [], role: [], zodiac: [], sex: []},
+            lockedHeroesOnly: false,
             filterModal: false,
             elementMask: {},
 
@@ -90,6 +101,9 @@ export default {
             handler() {
                 this.setMask();
             }
+        },
+        lockedHeroesOnly() {
+            this.setMask()
         },
         list: {
             deep: true,
@@ -140,7 +154,7 @@ export default {
         },
         setMask() {
             this.list.forEach(hero => {
-                this.elementMask[hero] = filterHero(this.$store.getters.getHeroName(hero), this.$store.getters.getHero(hero), this.filters)
+                this.elementMask[hero] = this.lockedHeroesOnly ? this.locked.includes(hero) : filterHero(this.$store.getters.getHeroName(hero), this.$store.getters.getHero(hero), this.filters)
             })
         },
 

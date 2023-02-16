@@ -4,19 +4,19 @@ export default [
         'background': 'rgba(255, 0, 0, 0.133)',
         en: [
             {
-                src: 'https://ceciliabot.github.io/img/Raid-Normal_en.png',
+                src: './img/Raid-Normal_en.png',
                 description: 'Normal Raid Map',
                 author: '',
                 size: [1398, 1080]
             },
             {
-                src: 'https://ceciliabot.github.io/img/Raid-Hell_en.png',
+                src: './img/Raid-Hell_en.png',
                 description: 'Hell Raid Map',
                 author: '<a href="https://www.reddit.com/user/C0NNECT1NG/">u/C0NNECT1NG</a> (<a href="https://www.reddit.com/r/EpicSeven/comments/flg4b1/complete_hell_raid_map/">Reddit post</a>)',
                 size: [1101, 1080]
             },
             {
-                src: 'https://preview.redd.it/cbfoucqrqxy91.png?width=1030&format=png&auto=webp&s=73ad03545609ad9cb2c970846b6c4a22fb85fc76',
+                src: './img/nightmare.png',
                 description: 'Nightmare Raid Map',
                 author: '<a href="https://www.reddit.com/user/SJack2">u/SJack2</a> (<a href="https://www.reddit.com/r/EpicSeven/comments/ypyagf/azmakalis_of_cycle_nightmare_lab_map/">Reddit post</a>)',
                 size: [1030, 740]
@@ -64,15 +64,15 @@ export default [
                 size: [956,711]
             },
             {
-                src: 'https://img.game8.co/3238837/41e580783640902df84ad4154d45b02b.png/original',
+                src: './img/nixied2.png',
                 description: 'Nixied 2',
-                author: '<a href="https://game8.co/games/Epic-Seven/archives/284193">game8</a>',
+                author: '<a href="https://game8.co/games/Epic-Seven/archives/284193">game8</a><br />Updated by Moriyaism',
                 size: [1000,1009]
             },
             {
-                src: 'https://img.game8.co/3240084/c9d0e19e6d97cfc31f10c9c0f2381a73.png/original',
+                src: './img/nixied3.png',
                 description: 'Nixied 3',
-                author: '<a href="https://game8.co/games/Epic-Seven/archives/284193">game8</a>',
+                author: '<a href="https://game8.co/games/Epic-Seven/archives/284193">game8</a><br />Updated by Moriyaism',
                 size: [1000,836]
             },
             {
@@ -88,7 +88,20 @@ export default [
                 size: [2318, 2160]
             }
         ]
-    }//,
+    },
+    {
+        name: 'malicus_consciousness',
+        'background': 'rgba(255, 0, 0, 0.133)',
+        en: [
+            {
+                src: './img/malicus4_route.png',
+                description: 'Area 4',
+                author: 'Map by Moriyaism',
+                size: [2676,2182]
+            }
+        ]
+    }
+    //,
     // {
     //     name: 'test gallery',
     //     description_en: 'Photogallery.vue test images',

@@ -1,6 +1,7 @@
 <script>
 import CharacterSelect from '@/components/CharacterSelect.vue'
 import { h, withDirectives } from 'vue'
+import { cdn } from '@/utils/constant.js'
 import Ripple from '@/directives/material-ripple.js'
 
 var buffList = {
@@ -314,7 +315,7 @@ export default {
         Object.keys(buffList).map( buff => {
           return h('div', {class: ['buff-debuff-check noselect', {enabled: this.doesArrayInclude('buffs', buffList[buff].id)}], onClick: () => this.addToArray('buffs', buffList[buff].id) }, [
             //this.doesArrayInclude('buffs', buffList[buff].id) ? h('div', {staticClass: 'activeBuff animate'},'✓') : null,
-            h('img', {src: 'https://assets.epicsevendb.com/buff/' + buff + '.png'}),
+            h('img', {src: cdn+'/buff/' + buff + '.png'}),
             h('p', this.$t(`strings.${buff}`))
           ])
         })
@@ -323,7 +324,7 @@ export default {
         h('h2', `${this.$tc(`strings.debuff`, 2)}:`),
         Object.keys(debuffList).map( debuff => {
           return h('div', {class: ['buff-debuff-check noselect', {enabled: this.doesArrayInclude('debuffs', debuffList[debuff].id)}], onClick: () => this.addToArray('debuffs', debuffList[debuff].id) }, [
-            h('img', {src: 'https://assets.epicsevendb.com/buff/' + debuff + '.png'}),
+            h('img', {src: cdn + '/buff/' + debuff + '.png'}),
             h('p', this.$t(`strings.${debuff}`))
           ])
         })
