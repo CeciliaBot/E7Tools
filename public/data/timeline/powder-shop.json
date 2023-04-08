@@ -1,5 +1,19 @@
 [
   {
+    "nid": 9344640,
+    "dt": [1678330800000, 1681959599000],
+    "a": [
+      { "id": "dignus-orb" },
+      { "id": "bloodstone" },
+      { "id": "samsara-prayer-beads" },
+      { "id": "rise-of-a-monarch" },
+      { "id": "siraren" },
+      { "id": "rosa-hargana" },
+      { "id": "moonlight-dreamblade" },
+      { "id": "waters-origin" }
+    ]
+  },
+  {
     "nid": 9244501,
     "dt": [1674702000000, 1678330799000],
     "a": [

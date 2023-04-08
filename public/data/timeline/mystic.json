@@ -1229,5 +1229,61 @@
       ],
       "a": [],
       "thumbnail": ""
+   },
+   {
+      "nid": 0,
+      "type": "mystic",
+      "dt": [
+         "2023-03-09T03:00:00Z",
+         "2023-03-30T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "lionheart-cermia"
+         },
+         {
+            "id": "briar-witch-iseria"
+         },
+         {
+            "id": "sage-baal-sezan"
+         },
+         {
+            "id": "ambitious-tywin"
+         },
+         {
+            "id": "angel-of-light-angelica"
+         }
+      ],
+      "a": [],
+      "thumbnail": ""
+   },
+   {
+      "nid": 9384034,
+      "type": "mystic",
+      "dt": [
+         "2023-03-30T03:00:00Z",
+         "2023-04-20T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "architect-laika",
+            "new": true
+         },
+         {
+            "id": "tempest-surin"
+         }
+      ],
+      "a": [],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/8c73aa6423164cb1b577d662ad684f12/c62dad427f054dcb83344bde2e6e800d.jpg"
+   },
+   {
+      "nid": 9359375,
+      "type": "mystic",
+      "dt": [
+         "2023-03-09T03:00:00Z",
+         "2023-05-11T02:59:59Z"
+      ],
+      "name": "Double Custom Mystic Banner (Second hero added later)",
+      "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/cbd7b5039edc4b5aa6b1766f71191bd9/c6b6fd5ccf7e415898a32c301e991b23_1651043570.jpg"
    }
 ]

@@ -1,5 +1,18 @@
 [
     [
+        2.20, "2023/04/01",
+        [
+            ["new", "Now you can edit your teams."],
+            ["new", "Added search bar in the hero select modals."]
+        ]
+    ],
+    [
+        2.10, "2023/03/29",
+        [
+            ["new", "Added new Malicus's Consciousness maps made by Moriyaism. Zone 1, 2, 3."]
+        ]
+    ],
+    [
         2.09, "2023/02/16",
         [
             ["fix", "Switch buff and debuff (dead) icons from EpicSevenDB to CDN."]

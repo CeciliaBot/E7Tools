@@ -1,6 +1,8 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "CeciliaBot",
+    "short_name": "CeciliaBot",
+    "start_url": "/",
+    "scope": "/",
     "icons": [
         {
             "src": "/favicons/android-chrome-192x192.png",

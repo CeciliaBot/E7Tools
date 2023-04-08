@@ -2,9 +2,10 @@
     <div class="center-modal" @click="checkOutOfBounds">
         <div class="modal-game-box gamebox" style="padding: 10px;">
             <div style="flex: 1; display: flex; overflow: hidden;">
-                <div style="flex: 1; display: flex; flex-direction: column;">
-                    <div style="height: 56px; border-bottom: solid 2px #6a553a; display: flex; justify-content: space-between;">
-                        <h1 style="margin-left: 5px; width: 50%;">Select Heroes <span v-if="max">({{ selected.length }}/{{max || 1}})</span></h1>
+                <div style="flex: 1; width: 100%; display: flex; flex-direction: column;">
+                    <div style="height: 56px; border-bottom: solid 2px #6a553a; display: flex; justify-content: space-between; align-items: center;">
+                        <h1 class="text-ellipsis" style="flex: 1 0; margin-left: 5px; width: 50%;">Select Heroes <span v-if="max">({{ selected.length }}/{{max || 1}})</span></h1>
+                        <SearchBar style="flex: 1 0 100px" @keyup="filter.name = $event.target.value" />
                         <button class="material-button basic basic" style="float: right; font-size: 18px;" @click="openFilter" v-ripple-effect>
                             <span><i class="fa fa-sliders-h fa-rotate-90" /> &#x2605; {{ $t('strings.'+sorter[0]) }}</span>
                         </button>
@@ -42,6 +43,7 @@
 
 <script>
 import FilterComponent from '@/components/filter-modal.vue'
+import SearchBar from '@/layout/SearchBar.vue'
 import { computePosition, shift } from '@floating-ui/dom';
 import sort from '@/utils/sort-heroes.js'
 import filterItem from '@/utils/filter-data-item.js'
@@ -49,7 +51,8 @@ import filterItem from '@/utils/filter-data-item.js'
 export default {
     emits: ['selected', 'close'],
     components: {
-        FilterComponent
+        FilterComponent,
+        SearchBar
     },
     props: {
         list: {

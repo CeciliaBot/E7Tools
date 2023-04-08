@@ -279,6 +279,7 @@
     "download": "Download",
     "load": "Load",
     "delete": "Delete",
+    "edit": "Edit",
     "new": "new",
     "delete_confirm": "Are you sure you want to delete {0}?",
     "confirm": "Confirm",

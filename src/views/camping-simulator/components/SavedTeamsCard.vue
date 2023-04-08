@@ -1,7 +1,8 @@
 <template>
     <div class="team-card">
         <h1 :class="[team.gameMode.join(' ')]" :style="{'background-image': backgroundImages }">
-            <div class="options" @click="deleteTeam" v-tooltip=" () => $t('strings.delete')"><i class="fa fa-trash" /></div>
+            <div class="options" @click="deleteTeam" v-tooltip="() => $t('strings.delete')"><i class="fa fa-trash" /></div>
+            <div class="options" @click="editTeam" v-tooltip="() => $t('strings.edit')"><i class="fa fa-edit" /></div>
             <span><i v-if="team._type==='friendship'" class="far fa-heart" />{{ team.name }}</span>
         </h1>
         <div>
@@ -25,7 +26,7 @@ import { enemies } from '../util/constant.js'
 
 
 export default {
-    emits: ['delete'],
+    emits: ['edit', 'delete'],
     components: {
         TeamFormation
     },
@@ -43,6 +44,9 @@ export default {
     methods: {
         getHeroName: function (id) {
             return this.$store.getters.getHeroName(id);
+        },
+        editTeam() {
+            this.$emit('edit', this.team)
         },
         deleteTeam() {
             this.$emit('delete', this.team)

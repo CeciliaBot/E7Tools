@@ -106,7 +106,8 @@
     {
         "nid": [
             9010034,
-            9260569
+            9260569,
+            9326973
         ],
         "type": "season",
         "dt": [
@@ -115,5 +116,16 @@
         ],
         "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/f8d339f53c40445886b4485e8ba97b9c/d1feeaec27fa466bb290be636e5a0193.jpg",
         "name": "World Arena Triumph Season (Season 9)"
+    },
+    {
+        "nid": [
+            9327653
+        ],
+        "type": "season",
+        "dt": [
+            1677906000000
+        ],
+        "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/457c87d7d3704a1ca5776a7dac41fcb4/a1dcd5aa9f804d25a8dca6f89cbb467e.jpg",
+        "name": "World Arena Indomitable Season (Season 10)"
     }
 ]

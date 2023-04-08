@@ -168,11 +168,13 @@
     },
     {
         "nid": [
-            9181783
+            9181783,
+            9358453
         ],
         "type": "season",
         "dt": [
-            1673258400000
+            1673258400000,
+            1680498000000
         ],
         "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/198df477d8fb425db7015a72a1cb4095/2586842f49c24ef680ecf5acfcf771d5.jpg",
         "name": "Arena Indomitable Season (Seasaon 14)"

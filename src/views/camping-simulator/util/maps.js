@@ -91,10 +91,28 @@ export default [
     },
     {
         name: 'malicus_consciousness',
-        'background': 'rgba(255, 0, 0, 0.133)',
+        background: 'rgba(255, 0, 0, 0.133)',
         en: [
             {
-                src: './img/malicus4_route.png',
+                src: './img/malicus_1_en.png',
+                description: 'Area 1',
+                author: 'Map by Moriyaism',
+                size: [1868,1726]
+            },
+            {
+                src: './img/malicus_2_en.png',
+                description: 'Area 2',
+                author: 'Map by Moriyaism',
+                size: [1392,2126]
+            },
+            {
+                src: './img/malicus_3_en.png',
+                description: 'Area 3',
+                author: 'Map by Moriyaism',
+                size: [2268,1946]
+            },
+            {
+                src: './img/malicus_4_en.png',
                 description: 'Area 4',
                 author: 'Map by Moriyaism',
                 size: [2676,2182]

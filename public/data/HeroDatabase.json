@@ -2718,7 +2718,7 @@
         "role": "assassin",
         "attribute": "fire",
         "sex": 2,
-        "zodiac": "ram"
+        "zodiac": "goat"
     },
     "aeningning": {
         "_id": "aeningning",
@@ -2748,7 +2748,7 @@
         "role": "knight",
         "attribute": "ice",
         "sex": 2,
-        "zodiac": "goat"
+        "zodiac": "ram"
     },
     "death-dealer-ray": {
         "_id": "death-dealer-ray",
@@ -2860,5 +2860,35 @@
         "sex": 2,
         "zodiac": "bull",
         "limited": true
+    },
+    "eligos": {
+        "id": "c1142",
+        "_id": "eligos",
+        "name": "Eligos",
+        "rarity": 5,
+        "attribute": "fire",
+        "role": "ranger",
+        "sex": 1,
+        "zodiac": "maiden"
+    },
+    "architect-laika": {
+        "id": "c2099",
+        "_id": "architect-laika",
+        "name": "Architect Laika",
+        "rarity": 5,
+        "attribute": "light",
+        "role": "mage",
+        "sex": 2,
+        "zodiac": "archer"
+    },
+    "ainos-20": {
+        "id": "c4105",
+        "_id": "ainos-20",
+        "name": "Ainos 2.0",
+        "rarity": 3,
+        "attribute": "dark",
+        "role": "manauser",
+        "sex": 2,
+        "zodiac": "archer"
     }
 }

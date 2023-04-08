@@ -16,7 +16,7 @@ export default function (hero, _this) {
         $t('strings.rarity') + ': ' + data.rarity + '<br>' +
         'Cannot team up with: ' + ( (data.linked_hero || []).map(h => _this.$store.getters.getHeroName(h)).join(', ') || '-' ) + '<br>' +
         'Has AoE attack: ' + (data.common.includes('aoe') ? 'Yes' : 'No') + ' | Cleanse skill: ' +  (data.common.includes('cleanse') ? 'Yes' : 'No') + ' | Dispel skill: '+ (data.common.includes('dispel') ? 'Yes' : 'No') + '<br><br>' +
-        _this.$t('strings.topics') + ': ' + topics.join(', ') + 
+        _this.$t('strings.topics') + ': ' + topics.map(topic => _this.$t('strings.' + topic)).join(', ') + 
         '<br><br>'+
         cValues.join('<br>'),
         [$t('strings.back')]

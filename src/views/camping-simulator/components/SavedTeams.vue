@@ -2,21 +2,25 @@
     <div>
         <h1 style="text-align: center;">{{ $t('strings.your_teams') }}</h1>
         <div class="flex-center">
-            <template v-for="team in teams" :key="team">
-                <Card :team="team" @delete="deleteTeam"/>
+            <template v-for="team in localTeams" :key="team">
+                <Card :team="team" @edit="editTeam" @delete="deleteTeam"/>
             </template>
         </div>
+        <TeamEditor :camp="openEditModal" :edit-mode="true" :title="$t('strings.edit')" @close="closeEditModal" @save="saveTeamEdit" />
     </div>
 </template>
 
 <script>
 import Card from './SavedTeamsCard.vue'
+import TeamEditor from './SaveTeamModal.vue'
+import { isEditing } from '../util/send-team-usage.js'
 //import ajax from '@/utils/ajax.js'
 
 export default {
     name: 'saved-teams',
     components: {
-        Card
+        Card,
+        TeamEditor
     },
     props: {
         teams: {
@@ -26,10 +30,44 @@ export default {
     },
     data() {
         return {
-            localTeams: this.teams
+            localTeams: [],
+            openEditModal: null
+        }
+    },
+    watch: {
+        teams: {
+            immediate: true,
+            handler() {
+                this.localTeams = this.teams
+            }
         }
     },
     methods: {
+        editTeam(team) {
+            this.openEditModal = team;
+        },
+        closeEditModal() {
+            this.openEditModal = null
+        },
+        saveTeamEdit(team) {
+            try {
+                var edited;
+                for (var i = 0; i < this.teams.length; i++ ) {
+                    if (this.localTeams[i] === this.openEditModal) {
+                        edited = JSON.parse(JSON.stringify(this.localTeams[i]));
+                        this.localTeams[i] = team;
+                        
+                    }
+                }
+                if (edited) {
+                    this.closeEditModal();
+                    isEditing(team, edited)
+                } else
+                    this.$snackbar.error({title: 'error', description: 'Team not found in local teams.'});
+            } catch (err) {
+                this.$snackbar.error({title: 'error', description: 'Something went wrong.'})
+            }
+        },
         deleteTeam: function (team) {
             this.$promiseAlert(
                 this.$t('strings.delete'),
@@ -84,8 +122,8 @@ export default {
         background-position-y: center;
         background-size: 15%;
         background-repeat: no-repeat;
-        /*background-position-x: 100%, 85%, 70%, 55%, 40%, 35%, 20%, 5%;*/
-        background-position-x: 92%, 80%, 68%, 56%, 44%, 32%, 20%, 8%;
+        /* background-position-x: 92%, 80%, 68%, 56%, 44%, 32%, 20%, 8%; */
+        background-position-x: 78%, 64%, 50%, 36%, 22%, 8%;
     }
     .team-card .morale-box {
         text-align: center;

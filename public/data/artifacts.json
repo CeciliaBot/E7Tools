@@ -61,6 +61,15 @@
         "role": "assassin",
         "gacha": true
     },
+    "an-offer-you-cant-refuse": {
+        "_id": "an-offer-you-cant-refuse",
+        "id": "art0178",
+        "identifier": "",
+        "name": "An Offer You Can't Refuse",
+        "rarity": 5,
+        "role": "ranger",
+        "gacha": true
+    },
     "ancient-dragons-legacy": {
         "_id": "ancient-dragons-legacy",
         "id": "art0122",

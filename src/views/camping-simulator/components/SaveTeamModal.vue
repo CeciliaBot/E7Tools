@@ -1,6 +1,6 @@
 <template>
     <Modal v-if="camp && campData.team" @close="closeModal">
-        <template v-slot:title>{{ $t(`strings.save_team`) }}</template>
+        <template v-slot:title>{{ title || $t(`strings.save_team`) }}</template>
         <div style="padding: 5px 10px 10px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
             <div style="overflow: auto;">
                 <div v-show="currSlide === 0">
@@ -85,7 +85,7 @@ export default {
         InputField,
         MaterialCheckbox
     },
-    props: ['camp','editable','isnew'],
+    props: ['camp','editable','editMode', 'title'],
     data: function () {
         return {
             campData: {},
@@ -164,7 +164,7 @@ export default {
             this.campData.topics = this.campData.topics || []
             this.campData.enemy = this.campData.enemy || []
             this.campData.gameMode = this.campData.gameMode || []
-            this.campData.uploaded = this.campData.uploaded != undefined ? this.campData.uploaded : true   // we change this if upload to statistics api fails
+            this.campData.uploaded = this.campData.uploaded !== undefined ? this.campData.uploaded : true   // we change this if upload to statistics api fails
         },
 
         addEnemy(enemy) {
