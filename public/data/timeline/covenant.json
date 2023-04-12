@@ -6658,7 +6658,7 @@
       "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/981b40b6d1e4449e8f5af81b94a6388a/cb0a1d5b33df4e02be4c130d507324a6_1652252634.jpg"
    },
    {
-      "nid": 0,
+      "nid": 9397076,
       "type": "covenant",
       "dt": [
          "2023-04-06T03:00:00Z",
@@ -6677,7 +6677,7 @@
       "thumbnail": "https://d3kxs6kpbh59hp.cloudfront.net/community/COMMUNITY/75592cee2a3c4f8098ae64f5abf66a8b/5658cfe34b2c409e8f4c867f54cb8a80_1654678258.jpg"
    },
    {
-      "nid": 0,
+      "nid": 9397042,
       "type": "covenant",
       "dt": [
          "2023-04-06T03:00:00Z",
@@ -6694,5 +6694,90 @@
          }
       ],
       "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/application_no/96001/default/COMMUNITY243a65ae40aa414ca37fc4f592da18f2/cd9416cbde5d4e97beaf670b4b1ee1ee.jpg"
+   },
+   {
+      "nid": 9410651,
+      "type": "covenant",
+      "dt": [
+         "2023-04-13T09:00:00Z",
+         "2023-04-20T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "tenebria"
+         }
+      ],
+      "a": [
+         {
+            "id": "crimson-moon-of-nightmares"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/dc22eabce0ed4179838b3691165fa716/5744ef44a213474f82739df06900d25b.jpg"
+   },
+   {
+      "nid": 9410651,
+      "type": "covenant",
+      "dt": [
+         "2023-04-13T09:00:00Z",
+         "2023-04-20T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "roana"
+         }
+      ],
+      "a": [
+         {
+            "id": "touch-of-rekos"
+         }
+      ],
+      "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/27dde70d830f4949b25805ade4abe228/06cdd26ffdf64102a1dbe23a26aa432c.jpg"
+   },
+   {
+      "nid": 0,
+      "type": "covenant",
+      "dt": [
+         "2023-04-20T03:00:00Z",
+         "2023-04-27T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "destina"
+         }
+      ],
+      "a": [
+         {
+            "id": "shimadra-staff"
+         }
+      ],
+      "thumbnail": ""
+   },
+   {
+      "nid": 0,
+      "type": "covenant",
+      "dt": [
+         "2023-04-20T03:00:00Z",
+         "2023-04-27T02:59:59Z"
+      ],
+      "c": [
+         {
+            "id": "baal-sezan"
+         }
+      ],
+      "a": [
+         {
+            "id": "last-teatime"
+         }
+      ],
+      "thumbnail": ""
+   },
+   {
+      "nid": 0,
+      "type": "limited",
+      "dt": [
+         "2023-04-20T03:00:00Z",
+         "2023-05-18T02:59:59Z"
+      ],
+      "name": "Custom Triple RGB Group Summon"
    }
 ]

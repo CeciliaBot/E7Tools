@@ -131,11 +131,13 @@
     },
     {
         "nid": [
-            9260569
+            9260569,
+            9410675
         ],
         "type": "season",
         "dt": [
-            1675504800000
+            1675504800000,
+            1682755199000
         ],
         "thumbnail": "https://d2x8kymwjom7h7.cloudfront.net/live/application_no/96001/default/COMMUNITY/33ccecc91c03475bbec5f34b2c008cae/eafe5cae9a594b00b256f9aebc9c19f5.jpg",
         "name": "Guild War Indomitable Season (Season 11)"
